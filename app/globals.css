@@ -1,0 +1,298 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────
+   FONT FACES — self-hosted in /public/fonts
+───────────────────────────────────────── */
+
+/* PP Neue Machina — display / nav */
+@font-face {
+  font-family: "PP Neue Machina";
+  src: url("/fonts/PPNeueMachina-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Neue Machina";
+  src: url("/fonts/PPNeueMachina-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Neue Machina";
+  src: url("/fonts/PPNeueMachina-Ultrabold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* MD Nichrome — body / headings */
+@font-face {
+  font-family: "MD Nichrome";
+  src: url("/fonts/MDNichromeTest-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MD Nichrome";
+  src: url("/fonts/MDNichromeTest-ThinOblique.otf") format("opentype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MD Nichrome";
+  src: url("/fonts/MDNichromeTest-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MD Nichrome";
+  src: url("/fonts/MDNichromeTest-LightOblique.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MD Nichrome";
+  src: url("/fonts/MDNichromeTest-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MD Nichrome";
+  src: url("/fonts/MDNichromeTest-RegularOblique.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MD Nichrome";
+  src: url("/fonts/MDNichromeTest-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MD Nichrome";
+  src: url("/fonts/MDNichromeTest-BoldOblique.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MD Nichrome";
+  src: url("/fonts/MDNichromeTest-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MD Nichrome";
+  src: url("/fonts/MDNichromeTest-BlackOblique.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* MD Nichrome Ultra — extra-heavy display */
+@font-face {
+  font-family: "MD Nichrome Ultra";
+  src: url("/fonts/MDNichromeTest-Ultra.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MD Nichrome Ultra";
+  src: url("/fonts/MDNichromeTest-UltraOblique.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* MD Nichrome Dark — subheadings / labels */
+@font-face {
+  font-family: "MD Nichrome Dark";
+  src: url("/fonts/MDNichromeTest-Dark.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MD Nichrome Dark";
+  src: url("/fonts/MDNichromeTest-DarkOblique.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* MD Nichrome Infra — hairline display */
+@font-face {
+  font-family: "MD Nichrome Infra";
+  src: url("/fonts/MDNichromeTest-Infra.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MD Nichrome Infra";
+  src: url("/fonts/MDNichromeTest-InfraOblique.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ─────────────────────────────────────────
+   DESIGN TOKENS — Tailwind v4 @theme
+───────────────────────────────────────── */
+
+@theme {
+  /* Colors */
+  --color-cream: #f8f3ec;
+  --color-near-black: #191919;
+  --color-orange: #e76e52;
+  --color-gray: #8a8a8a;
+  --color-green: #29ea89;
+  --color-blue: #3166ed;
+
+  /* Font families */
+  --font-display: "PP Neue Machina", Arial, sans-serif;
+  --font-body: "MD Nichrome", Verdana, sans-serif;
+  --font-ultra: "MD Nichrome Ultra", Verdana, sans-serif;
+  --font-dark: "MD Nichrome Dark", Verdana, sans-serif;
+  --font-infra: "MD Nichrome Infra", Verdana, sans-serif;
+
+  /* Type scale — mirrors live site values */
+  --text-nav:   14px;
+  --text-body:  16px;
+  --text-lg:    18px;
+  --text-xl:    20px;
+  --text-2xl:   24px;
+  --text-3xl:   27px;
+  --text-4xl:   30px;
+  --text-label: 44px;
+  --text-d1:    62px;
+  --text-d2:    94px;
+  --text-d3:    100px;
+  --text-d4:    120px;
+
+  /* Letter spacing */
+  --tracking-nav:   0.5em;
+  --tracking-label: 0.05em;
+}
+
+/* ─────────────────────────────────────────
+   CSS VARIABLES (aliased for components)
+───────────────────────────────────────── */
+
+:root {
+  --background-light: #f8f3ec;
+  --near-black: #191919;
+  --orange-text: #e76e52;
+  --text-dark: #000;
+  --light-grey: #8a8a8a;
+}
+
+/* ─────────────────────────────────────────
+   BASE
+───────────────────────────────────────── */
+
+body {
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  font-family: "PP Neue Machina", Arial, sans-serif;
+  cursor: none;
+}
+
+html,
+*,
+*::before,
+*::after {
+  cursor: none !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ─────────────────────────────────────────
+   PAGE TRANSITION
+───────────────────────────────────────── */
+
+.page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.page-transition__panel {
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  transform: translateY(0);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html.pt-up .page-transition__panel {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.page-transition__logo {
+  width: clamp(48px, 6vw, 80px);
+  height: clamp(48px, 6vw, 80px);
+  background-image: url('/ae-logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(0) invert(1);
+}
+
+/* ─────────────────────────────────────────
+   CUSTOM CURSOR
+───────────────────────────────────────── */
+
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  left: -40px;
+  top: -40px;
+  transition: opacity 0.2s;
+}
+
+@media (hover: none) {
+  .custom-cursor {
+    display: none;
+  }
+}
