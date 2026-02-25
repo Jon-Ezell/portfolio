@@ -72,7 +72,16 @@ export default function PageTransition() {
   return (
     <div className="page-transition">
       <div className="page-transition__panel">
-        <div className="page-transition__logo" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/transition.png"
+          alt=""
+          style={{
+            width: "50%",
+            height: "50%",
+            objectFit: "contain",
+          }}
+        />
       </div>
     </div>
   );

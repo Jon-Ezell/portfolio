@@ -36,8 +36,29 @@ const projects = [
 
 export default function CaseStudies() {
   return (
-    <section id="work" className="bg-black px-8 py-32">
-      <div className="max-w-7xl mx-auto">
+    <section
+      id="work"
+      className="px-8 py-32"
+      style={{ backgroundColor: "var(--theme-bg)", position: "relative", overflow: "hidden" }}
+    >
+      {/* Background rocks — sits behind all content */}
+      <div style={{ position: "absolute", inset: 0, zIndex: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none" }}>
+        <Image
+          src="/rocks.png"
+          alt=""
+          width={900}
+          height={900}
+          style={{
+            width: "clamp(500px, 65vw, 900px)",
+            height: "auto",
+            objectFit: "contain",
+            opacity: 0.3,
+            mixBlendMode: "var(--theme-vase-blend)" as React.CSSProperties["mixBlendMode"],
+          }}
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto" style={{ position: "relative", zIndex: 1 }}>
         <motion.p
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,10 +68,10 @@ export default function CaseStudies() {
           style={{
             fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif',
             fontSize: "44px",
-            color: "#fff",
+            color: "var(--theme-text)",
           }}
         >
-          CASE STUDIES
+          SELECTED WORK
         </motion.p>
 
         <div className="flex flex-col gap-6">
@@ -70,17 +91,20 @@ export default function CaseStudies() {
                 href={`/${project.slug}`}
                 className="group grid grid-cols-1 md:grid-cols-2 gap-8 rounded-[10px] p-8 transition-colors"
                 style={{
-                  backgroundColor: "#191919",
+                  backgroundColor: "color-mix(in srgb, var(--theme-card-bg) 50%, transparent)",
+                  backdropFilter: "blur(16px)",
+                  WebkitBackdropFilter: "blur(16px)",
+                  border: "1px solid var(--theme-divider)",
                   textDecoration: "none",
                 }}
-                onMouseEnter={(e) =>
-                  ((e.currentTarget as HTMLElement).style.backgroundColor =
-                    "#242424")
-                }
-                onMouseLeave={(e) =>
-                  ((e.currentTarget as HTMLElement).style.backgroundColor =
-                    "#191919")
-                }
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.backgroundColor =
+                    "var(--theme-card-bg-hover)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.backgroundColor =
+                    "color-mix(in srgb, var(--theme-card-bg) 50%, transparent)";
+                }}
               >
                 {/* Thumbnail */}
                 <div className="rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
@@ -101,7 +125,7 @@ export default function CaseStudies() {
                       fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif',
                       fontSize: "clamp(1.2rem, 2.5vw, 1.8rem)",
                       lineHeight: 1.1,
-                      color: "#fff",
+                      color: "var(--theme-text)",
                     }}
                   >
                     {project.headline}
@@ -113,7 +137,7 @@ export default function CaseStudies() {
                       fontSize: "14px",
                       fontWeight: 300,
                       lineHeight: 1.6,
-                      color: "rgba(255,255,255,0.5)",
+                      color: "var(--theme-muted)",
                     }}
                   >
                     {project.description}
@@ -127,8 +151,8 @@ export default function CaseStudies() {
                           fontSize: "11px",
                           fontWeight: 300,
                           letterSpacing: "0.1em",
-                          color: "#8a8a8a",
-                          border: "1px solid rgba(255,255,255,0.1)",
+                          color: "var(--theme-muted)",
+                          border: "1px solid var(--theme-divider)",
                           borderRadius: "4px",
                           padding: "4px 10px",
                         }}

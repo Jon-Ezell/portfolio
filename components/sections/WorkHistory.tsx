@@ -9,14 +9,12 @@ const history = [
     company: "Scoot",
     description:
       "Led design and co-led product for immersive virtual event startup. Built out and shipped core product offering. Company closed first fortune 500 deals during my tenure.",
-    dot: false,
   },
   {
     year: "2024",
     role: "DESIGN CONSULTANT",
     company: "WELL – YC W23",
     description: "Designed core UX/UI and branding for YC company Well.",
-    dot: false,
   },
   {
     year: "2023",
@@ -24,14 +22,12 @@ const history = [
     company: "ZEPHYR",
     description:
       "Created cutting edge heath and wellness branding, product, and experience.",
-    dot: true,
   },
   {
     year: "2023",
     role: "UX CONSULTANT",
     company: "REFLECTION SCIENCES",
     description: "Led UX of Gates Foundation funded Ed-tech startup",
-    dot: false,
   },
   {
     year: "2022",
@@ -39,7 +35,6 @@ const history = [
     company: "ALTR",
     description:
       "Led Design for VC funded tokenization-based data security startup. Company went from 100k → 1M+ ARR during my tenure.",
-    dot: false,
   },
   {
     year: "2019",
@@ -47,14 +42,13 @@ const history = [
     company: "CAVIS",
     description:
       "Re-imaged branding and web-assets for turn-key energy optimization leader",
-    dot: false,
   },
 ];
 
 export default function WorkHistory() {
   return (
     <section
-      style={{ backgroundColor: "#f5f0e8", padding: "clamp(48px, 7vw, 100px) clamp(24px, 6vw, 80px)" }}
+      style={{ backgroundColor: "var(--theme-bg)", padding: "clamp(48px, 7vw, 100px) clamp(24px, 6vw, 80px)" }}
     >
       <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
 
@@ -68,7 +62,7 @@ export default function WorkHistory() {
             fontFamily: '"MD Nichrome Dark", Verdana, sans-serif',
             fontSize: "22px",
             letterSpacing: "0.08em",
-            color: "#000",
+            color: "var(--theme-text)",
             marginBottom: "clamp(40px, 6vw, 80px)",
           }}
         >
@@ -87,6 +81,7 @@ export default function WorkHistory() {
             >
               {/* Row content */}
               <div
+                className="work-history-row"
                 style={{
                   display: "grid",
                   gridTemplateColumns: "clamp(120px, 16vw, 200px) 1fr clamp(200px, 30vw, 380px)",
@@ -102,7 +97,7 @@ export default function WorkHistory() {
                     fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif',
                     fontSize: "clamp(3rem, 7vw, 6.5rem)",
                     lineHeight: 1,
-                    color: "#000",
+                    color: "var(--theme-text)",
                   }}
                 >
                   {item.year}
@@ -115,7 +110,7 @@ export default function WorkHistory() {
                       fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif',
                       fontSize: "clamp(1.4rem, 3vw, 2.6rem)",
                       lineHeight: 1.0,
-                      color: "#000",
+                      color: "var(--theme-text)",
                       margin: 0,
                     }}
                   >
@@ -127,7 +122,7 @@ export default function WorkHistory() {
                       fontSize: "clamp(10px, 1vw, 13px)",
                       fontWeight: 400,
                       letterSpacing: "0.1em",
-                      color: "#e76e52",
+                      color: "var(--theme-accent)",
                       marginTop: "6px",
                       margin: "6px 0 0",
                     }}
@@ -143,7 +138,7 @@ export default function WorkHistory() {
                     fontSize: "clamp(12px, 1.1vw, 14px)",
                     fontWeight: 300,
                     lineHeight: 1.7,
-                    color: "#3a3a3a",
+                    color: "var(--theme-muted)",
                     margin: 0,
                   }}
                 >
@@ -152,7 +147,7 @@ export default function WorkHistory() {
               </div>
 
               {/* Divider */}
-              <div style={{ height: "1px", backgroundColor: "rgba(0,0,0,0.15)" }} />
+              <div style={{ height: "1px", backgroundColor: "var(--theme-divider)" }} />
             </motion.div>
           ))}
         </div>

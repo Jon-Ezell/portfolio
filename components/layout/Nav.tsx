@@ -3,11 +3,21 @@
 import Link from "next/link";
 
 const links = [
-  { label: "HOME", href: "/" },
-  { label: "WORK", href: "/#work" },
-  { label: "RESUME", href: "/resume" },
-  { label: "CONTACT", href: "/#contact" },
+  { label: "HOME", href: "/", anchor: null },
+  { label: "WORK", href: "/#work", anchor: "work" },
+  { label: "RESUME", href: "/resume", anchor: null },
+  { label: "CONTACT", href: "/#contact", anchor: "contact" },
 ];
+
+function handleAnchorClick(e: React.MouseEvent, anchor: string) {
+  e.preventDefault();
+  const el = document.getElementById(anchor);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+  // If el not found (different page), PageTransition's global listener
+  // handles the full transition + navigation to the href.
+}
 
 export default function Nav() {
   return (
@@ -23,6 +33,7 @@ export default function Nav() {
           <li key={link.href}>
             <Link
               href={link.href}
+              onClick={link.anchor ? (e) => handleAnchorClick(e, link.anchor!) : undefined}
               className="flex items-center px-5 py-[10px] text-white/90 hover:bg-white/10 rounded-[4px] transition-colors duration-300"
               style={{
                 fontFamily: '"MD Nichrome", Verdana, sans-serif',

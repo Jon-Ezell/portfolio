@@ -2,39 +2,46 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function FooterCTA() {
+interface FooterCTAProps {
+  nextProject?: { href: string; label: string };
+}
+
+export default function FooterCTA({ nextProject }: FooterCTAProps = {}) {
   return (
     <section
       id="contact"
       style={{
-        backgroundColor: "#f5f0e8",
+        backgroundColor: "var(--theme-bg)",
         position: "relative",
         overflow: "hidden",
-        paddingTop: "clamp(48px, 7vw, 100px)",
+        paddingTop: "clamp(32px, 4.5vw, 64px)",
       }}
     >
       {/* Main content row: headline left + circle right */}
       <div
+        className="footer-cta-main"
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
           padding: "0 clamp(24px, 5vw, 80px)",
-          paddingBottom: "clamp(40px, 5vw, 72px)",
+          paddingBottom: "clamp(24px, 3vw, 48px)",
         }}
       >
         {/* Headline */}
         <motion.h2
+          className="footer-cta-headline-text"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           style={{
             fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif',
-            fontSize: "clamp(3.5rem, 13vw, 13rem)",
+            fontSize: "clamp(2.4rem, 9vw, 9rem)",
             lineHeight: 0.92,
-            color: "#111",
+            color: "var(--theme-text)",
             margin: 0,
             flex: 1,
           }}
@@ -49,6 +56,7 @@ export default function FooterCTA() {
         {/* Orange circle CTA */}
         <motion.a
           href="mailto:jon@ezell.guru"
+          className="footer-cta-circle"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -61,7 +69,7 @@ export default function FooterCTA() {
             width: "clamp(180px, 18vw, 260px)",
             height: "clamp(180px, 18vw, 260px)",
             borderRadius: "50%",
-            backgroundColor: "#e76e52",
+            backgroundColor: "var(--theme-accent)",
             flexShrink: 0,
             marginLeft: "clamp(24px, 4vw, 60px)",
             cursor: "pointer",
@@ -73,7 +81,7 @@ export default function FooterCTA() {
               fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif',
               fontSize: "clamp(18px, 2.2vw, 30px)",
               lineHeight: 1.2,
-              color: "#111",
+              color: "var(--theme-accent-text)",
               textAlign: "center",
               margin: 0,
             }}
@@ -85,8 +93,61 @@ export default function FooterCTA() {
         </motion.a>
       </div>
 
+      {/* Next project pill */}
+      {nextProject && (
+        <div style={{ padding: "0 clamp(24px, 5vw, 80px)", paddingBottom: "clamp(24px, 3vw, 48px)" }}>
+          <motion.div
+            initial="rest"
+            whileHover="hovered"
+            animate="rest"
+            style={{ display: "inline-block" }}
+          >
+            <Link
+              href={nextProject.href}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.6rem",
+                border: "1px solid var(--theme-divider)",
+                borderRadius: "100px",
+                padding: "0.55rem 1.2rem 0.55rem 1rem",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}
+            >
+              <motion.span
+                variants={{
+                  rest: { color: "var(--theme-muted)", x: 0 },
+                  hovered: { color: "var(--theme-accent)", x: 0 },
+                }}
+                transition={{ duration: 0.2 }}
+                style={{
+                  fontFamily: '"PP Neue Machina", Arial, sans-serif',
+                  fontSize: "clamp(10px, 0.9vw, 13px)",
+                  fontWeight: 400,
+                  letterSpacing: "0.12em",
+                }}
+              >
+                NEXT PROJECT
+              </motion.span>
+              <motion.span
+                variants={{
+                  rest: { x: 0, color: "var(--theme-accent)" },
+                  hovered: { x: 5, color: "var(--theme-accent)" },
+                }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                style={{ display: "block", lineHeight: 1, fontSize: "clamp(10px, 0.9vw, 13px)" }}
+              >
+                →
+              </motion.span>
+            </Link>
+          </motion.div>
+        </div>
+      )}
+
       {/* Bottom bar */}
       <div
+        className="footer-bottom-bar"
         style={{
           padding: "0 clamp(24px, 5vw, 80px)",
           paddingBottom: "clamp(20px, 3vw, 36px)",
@@ -96,7 +157,7 @@ export default function FooterCTA() {
         }}
       >
         {/* Contact links */}
-        <div style={{ display: "flex", alignItems: "center", gap: "clamp(12px, 2vw, 28px)" }}>
+        <div className="footer-contact-links" style={{ display: "flex", alignItems: "center", gap: "clamp(12px, 2vw, 28px)" }}>
           {[
             { label: "EMAIL", href: "mailto:jon@ezell.guru" },
             { label: "PHONE", href: "tel:5128530338" },
@@ -112,8 +173,8 @@ export default function FooterCTA() {
               <motion.a
                 href={item.href}
                 variants={{
-                  rest: { color: "#111", x: 0 },
-                  hovered: { color: "#e76e52", x: 5 },
+                  rest: { x: 0 },
+                  hovered: { color: "var(--theme-accent)", x: 5 },
                 }}
                 transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
                 style={{
@@ -123,6 +184,7 @@ export default function FooterCTA() {
                   letterSpacing: "0.12em",
                   textDecoration: "underline",
                   textUnderlineOffset: "3px",
+                  color: "var(--theme-text)",
                 }}
               >
                 {item.label}
@@ -139,7 +201,7 @@ export default function FooterCTA() {
                 }}
                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
               >
-                <path d="M0 0L10 6L0 12V0Z" fill="#e76e52" />
+                <path d="M0 0L10 6L0 12V0Z" style={{ fill: "var(--theme-accent)" }} />
               </motion.svg>
             </motion.div>
           ))}
@@ -151,7 +213,7 @@ export default function FooterCTA() {
           alt="Jon Ezell"
           width={56}
           height={56}
-          style={{ width: "clamp(40px, 4.5vw, 56px)", height: "auto", objectFit: "contain" }}
+          style={{ width: "clamp(40px, 4.5vw, 56px)", height: "auto", objectFit: "contain", filter: "var(--theme-logo-filter)" }}
         />
       </div>
 
@@ -162,9 +224,9 @@ export default function FooterCTA() {
       <div
         style={{
           padding: "clamp(14px, 2vw, 22px) clamp(24px, 5vw, 80px)",
-          display: "flex",
+          display: "grid",
+          gridTemplateColumns: "1fr auto 1fr",
           alignItems: "center",
-          justifyContent: "space-between",
           gap: "1rem",
         }}
       >
@@ -174,7 +236,7 @@ export default function FooterCTA() {
             fontSize: "clamp(9px, 0.8vw, 11px)",
             fontWeight: 300,
             letterSpacing: "0.08em",
-            color: "rgba(0,0,0,0.4)",
+            color: "var(--theme-muted)",
             margin: 0,
           }}
         >
@@ -198,8 +260,8 @@ export default function FooterCTA() {
         >
           <motion.span
             variants={{
-              rest: { color: "rgba(0,0,0,0.4)", y: 0 },
-              hovered: { color: "#e76e52", y: -2 },
+              rest: { y: 0 },
+              hovered: { color: "var(--theme-accent)", y: -2 },
             }}
             transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
             style={{
@@ -208,17 +270,18 @@ export default function FooterCTA() {
               fontWeight: 300,
               letterSpacing: "0.08em",
               display: "block",
+              color: "var(--theme-muted)",
             }}
           >
             BACK TO TOP
           </motion.span>
           <motion.span
             variants={{
-              rest: { color: "rgba(0,0,0,0.4)", y: 0 },
-              hovered: { color: "#e76e52", y: -4 },
+              rest: { y: 0 },
+              hovered: { color: "var(--theme-accent)", y: -4 },
             }}
             transition={{ type: "spring", stiffness: 400, damping: 20 }}
-            style={{ display: "block", lineHeight: 1, fontSize: "10px" }}
+            style={{ display: "block", lineHeight: 1, fontSize: "10px", color: "var(--theme-muted)" }}
           >
             ↑
           </motion.span>
@@ -230,8 +293,9 @@ export default function FooterCTA() {
             fontSize: "clamp(9px, 0.8vw, 11px)",
             fontWeight: 300,
             letterSpacing: "0.08em",
-            color: "rgba(0,0,0,0.4)",
+            color: "var(--theme-muted)",
             margin: 0,
+            textAlign: "right",
           }}
         >
           &copy; 2026 Jon Ezell. All rights reserved.

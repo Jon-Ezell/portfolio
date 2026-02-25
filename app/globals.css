@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ─────────────────────────────────────────
    FONT FACES — self-hosted in /public/fonts
 ───────────────────────────────────────── */
@@ -217,8 +221,8 @@
 ───────────────────────────────────────── */
 
 body {
-  background-color: var(--background-light);
-  color: var(--text-dark);
+  background-color: var(--theme-bg);
+  color: var(--theme-muted);
   font-family: "PP Neue Machina", Arial, sans-serif;
   cursor: none;
 }
@@ -263,13 +267,11 @@ html.pt-up .page-transition__panel {
 }
 
 .page-transition__logo {
-  width: clamp(48px, 6vw, 80px);
-  height: clamp(48px, 6vw, 80px);
-  background-image: url('/ae-logo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  filter: brightness(0) invert(1);
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ─────────────────────────────────────────
@@ -294,5 +296,168 @@ html.pt-up .page-transition__panel {
 @media (hover: none) {
   .custom-cursor {
     display: none;
+  }
+}
+
+/* ─────────────────────────────────────────
+   THEME SYSTEM
+───────────────────────────────────────── */
+
+:root {
+  --theme-bg: #f5f0e8;
+  --theme-text: #111111;
+  --theme-muted: #3a3a3a;
+  --theme-accent: #e76e52;
+  --theme-accent-text: #111111;
+  --theme-nav: rgba(7, 7, 7, 0.89);
+  --theme-divider: rgba(0, 0, 0, 0.15);
+  --theme-surface: #ece7df;
+  --theme-surface-hover: #e4dfd7;
+  --theme-card-bg: rgba(196, 188, 176, 0.92);
+  --theme-card-bg-hover: rgba(182, 174, 162, 0.95);
+  --theme-on-dark: rgba(245, 240, 232, 0.65);
+  --theme-logo-filter: none;
+  --theme-venn-filter: none;
+  --theme-vase-blend: multiply;
+  --theme-tree-blend: screen;
+  --theme-tree-opacity: 0.45;
+}
+
+/* Nav pill picks up the theme nav variable */
+nav ul {
+  background-color: var(--theme-nav) !important;
+}
+
+/* ─────────────────────────────────────────
+   CASE STUDY — MOBILE RESPONSIVE
+───────────────────────────────────────── */
+
+/* Process timeline: collapse to vertical list on mobile */
+@media (max-width: 767px) {
+  .timeline-grid {
+    display: flex !important;
+    flex-direction: column;
+  }
+  .timeline-node-cell {
+    display: none !important;
+  }
+  .timeline-cell-l,
+  .timeline-cell-r {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    justify-content: flex-start !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* Solution two-col images: stack on mobile */
+@media (max-width: 767px) {
+  .two-col-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Presenter layout: flex row on desktop, stacked on mobile */
+.presenter-grid {
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+}
+@media (max-width: 767px) {
+  .presenter-grid {
+    flex-direction: column;
+  }
+  .presenter-mobile-col {
+    height: 360px;
+  }
+}
+
+/* Local nav pill: compact on small screens */
+@media (max-width: 479px) {
+  .local-nav-btn {
+    padding: 0 8px !important;
+    letter-spacing: 0.1em !important;
+    font-size: 9px !important;
+  }
+}
+
+/* ─────────────────────────────────────────
+   HOME PAGE — MOBILE RESPONSIVE
+───────────────────────────────────────── */
+
+/* Outcomes: video wrapper — desktop positioning in CSS so mobile can override */
+.outcomes-video-wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: min(300px, 26vw);
+}
+
+@media (max-width: 767px) {
+  /* Outcomes: collapse 2x2 grid to vertical stack */
+  .outcomes-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: auto !important;
+    padding: clamp(48px, 10vw, 80px) 1.5rem !important;
+    gap: 2rem;
+  }
+  .outcomes-diamond,
+  .outcomes-spiral {
+    display: none !important;
+  }
+  .outcomes-text-left  { order: 1; }
+  .outcomes-video-wrap {
+    order: 2;
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+  .outcomes-text-right {
+    order: 3;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+  .outcomes-text-right h2 {
+    text-align: left !important;
+  }
+
+  /* WorkHistory: collapse 3-col grid to vertical list */
+  .work-history-row {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0.5rem !important;
+    padding: clamp(24px, 5vw, 40px) 0 !important;
+  }
+
+  /* FooterCTA: stack headline + circle vertically */
+  .footer-cta-main {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2.5rem;
+  }
+  .footer-cta-headline-text {
+    font-size: clamp(2.8rem, 11vw, 13rem) !important;
+    flex: unset !important;
+  }
+  .footer-cta-circle {
+    margin-left: 0 !important;
+    align-self: center;
+  }
+
+  /* FooterCTA bottom bar: wrap contact links */
+  .footer-bottom-bar {
+    flex-wrap: wrap;
+    gap: 1rem !important;
+  }
+  .footer-contact-links {
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem !important;
   }
 }
