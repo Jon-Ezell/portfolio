@@ -159,7 +159,7 @@ function PaletteIcon() {
 
 export default function ThemeSelector() {
   const [active, setActive] = useState("cream");
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem("portfolio-theme") || "cream";
