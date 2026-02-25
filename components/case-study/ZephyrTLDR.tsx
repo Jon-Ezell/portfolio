@@ -8,9 +8,10 @@ interface ZephyrTLDRProps {
 
 export default function ZephyrTLDR({
   metrics = [
+    { value: "Top 10%", label: "CU Boulder New Venture Challenge — 50+ Competing Teams" },
+    { value: "2", label: "Rounds of Seed Funding Received" },
     { value: "112", label: "Users Surveyed" },
-    { value: "100+", label: "Pages of scientific literature analyzed" },
-    { value: "1", label: "Venture business award received" },
+    { value: "100+", label: "Pages of Scientific Literature Analyzed" },
   ],
 }: ZephyrTLDRProps) {
   return (
@@ -132,7 +133,7 @@ export default function ZephyrTLDR({
           <div style={{ borderTop: "1px solid var(--theme-divider)", marginBottom: "clamp(1.5rem, 3vw, 2.5rem)" }} />
 
           {/* Metrics */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {metrics.map((m, i) => (
               <motion.div
                 key={m.label}
@@ -141,10 +142,10 @@ export default function ZephyrTLDR({
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               >
-                <p style={{ fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif', fontSize: "clamp(2rem, 5vw, 5rem)", lineHeight: 1, color: "var(--theme-text)" }}>
+                <p style={{ fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif', fontSize: "clamp(1.5rem, 3vw, 3rem)", lineHeight: 1, color: "var(--theme-text)" }}>
                   {m.value}
                 </p>
-                <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "11px", fontWeight: 300, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--theme-muted)", marginTop: "0.4rem" }}>
+                <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "11px", fontWeight: 300, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--theme-muted)", marginTop: "0.6rem" }}>
                   {m.label}
                 </p>
               </motion.div>

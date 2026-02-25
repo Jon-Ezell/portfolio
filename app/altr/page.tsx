@@ -24,7 +24,7 @@ export default function AltrPage() {
             { label: "Client", value: "ALTR Solution Inc." },
             { label: "Project", value: "Onboarding Redesign" },
             { label: "Year", value: "2022" },
-            { label: "Role", value: "Project Lead, UX Designer" },
+            { label: "My Role", value: "Project Lead — Research, UX/UI, Handoff" },
             { label: "Team", value: "Kate McCarter (Design), Jacob Wagh (Supervisor), Kevin Rose (Engineering)" },
             { label: "Timeline", value: "Jan 2022 – May 2022" },
           ]}

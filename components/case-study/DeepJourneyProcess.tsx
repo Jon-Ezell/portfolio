@@ -224,6 +224,22 @@ export default function DeepJourneyProcess() {
               and technical constraints. I built a functional n8n prototype to test out the quality and
               accuracy of various LLMs and query parameters.
             </p>
+
+            {/* n8n callout */}
+            <div style={{ marginTop: "1.5rem", borderLeft: "2px solid var(--theme-accent)", paddingLeft: "1.25rem" }}>
+              <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "clamp(0.85rem, 1.1vw, 0.95rem)", fontWeight: 700, lineHeight: 1.4, color: "var(--theme-text)", marginBottom: "0.75rem" }}>
+                Building the prototype before designing the interface
+              </p>
+              <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.75, color: "var(--theme-muted)", marginBottom: "0.75rem" }}>
+                Before designing a single screen, I built a functional prototype in n8n to evaluate which LLMs and query parameters produced accurate, trustworthy results at scale.
+              </p>
+              <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.75, color: "var(--theme-muted)", marginBottom: "0.75rem" }}>
+                This step is one most designers skip — but for an AI product where the quality of outputs directly determines user trust, validating the model behavior before committing to an interface was non-negotiable.
+              </p>
+              <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.75, color: "var(--theme-muted)" }}>
+                Testing variables included: model selection, context window size, prompt structure, and how the system handled ambiguous or low-confidence queries.
+              </p>
+            </div>
           </motion.div>
 
           {/* ── ROW 4 ── text left, image right */}

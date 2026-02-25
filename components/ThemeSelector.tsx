@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 // All palettes verified WCAG AA — text/bg ≥ 4.5:1, muted/bg ≥ 5:1
 const themes = [
@@ -143,8 +143,23 @@ function applyTheme(id: string) {
   localStorage.setItem("portfolio-theme", id);
 }
 
+// Paint palette icon — shown when expanded
+function PaletteIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="13.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+      <circle cx="17.5" cy="10.5" r="1" fill="currentColor" stroke="none"/>
+      <circle cx="8.5" cy="7" r="1" fill="currentColor" stroke="none"/>
+      <circle cx="6.5" cy="12" r="1" fill="currentColor" stroke="none"/>
+      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+    </svg>
+  );
+}
+
+
 export default function ThemeSelector() {
   const [active, setActive] = useState("cream");
+  const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
     const saved = localStorage.getItem("portfolio-theme") || "cream";
@@ -168,38 +183,84 @@ export default function ThemeSelector() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        gap: "8px",
+        gap: "0px",
         backgroundColor: "rgba(0,0,0,0.75)",
         backdropFilter: "blur(12px)",
         borderRadius: "999px",
-        padding: "10px 7px",
+        padding: "6px 7px",
+        overflow: "hidden",
       }}
     >
-      {themes.map((t) => (
-        <motion.button
-          key={t.id}
-          onClick={() => handleSelect(t.id)}
-          title={t.label}
-          whileHover={{ scale: 1.25 }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ type: "spring", stiffness: 400, damping: 20 }}
-          style={{
-            width: "18px",
-            height: "18px",
-            borderRadius: "50%",
-            backgroundColor: t.swatch,
-            border:
-              active === t.id
-                ? "2px solid rgba(255,255,255,0.9)"
-                : "2px solid rgba(255,255,255,0.15)",
-            padding: 0,
-            outline: "none",
-            boxShadow:
-              active === t.id ? "0 0 0 2px rgba(255,255,255,0.2)" : "none",
-            transition: "border 0.2s, box-shadow 0.2s",
-          }}
-        />
-      ))}
+      {/* Toggle button */}
+      <motion.button
+        onClick={() => setIsOpen((v) => !v)}
+        title={isOpen ? "Collapse theme switcher" : "Switch theme"}
+        whileHover={{ scale: 1.15 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 20 }}
+        style={{
+          width: "22px",
+          height: "22px",
+          borderRadius: "50%",
+          backgroundColor: "rgba(255,255,255,0.1)",
+          border: "1px solid rgba(255,255,255,0.2)",
+          padding: 0,
+          outline: "none",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          color: "rgba(255,255,255,0.8)",
+          cursor: "pointer",
+          marginBottom: isOpen ? "6px" : "0px",
+          transition: "margin 0.25s ease",
+          flexShrink: 0,
+        }}
+      >
+        <span style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <PaletteIcon />
+        </span>
+      </motion.button>
+
+      {/* Swatches */}
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            key="swatches"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", overflow: "hidden" }}
+          >
+            {themes.map((t) => (
+              <motion.button
+                key={t.id}
+                onClick={() => handleSelect(t.id)}
+                title={t.label}
+                whileHover={{ scale: 1.25 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                style={{
+                  width: "18px",
+                  height: "18px",
+                  borderRadius: "50%",
+                  backgroundColor: t.swatch,
+                  border:
+                    active === t.id
+                      ? "2px solid rgba(255,255,255,0.9)"
+                      : "2px solid rgba(255,255,255,0.15)",
+                  padding: 0,
+                  outline: "none",
+                  boxShadow:
+                    active === t.id ? "0 0 0 2px rgba(255,255,255,0.2)" : "none",
+                  transition: "border 0.2s, box-shadow 0.2s",
+                  flexShrink: 0,
+                }}
+              />
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

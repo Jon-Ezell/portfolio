@@ -34,6 +34,21 @@ export default function ZephyrStrategy() {
           </div>
         </motion.div>
 
+        {/* ── Consumer product paragraph ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          style={{ marginBottom: "clamp(3rem, 6vw, 5rem)" }}
+        >
+          <div style={{ borderLeft: "2px solid var(--theme-text)", paddingLeft: "clamp(1.25rem, 3vw, 2.5rem)", maxWidth: "780px" }}>
+            <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "clamp(0.9rem, 1.4vw, 1.1rem)", fontWeight: 300, lineHeight: 1.8, color: "var(--theme-text)" }}>
+              Designing Zephyr required the same instincts that define great consumer product design — reducing a complex, intimidating behavior change into something that felt simple, rewarding, and habit-forming from the first session. The same principles apply whether you&apos;re designing a breathwork app or a healthcare marketplace: remove friction, show progress, make the value visible immediately.
+            </p>
+          </div>
+        </motion.div>
+
         {/* ── Divider ── */}
         <div style={{ borderTop: "1px solid var(--theme-divider)", marginBottom: "clamp(3rem, 6vw, 5rem)" }} />
 

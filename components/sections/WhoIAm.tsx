@@ -31,7 +31,7 @@ export default function WhoIAm() {
         {[
           <>Designing systems that <span style={{ color: "var(--theme-accent)" }}>translate complex, fragmented inputs</span> — across AI, consumer experiences, and enterprise platforms — <span style={{ color: "var(--theme-accent)" }}>into cohesive interactions</span> that create clarity, confidence, and meaningful human outcomes.</>,
           <>Focused on <span style={{ color: "var(--theme-accent)" }}>defining structure within ambiguity, shaping early ideas into intuitive experiences</span> used by real people and organizations at scale.</>,
-          <>Grounded in deep collaboration with designers, engineers, and stakeholders to turn complex problems into experiences that feel simple, intentional, and impactful.</>,
+          <>With 5+ years shipping products at growth startups, I&apos;ve led design from ambiguity through launch — building experiences that have moved real business metrics and helped teams scale.</>,
         ].map((content, i) => (
           <motion.p
             key={i}

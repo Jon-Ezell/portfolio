@@ -24,7 +24,7 @@ export default function DeepJourneyPage() {
             { label: "Company", value: "Scoot" },
             { label: "Project", value: "Deep Journey" },
             { label: "Year", value: "2025" },
-            { label: "System Focus", value: "continuity across conversations." },
+            { label: "My Role", value: "End-to-end — Research, Strategy, UX/UI, Handoff" },
           ]}
         />
 

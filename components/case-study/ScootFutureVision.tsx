@@ -81,7 +81,7 @@ export default function ScootFutureVision() {
         </motion.p>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5" style={{ marginBottom: "clamp(4rem, 8vw, 7rem)" }}>
           {cards.map((card, i) => (
             <motion.div
               key={card.title}
@@ -110,6 +110,56 @@ export default function ScootFutureVision() {
             </motion.div>
           ))}
         </div>
+
+        {/* Divider */}
+        <div style={{ borderTop: "1px solid var(--theme-divider)", marginBottom: "clamp(3rem, 6vw, 5rem)" }} />
+
+        {/* What I'd Do Differently */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          style={{ marginBottom: "1.5rem" }}
+        >
+          <span style={{ display: "inline-flex", alignItems: "center", gap: "0.4rem", border: "1px solid var(--theme-accent)", borderRadius: "100px", padding: "0.35rem 0.85rem", fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 400, color: "var(--theme-accent)" }}>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+              <path d="M3 3v5h5"/>
+            </svg>
+            Retrospective
+          </span>
+        </motion.div>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+          style={{ fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif', fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.05, letterSpacing: "-0.02em", color: "var(--theme-text)", marginBottom: "1.5rem" }}
+        >
+          What I&apos;d Do Differently
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "15px", fontWeight: 300, lineHeight: 1.75, color: "var(--theme-muted)", maxWidth: "780px", marginBottom: "1.5rem" }}
+        >
+          Looking back, I moved too quickly into high-fidelity on the mobile experience before fully stress-testing the information architecture across edge cases. We caught several structural issues late in development that required rework — a more rigorous low-fidelity phase would have surfaced them earlier and saved engineering cycles.
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "15px", fontWeight: 300, lineHeight: 1.75, color: "var(--theme-muted)", maxWidth: "780px" }}
+        >
+          I&apos;d also have pushed harder earlier for a formal usability testing cadence with real event attendees rather than relying primarily on internal feedback. The product was novel enough that our own team&apos;s familiarity with the experience consistently blinded us to first-time user confusion.
+        </motion.p>
 
       </div>
     </section>

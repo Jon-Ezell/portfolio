@@ -8,9 +8,10 @@ interface ScootTLDRProps {
 
 export default function ScootTLDR({
   metrics = [
+    { value: "60→95%", label: "Mobile Activation Improvement" },
+    { value: "+20%", label: "Web First-Time Activation Increase" },
     { value: "400+", label: "Screens Designed" },
-    { value: "30+", label: "Shipped Feature Sets" },
-    { value: "212", label: "Unique Components Created" },
+    { value: "212", label: "Components Built" },
   ],
 }: ScootTLDRProps) {
   return (
@@ -55,9 +56,9 @@ export default function ScootTLDR({
               marginBottom: "clamp(2rem, 5vw, 4rem)",
             }}
           >
-            Traditional webinars don&apos;t even come close to in person events from an
-            experiential and business outcomes standpoint. A few voices can speak, and many
-            will listen, but not a lot of connection, business, or engagement happens.
+            I joined Scoot when a barebones prototype existed and left having shipped 30+ feature sets,
+            a 212-component design system, and the platform that closed Scoot&apos;s first Fortune 500
+            deals. Here&apos;s how we got there.
           </p>
 
           {/* 3-column breakdown */}
@@ -70,11 +71,9 @@ export default function ScootTLDR({
                 The Problem
               </p>
               <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.7, color: "var(--theme-text)" }}>
-                Webinars typically cost 3–10X less than in person events, but only 2–5% of
-                webinar attendees convert to real business outcomes or connections, whereas in
-                person events convert closer to 40 or 50%. Survey of over 500 business
-                professionals reveals 77% prefer in-person events to traditional webinars, but
-                they&apos;re less frequent, more expensive, geographically and cost constrained.
+                Traditional webinars don&apos;t even come close to in person events from an
+                experiential and business outcomes standpoint. A few voices can speak, and many
+                will listen, but not a lot of connection, business, or engagement happens.
               </p>
             </div>
 
@@ -118,7 +117,7 @@ export default function ScootTLDR({
           <div style={{ borderTop: "1px solid var(--theme-divider)", marginBottom: "clamp(1.5rem, 3vw, 2.5rem)" }} />
 
           {/* Metrics */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {metrics.map((m, i) => (
               <motion.div
                 key={m.label}
@@ -127,10 +126,10 @@ export default function ScootTLDR({
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               >
-                <p style={{ fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif', fontSize: "clamp(2rem, 5vw, 5rem)", lineHeight: 1, color: "var(--theme-text)" }}>
+                <p style={{ fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif', fontSize: "clamp(1.5rem, 3vw, 3rem)", lineHeight: 1, color: "var(--theme-text)" }}>
                   {m.value}
                 </p>
-                <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "11px", fontWeight: 300, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--theme-muted)", marginTop: "0.4rem" }}>
+                <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "11px", fontWeight: 300, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--theme-muted)", marginTop: "0.6rem" }}>
                   {m.label}
                 </p>
               </motion.div>

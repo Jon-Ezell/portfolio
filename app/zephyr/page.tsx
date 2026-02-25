@@ -24,7 +24,7 @@ export default function ZephyrPage() {
             { label: "Company", value: "Zephyr LLC" },
             { label: "Project", value: "Zephyr App" },
             { label: "Year", value: "2023" },
-            { label: "System Focus", value: "continuity between breath and physiology." },
+            { label: "My Role", value: "Co-Founder — Product, Brand, Hardware Design" },
           ]}
         />
 

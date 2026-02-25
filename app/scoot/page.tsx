@@ -24,7 +24,7 @@ export default function ScootPage() {
             { label: "Company", value: "Scoot" },
             { label: "Project", value: "Scoot Engage" },
             { label: "Year", value: "2025" },
-            { label: "System Focus", value: "continuity across event lifecycle." },
+            { label: "My Role", value: "Director of Product Design — Lead IC" },
           ]}
         />
 

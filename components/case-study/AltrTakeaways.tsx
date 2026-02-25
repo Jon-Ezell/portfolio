@@ -109,6 +109,15 @@ export default function AltrTakeaways() {
           ))}
         </div>
 
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "15px", fontWeight: 300, lineHeight: 1.75, color: "var(--theme-muted)", maxWidth: "780px" }}
+        >
+          This project shaped how I approach every new product engagement — the first question I ask is always &ldquo;what does the data say about where users are failing?&rdquo; before entertaining any design hypotheses.
+        </motion.p>
 
       </div>
     </section>
