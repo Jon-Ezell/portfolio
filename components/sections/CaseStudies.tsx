@@ -6,6 +6,15 @@ import Image from "next/image";
 
 const projects = [
   {
+    slug: "altr",
+    title: "ALTR",
+    headline: "FROM 7% TO THE MOON",
+    description:
+      "A ground-up onboarding redesign that took ALTR's activation rate from 7% to over 50% and grew daily active users by 80% in two months.",
+    tags: ["UX Research", "Onboarding", "2022"],
+    thumbnail: "/ALTRHERO1.png",
+  },
+  {
     slug: "scoot",
     title: "Scoot",
     headline: "EVENTS THAT ENGAGE & SELL",
@@ -31,15 +40,6 @@ const projects = [
       "A wearable and app designed to regulate your nervous system anywhere, in seconds.",
     tags: ["Wearable", "iOS", "2023"],
     thumbnail: "/zephyr-app-mockup.png",
-  },
-  {
-    slug: "altr",
-    title: "ALTR",
-    headline: "FROM 7% TO THE MOON",
-    description:
-      "A ground-up onboarding redesign that took ALTR's activation rate from 7% to over 50% and grew daily active users by 80% in two months.",
-    tags: ["UX Research", "Onboarding", "2022"],
-    thumbnail: "/ALTRHERO1.png",
   },
 ];
 
