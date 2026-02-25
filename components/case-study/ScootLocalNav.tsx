@@ -48,6 +48,7 @@ export default function ScootLocalNav() {
       }}
     >
       <div
+        className="local-nav-pill"
         style={{
           display: "flex",
           alignItems: "center",

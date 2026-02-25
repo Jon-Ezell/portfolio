@@ -26,7 +26,7 @@ export default function Nav() {
       style={{ top: "calc(5% - 15px)" }}
     >
       <ul
-        className="flex items-center h-9 px-0.5 rounded-[6px]"
+        className="global-nav-pill flex items-center h-9 px-0.5 rounded-[6px]"
         style={{ backgroundColor: "#070707e3" }}
       >
         {links.map((link) => (
@@ -36,7 +36,7 @@ export default function Nav() {
               onClick={link.anchor ? (e) => handleAnchorClick(e, link.anchor!) : undefined}
               target={link.external ? "_blank" : undefined}
               rel={link.external ? "noopener noreferrer" : undefined}
-              className="flex items-center px-3 py-[6px] text-white/90 hover:bg-white/10 rounded-[4px] transition-colors duration-300"
+              className="global-nav-link flex items-center px-3 py-[6px] text-white/90 hover:bg-white/10 rounded-[4px] transition-colors duration-300"
               style={{
                 fontFamily: '"MD Nichrome", Verdana, sans-serif',
                 fontSize: "clamp(9px, 1vw, 11px)",

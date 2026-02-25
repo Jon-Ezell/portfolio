@@ -47,6 +47,7 @@ export default function ZephyrLocalNav() {
       }}
     >
       <div
+        className="local-nav-pill"
         style={{
           display: "flex",
           alignItems: "center",

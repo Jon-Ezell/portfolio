@@ -372,7 +372,26 @@ nav ul {
   }
 }
 
-/* Local nav pill: compact on small screens */
+/* Nav bars: 15% larger on mobile */
+@media (max-width: 767px) {
+  .global-nav-pill {
+    height: 42px !important;
+  }
+  .global-nav-link {
+    padding: 7px 14px !important;
+    font-size: 10.5px !important;
+  }
+  .local-nav-pill {
+    height: 51px !important;
+  }
+  .local-nav-btn {
+    height: 41px !important;
+    padding: 0 18px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* Local nav pill: compact on very small screens */
 @media (max-width: 479px) {
   .local-nav-btn {
     padding: 0 8px !important;
