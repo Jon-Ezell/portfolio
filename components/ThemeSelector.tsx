@@ -165,6 +165,7 @@ export default function ThemeSelector() {
     const saved = localStorage.getItem("portfolio-theme") || "cream";
     applyTheme(saved);
     setActive(saved);
+    if (window.innerWidth >= 768) setIsOpen(true);
   }, []);
 
   const handleSelect = (id: string) => {
