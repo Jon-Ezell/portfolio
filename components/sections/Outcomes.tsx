@@ -64,7 +64,7 @@ export default function Outcomes() {
         </motion.div>
 
         {/* Top-right: diamond decoration — larger, shifted ~50px toward center */}
-        <div
+        <motion.div
           className="outcomes-diamond"
           style={{
             gridColumn: "2",
@@ -76,6 +76,8 @@ export default function Outcomes() {
             position: "relative",
             zIndex: 20,
           }}
+          animate={{ y: [0, -12, 0], rotate: [0, 2, 0] }}
+          transition={{ duration: 5.0, repeat: Infinity, ease: "easeInOut" }}
         >
           <Image
             src="/decor-diamond-3d.png"
@@ -84,7 +86,7 @@ export default function Outcomes() {
             height={180}
             style={{ width: "clamp(120px, 14vw, 180px)", height: "auto", objectFit: "contain" }}
           />
-        </div>
+        </motion.div>
 
         {/* Bottom-left: Vector decoration */}
         <div

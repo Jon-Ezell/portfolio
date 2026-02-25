@@ -65,11 +65,11 @@ function TimelineNode({ icon, isFirst, isLast }: { icon: React.ReactNode; isFirs
   );
 }
 
-function CaptionedImage({ src, caption }: { src: string; caption?: string }) {
+function CaptionedImage({ src, caption, themeFilter }: { src: string; caption?: string; themeFilter?: boolean }) {
   return (
     <div style={{ maxWidth: "min(280px, 100%)" }}>
       <div style={{ overflow: "hidden" }}>
-        <Image src={src} alt={caption ?? ""} width={800} height={500} className="w-full h-auto" />
+        <Image src={src} alt={caption ?? ""} width={800} height={500} className="w-full h-auto" style={themeFilter ? { filter: "var(--theme-graphic-filter)" } : undefined} />
       </div>
       {caption && (
         <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "11px", fontWeight: 300, color: "var(--theme-muted)", marginTop: "0.6rem", textAlign: "center" }}>
@@ -135,7 +135,7 @@ export default function ZephyrProcess() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             style={{ paddingRight: "3rem", paddingBottom: "5rem", display: "flex", justifyContent: "flex-end" }}
           >
-            <CaptionedImage src="/regulation.png" caption="Heart rate coherence research" />
+            <CaptionedImage src="/regulation.png" caption="Heart rate coherence research" themeFilter />
           </motion.div>
 
           <TimelineNode icon={<BookIcon />} isFirst />
@@ -192,7 +192,7 @@ export default function ZephyrProcess() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{ paddingLeft: "3rem", paddingTop: "2rem", paddingBottom: "5rem" }}
           >
-            <CaptionedImage src="/graph.png" caption="Survey insights — 112 respondents" />
+            <CaptionedImage src="/graph.png" caption="Survey insights — 112 respondents" themeFilter />
           </motion.div>
 
           {/* ── ROW 3 ── image left, text right */}

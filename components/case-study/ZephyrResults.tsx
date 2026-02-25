@@ -73,17 +73,36 @@ export default function ZephyrResults() {
           A thoughtful and research informed wearable prototype
         </motion.h2>
 
-        {/* Body */}
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
+        {/* band.png — prototype photo + caption */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "14px", fontWeight: 300, lineHeight: 1.8, color: "var(--theme-muted)", maxWidth: "680px", marginBottom: "clamp(2rem, 4vw, 3rem)" }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            border: "1px solid var(--theme-divider)",
+            borderRadius: "20px",
+            overflow: "hidden",
+            backgroundColor: "var(--theme-surface)",
+            maxWidth: "430px",
+            marginBottom: "clamp(2rem, 4vw, 3rem)",
+          }}
         >
-          The prototype provides a method for aligning the breath with the heart rate discreetly,
-          effectively and measurably.
-        </motion.p>
+          <Image
+            src="/band.png"
+            alt="Zephyr wearable prototype"
+            width={1600}
+            height={900}
+            className="w-full h-auto"
+            style={{ display: "block" }}
+          />
+          <div style={{ borderTop: "1px solid var(--theme-divider)", padding: "clamp(1rem, 2vw, 1.5rem) clamp(1.25rem, 3vw, 2rem)" }}>
+            <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.8, color: "var(--theme-muted)", margin: 0 }}>
+              The prototype provides a method for aligning the breath with the heart rate discreetly,
+              effectively and measurably.
+            </p>
+          </div>
+        </motion.div>
 
         {/* Wristband diagram — bordered container, theme-adaptive */}
         <motion.div

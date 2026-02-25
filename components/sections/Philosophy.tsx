@@ -12,9 +12,11 @@ export default function Philosophy() {
       {/* ── Top headline ── */}
       <div className="pt-20 pb-10 px-8 text-center relative" style={{ zIndex: 1 }}>
         {/* Mortar + pestle — top-left, beside headline */}
-        <div
+        <motion.div
           className="hidden md:block"
           style={{ position: "absolute", left: "clamp(16px, 4vw, 60px)", top: "40px", zIndex: 2 }}
+          animate={{ y: [0, -14, 0], rotate: [-1, 1, -1] }}
+          transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
         >
           <Image
             src="/decor-mortar.png"
@@ -23,7 +25,7 @@ export default function Philosophy() {
             height={160}
             style={{ width: "clamp(135px, 15vw, 240px)", height: "auto", objectFit: "contain" }}
           />
-        </div>
+        </motion.div>
 
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
@@ -47,9 +49,11 @@ export default function Philosophy() {
       {/* ── Body text + prayer beads row ── */}
       <div className="relative px-8 pb-10" style={{ zIndex: 1 }}>
         {/* Prayer beads — right side, beside body text */}
-        <div
+        <motion.div
           className="hidden md:block"
           style={{ position: "absolute", right: "clamp(16px, 4vw, 60px)", top: "0px", zIndex: 2 }}
+          animate={{ y: [0, -10, 0], x: [0, 3, 0] }}
+          transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
         >
           <Image
             src="/decor-beads.png"
@@ -58,7 +62,7 @@ export default function Philosophy() {
             height={200}
             style={{ width: "clamp(75px, 9vw, 120px)", height: "auto", objectFit: "contain" }}
           />
-        </div>
+        </motion.div>
 
         <div style={{ maxWidth: "560px", margin: "0 auto" }}>
           {[
@@ -136,9 +140,11 @@ export default function Philosophy() {
       {/* ── SEE HOW I DO IT CTA ── */}
       <div className="pb-20 text-center" style={{ position: "relative", zIndex: 1 }}>
         {/* Stepping stones — bottom-left */}
-        <div
+        <motion.div
           className="hidden md:block"
           style={{ position: "absolute", left: "clamp(16px, 4vw, 60px)", bottom: "0px", zIndex: 2 }}
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 6.0, repeat: Infinity, ease: "easeInOut" }}
         >
           <Image
             src="/decor-stepping-stones.png"
@@ -147,7 +153,7 @@ export default function Philosophy() {
             height={260}
             style={{ width: "clamp(120px, 14vw, 200px)", height: "auto", objectFit: "contain" }}
           />
-        </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}

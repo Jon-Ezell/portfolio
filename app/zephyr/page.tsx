@@ -55,7 +55,7 @@ export default function ZephyrPage() {
           <ZephyrSolution />
         </div>
 
-        <FooterCTA nextProject={{ href: "/scoot", label: "Scoot" }} />
+        <FooterCTA nextProject={{ href: "/altr", label: "ALTR" }} />
       </main>
     </>
   );

@@ -2,7 +2,25 @@
 
 import { motion } from "framer-motion";
 
-export default function ZephyrStrategy() {
+const audiences = [
+  {
+    num: "01",
+    title: "Data Teams / IT Admins",
+    body: "They need to connect databases to ALTR to enable governance. The process requires technical precision, but they were constantly context-switching between ALTR, Snowflake, and documentation — losing their place and abandoning the flow entirely.",
+  },
+  {
+    num: "02",
+    title: "New Business Users",
+    body: "First-time users unfamiliar with the product need to understand what ALTR does and why each setup step matters. Without a welcome sequence or onboarding context, they couldn't determine the purpose of features or where to begin.",
+  },
+  {
+    num: "03",
+    title: "ALTR Internal Team",
+    body: "Without a working self-serve onboarding, every new customer required hands-on assistance from internal team members. This wasn't just a UX problem — it was a growth bottleneck that made scaling the product impossible.",
+  },
+];
+
+export default function AltrStrategy() {
   return (
     <section style={{ backgroundColor: "var(--theme-bg)", padding: "clamp(4rem, 8vw, 7rem) 2rem" }}>
       <div className="max-w-7xl mx-auto">
@@ -24,12 +42,19 @@ export default function ZephyrStrategy() {
             </span>
           </div>
 
+          {/* Design hypothesis */}
+          <div style={{ borderLeft: "2px solid var(--theme-text)", paddingLeft: "clamp(1.25rem, 3vw, 2.5rem)", maxWidth: "780px", marginBottom: "2rem" }}>
+            <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "clamp(0.9rem, 1.4vw, 1.1rem)", fontWeight: 300, lineHeight: 1.8, color: "var(--theme-text)" }}>
+              <strong style={{ fontWeight: 700 }}>Design Hypothesis:</strong>{" "}
+              If users can understand the connection process, know where they are within that process and what they need to do next, and interact with a simple and cohesive interface throughout — then they will be able to activate in ALTR much more easily.
+            </p>
+          </div>
+
           <div style={{ borderLeft: "2px solid var(--theme-text)", paddingLeft: "clamp(1.25rem, 3vw, 2.5rem)", maxWidth: "780px" }}>
             <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "clamp(0.9rem, 1.4vw, 1.1rem)", fontWeight: 300, lineHeight: 1.8, color: "var(--theme-text)" }}>
-              <strong style={{ fontWeight: 700 }}>Strategic insight:</strong>{" "}
-              The challenge wasn&apos;t building another mindfulness app — it was creating a{" "}
-              <em>closed-loop feedback system</em> that bridges breath and physiology, translating
-              hard-to-detect signals into meaningful behavioral feedback that users could act on anywhere.
+              <strong style={{ fontWeight: 700 }}>Strategic Decision:</strong>{" "}
+              Rather than patching the existing database connection form, I shifted scope to redesigning the{" "}
+              <em>entire activation journey</em> — consolidating the 3-product flow into a guided in-product wizard, and surfacing all necessary information inline so users never need to leave ALTR.
             </p>
           </div>
         </motion.div>
@@ -49,24 +74,13 @@ export default function ZephyrStrategy() {
             Audiences
           </h2>
           <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "clamp(0.9rem, 1.3vw, 1rem)", fontWeight: 300, lineHeight: 1.7, color: "var(--theme-muted)", maxWidth: "580px" }}>
-            The MVP was designed to serve two distinct user types with very different motivations but the same core need.
+            Three groups with fundamentally different relationships to the activation problem — each made worse by the same broken onboarding flow.
           </p>
         </motion.div>
 
-        {/* ── Audience cards — 2-col ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[
-            {
-              num: "01",
-              title: "The Help Seeker",
-              body: "This user is one of the 51.5 million people in the US that struggles with moderate to severe stress on a regular basis. They may not be able to pay for a therapist or health club membership, but need accessible and effective support. They want to see and know that what they are paying for is actually working.",
-            },
-            {
-              num: "02",
-              title: "The Biohacker",
-              body: "These are high-performing individuals who want whatever they can get to give them an edge. Instead of insurance covered medical devices, these people are obsessed with free market solutions that help them improve their day-to-day performance. They are often competitive and gain motivation through results and social proof.",
-            },
-          ].map((a, i) => (
+        {/* ── Audience cards ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {audiences.map((a, i) => (
             <motion.div
               key={a.num}
               initial={{ opacity: 0, y: 32 }}

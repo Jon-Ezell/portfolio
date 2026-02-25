@@ -29,10 +29,10 @@ export default function WhoIAm() {
         </motion.p>
 
         {[
-          "Designing systems that translate complex, fragmented inputs — across AI, consumer experiences, and enterprise platforms — into cohesive interactions that create clarity, confidence, and meaningful human outcomes.",
-          "Focused on defining structure within ambiguity, shaping early ideas into intuitive experiences used by real people and organizations at scale.",
-          "Grounded in deep collaboration with designers, engineers, and stakeholders to turn complex problems into experiences that feel simple, intentional, and impactful.",
-        ].map((text, i) => (
+          <>Designing systems that <span style={{ color: "var(--theme-accent)" }}>translate complex, fragmented inputs</span> — across AI, consumer experiences, and enterprise platforms — <span style={{ color: "var(--theme-accent)" }}>into cohesive interactions</span> that create clarity, confidence, and meaningful human outcomes.</>,
+          <>Focused on <span style={{ color: "var(--theme-accent)" }}>defining structure within ambiguity, shaping early ideas into intuitive experiences</span> used by real people and organizations at scale.</>,
+          <>Grounded in deep collaboration with designers, engineers, and stakeholders to turn complex problems into experiences that feel simple, intentional, and impactful.</>,
+        ].map((content, i) => (
           <motion.p
             key={i}
             initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ export default function WhoIAm() {
               marginBottom: i < 2 ? "1.4em" : 0,
             }}
           >
-            {text}
+            {content}
           </motion.p>
         ))}
       </div>

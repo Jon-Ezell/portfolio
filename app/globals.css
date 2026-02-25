@@ -428,23 +428,38 @@ nav ul {
     text-align: left !important;
   }
 
-  /* WorkHistory: collapse 3-col grid to vertical list */
+  /* WorkHistory: collapse 3-col grid to vertical list, centered */
+  .work-history-label {
+    text-align: center;
+  }
   .work-history-row {
     display: flex !important;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 0.5rem !important;
     padding: clamp(24px, 5vw, 40px) 0 !important;
+  }
+  .work-history-row > * {
+    text-align: center !important;
+    width: 100%;
+  }
+  .work-history-row p,
+  .work-history-row span {
+    text-align: center !important;
   }
 
   /* FooterCTA: stack headline + circle vertically */
   .footer-cta-main {
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: center !important;
     gap: 2.5rem;
   }
   .footer-cta-headline-text {
     font-size: clamp(2.8rem, 11vw, 13rem) !important;
     flex: unset !important;
+    text-align: center !important;
+    width: 100%;
   }
   .footer-cta-circle {
     margin-left: 0 !important;

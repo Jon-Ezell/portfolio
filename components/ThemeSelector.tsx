@@ -83,7 +83,7 @@ const themes = [
   {
     id: "forest",
     label: "Forest",
-    swatch: "#0e1a10",
+    swatch: "#40D879",
     vars: {
       "--theme-bg": "#0e1a10",
       "--theme-text": "#dff0e0",
@@ -108,7 +108,7 @@ const themes = [
   {
     id: "dusk",
     label: "Dusk",
-    swatch: "#1a0e30",
+    swatch: "#BBADFA",
     vars: {
       "--theme-bg": "#0e0b1a",
       "--theme-text": "#ede8f8",
@@ -124,31 +124,6 @@ const themes = [
       "--theme-on-dark": "rgba(255, 255, 255, 0.55)",
       "--theme-logo-filter": "brightness(0) invert(1)",
       "--theme-venn-filter": "invert(1) hue-rotate(240deg)",
-      "--theme-graphic-filter": "invert(1)",
-      "--theme-vase-blend": "screen",
-      "--theme-tree-blend": "luminosity",
-      "--theme-tree-opacity": "0.9",
-    },
-  },
-  {
-    id: "ember",
-    label: "Ember",
-    swatch: "#1c0d05",
-    vars: {
-      "--theme-bg": "#1a0c06",
-      "--theme-text": "#f5e8d8",
-      "--theme-muted": "#d4b898",
-      "--theme-accent": "#fb8c6a",
-      "--theme-accent-text": "#111111",
-      "--theme-nav": "rgba(10,5,2,0.95)",
-      "--theme-divider": "rgba(255,255,255,0.12)",
-      "--theme-surface": "#240e06",
-      "--theme-surface-hover": "#2e1208",
-      "--theme-card-bg": "rgba(36, 14, 6, 0.72)",
-      "--theme-card-bg-hover": "rgba(46, 18, 8, 0.78)",
-      "--theme-on-dark": "rgba(255, 255, 255, 0.55)",
-      "--theme-logo-filter": "brightness(0) invert(1)",
-      "--theme-venn-filter": "invert(1) sepia(0.3)",
       "--theme-graphic-filter": "invert(1)",
       "--theme-vase-blend": "screen",
       "--theme-tree-blend": "luminosity",
@@ -187,7 +162,7 @@ export default function ThemeSelector() {
       style={{
         position: "fixed",
         top: "50%",
-        left: "clamp(12px, 2vw, 24px)",
+        right: "clamp(12px, 2vw, 24px)",
         transform: "translateY(-50%)",
         zIndex: 9998,
         display: "flex",

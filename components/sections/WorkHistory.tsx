@@ -54,6 +54,7 @@ export default function WorkHistory() {
 
         {/* Label */}
         <motion.p
+          className="work-history-label"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}

@@ -14,12 +14,12 @@ interface DeepJourneyHeroProps {
 
 export default function DeepJourneyHero({ metaItems = [] }: DeepJourneyHeroProps) {
   return (
-    <section className="relative overflow-hidden" style={{ backgroundColor: "var(--theme-nav)" }}>
+    <section className="relative overflow-hidden" style={{ backgroundColor: "var(--theme-bg)" }}>
       <div className="relative max-w-7xl mx-auto px-8">
         {/* ── Headline + Description row ── */}
         <div
           className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start md:items-center"
-          style={{ paddingTop: "clamp(5.5rem, 7vw, 6rem)" }}
+          style={{ paddingTop: "clamp(7.375rem, 8.875vw, 7.875rem)" }}
         >
           {/* Left: headline */}
           <motion.h1
@@ -33,9 +33,9 @@ export default function DeepJourneyHero({ metaItems = [] }: DeepJourneyHeroProps
               letterSpacing: "-0.01em",
             }}
           >
-            <span style={{ color: "#ffffff" }}>THOUSANDS OF</span>
+            <span style={{ color: "var(--theme-text)" }}>THOUSANDS OF</span>
             <br />
-            <span style={{ color: "#ffffff" }}>CONVERSATIONS</span>
+            <span style={{ color: "var(--theme-text)" }}>CONVERSATIONS</span>
             <br />
             <span style={{ color: "var(--theme-accent)" }}>AT YOUR</span>
             <br />
@@ -72,7 +72,7 @@ export default function DeepJourneyHero({ metaItems = [] }: DeepJourneyHeroProps
                 fontSize: "16px",
                 fontWeight: 300,
                 lineHeight: 1.75,
-                color: "rgba(255,255,255,0.65)",
+                color: "var(--theme-muted)",
               }}
             >
               An Agent tailor built for sales leaders to gain{" "}
@@ -93,7 +93,7 @@ export default function DeepJourneyHero({ metaItems = [] }: DeepJourneyHeroProps
             marginTop: "clamp(3rem, 6vw, 5rem)",
             paddingTop: "2rem",
             paddingBottom: "clamp(2.5rem, 5vw, 4rem)",
-            borderTop: "1px solid rgba(255,255,255,0.1)",
+            borderTop: "1px solid var(--theme-divider)",
           }}
         >
           <motion.div
@@ -109,7 +109,7 @@ export default function DeepJourneyHero({ metaItems = [] }: DeepJourneyHeroProps
                 fontWeight: 300,
                 letterSpacing: "0.3em",
                 textTransform: "uppercase",
-                color: "var(--theme-on-dark)",
+                color: "var(--theme-muted)",
               }}
             >
               Project Details
@@ -132,7 +132,7 @@ export default function DeepJourneyHero({ metaItems = [] }: DeepJourneyHeroProps
                     fontWeight: 300,
                     letterSpacing: "0.25em",
                     textTransform: "uppercase",
-                    color: "var(--theme-on-dark)",
+                    color: "var(--theme-muted)",
                   }}
                 >
                   {item.label}
@@ -142,7 +142,7 @@ export default function DeepJourneyHero({ metaItems = [] }: DeepJourneyHeroProps
                     fontFamily: '"PP Neue Machina", Arial, sans-serif',
                     fontSize: "15px",
                     fontWeight: 300,
-                    color: "rgba(255,255,255,0.85)",
+                    color: "var(--theme-text)",
                     lineHeight: 1.5,
                   }}
                 >

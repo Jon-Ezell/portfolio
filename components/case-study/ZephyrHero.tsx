@@ -14,12 +14,12 @@ interface ZephyrHeroProps {
 
 export default function ZephyrHero({ metaItems = [] }: ZephyrHeroProps) {
   return (
-    <section className="relative overflow-hidden" style={{ backgroundColor: "var(--theme-nav)" }}>
+    <section className="relative overflow-hidden" style={{ backgroundColor: "var(--theme-bg)" }}>
       <div className="relative max-w-7xl mx-auto px-8">
         {/* ── Headline + Description row ── */}
         <div
           className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start md:items-center"
-          style={{ paddingTop: "clamp(5.5rem, 7vw, 6rem)" }}
+          style={{ paddingTop: "clamp(7.375rem, 8.875vw, 7.875rem)" }}
         >
           {/* Left: headline */}
           <motion.h1
@@ -33,7 +33,7 @@ export default function ZephyrHero({ metaItems = [] }: ZephyrHeroProps) {
               letterSpacing: "-0.01em",
             }}
           >
-            <span style={{ color: "#ffffff" }}>BREATH ON</span>
+            <span style={{ color: "var(--theme-text)" }}>BREATH ON</span>
             <br />
             <span style={{ color: "var(--theme-accent)" }}>STRESS</span>
             <br />
@@ -70,16 +70,10 @@ export default function ZephyrHero({ metaItems = [] }: ZephyrHeroProps) {
                 fontSize: "16px",
                 fontWeight: 300,
                 lineHeight: 1.75,
-                color: "rgba(255,255,255,0.65)",
+                color: "var(--theme-muted)",
               }}
             >
-              Regulate your{" "}
-              <span style={{ color: "var(--theme-accent)" }}>nervous system</span>
-              {" "}anywhere, in seconds. A wearable wristband and companion app combining{" "}
-              <span style={{ color: "var(--theme-accent)" }}>
-                biometric feedback
-              </span>
-              , haptics, and behavioral design.
+              Regulate your nervous system anywhere, in seconds. A wearable wristband and companion app combining biometric feedback, haptics, and behavioral design.
             </p>
           </motion.div>
         </div>
@@ -91,7 +85,7 @@ export default function ZephyrHero({ metaItems = [] }: ZephyrHeroProps) {
             marginTop: "clamp(3rem, 6vw, 5rem)",
             paddingTop: "2rem",
             paddingBottom: "clamp(2.5rem, 5vw, 4rem)",
-            borderTop: "1px solid rgba(255,255,255,0.1)",
+            borderTop: "1px solid var(--theme-divider)",
           }}
         >
           <motion.div
@@ -107,7 +101,7 @@ export default function ZephyrHero({ metaItems = [] }: ZephyrHeroProps) {
                 fontWeight: 300,
                 letterSpacing: "0.3em",
                 textTransform: "uppercase",
-                color: "var(--theme-on-dark)",
+                color: "var(--theme-muted)",
               }}
             >
               Project Details
@@ -130,7 +124,7 @@ export default function ZephyrHero({ metaItems = [] }: ZephyrHeroProps) {
                     fontWeight: 300,
                     letterSpacing: "0.25em",
                     textTransform: "uppercase",
-                    color: "var(--theme-on-dark)",
+                    color: "var(--theme-muted)",
                   }}
                 >
                   {item.label}
@@ -140,7 +134,7 @@ export default function ZephyrHero({ metaItems = [] }: ZephyrHeroProps) {
                     fontFamily: '"PP Neue Machina", Arial, sans-serif',
                     fontSize: "15px",
                     fontWeight: 300,
-                    color: "rgba(255,255,255,0.85)",
+                    color: "var(--theme-text)",
                     lineHeight: 1.5,
                   }}
                 >
@@ -159,13 +153,13 @@ export default function ZephyrHero({ metaItems = [] }: ZephyrHeroProps) {
           className="rounded-2xl overflow-hidden"
           style={{ marginBottom: "clamp(3rem, 6vw, 5rem)" }}
         >
-          <Image
-            src="/zephyr-phone-hero.png"
-            alt="Zephyr — breathing app and wristband"
-            width={1600}
-            height={900}
-            className="w-full h-auto"
-            priority
+          <video
+            src="/zephyrhervid.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{ width: "100%", display: "block" }}
           />
         </motion.div>
       </div>

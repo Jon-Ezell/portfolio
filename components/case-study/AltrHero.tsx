@@ -8,11 +8,11 @@ interface MetaItem {
   value: string;
 }
 
-interface ScootHeroProps {
+interface AltrHeroProps {
   metaItems?: MetaItem[];
 }
 
-export default function ScootHero({ metaItems = [] }: ScootHeroProps) {
+export default function AltrHero({ metaItems = [] }: AltrHeroProps) {
   return (
     <section className="relative overflow-hidden" style={{ backgroundColor: "var(--theme-bg)" }}>
       <div className="relative max-w-7xl mx-auto px-8">
@@ -33,11 +33,11 @@ export default function ScootHero({ metaItems = [] }: ScootHeroProps) {
               letterSpacing: "-0.01em",
             }}
           >
-            <span style={{ color: "var(--theme-text)" }}>EVENTS THAT</span>
+            <span style={{ color: "var(--theme-text)" }}>FROM</span>
             <br />
-            <span style={{ color: "var(--theme-accent)" }}>ENGAGE AND</span>
+            <span style={{ color: "var(--theme-accent)" }}>7% TO</span>
             <br />
-            <span style={{ color: "var(--theme-accent)" }}>SELL</span>
+            <span style={{ color: "var(--theme-accent)" }}>THE MOON</span>
           </motion.h1>
 
           {/* Right: description */}
@@ -47,7 +47,7 @@ export default function ScootHero({ metaItems = [] }: ScootHeroProps) {
             transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            {/* Diamond — hidden on mobile */}
+            {/* Diamond decoration — hidden on mobile */}
             <div
               className="absolute pointer-events-none select-none hidden md:block"
               style={{
@@ -73,13 +73,9 @@ export default function ScootHero({ metaItems = [] }: ScootHeroProps) {
                 color: "var(--theme-muted)",
               }}
             >
-              An immersive virtual event platform that creates{" "}
-              <span style={{ color: "var(--theme-accent)" }}>meaningful connections</span>
-              {" "}and{" "}
-              <span style={{ color: "var(--theme-accent)" }}>
-                drives sales
-              </span>
-              .
+              A ground-up redesign of ALTR&apos;s onboarding experience that took{" "}
+              <span style={{ color: "var(--theme-accent)" }}>activation from 7% to over 50%</span>
+              {" "}by eliminating the friction standing between new users and their first value moment.
             </p>
           </motion.div>
         </div>
@@ -160,8 +156,8 @@ export default function ScootHero({ metaItems = [] }: ScootHeroProps) {
           style={{ marginBottom: "clamp(3rem, 6vw, 5rem)" }}
         >
           <Image
-            src="/scoot-laptop-phone.png"
-            alt="Scoot virtual event platform — laptop and mobile"
+            src="/ALTRHERO1.png"
+            alt="ALTR onboarding redesign — activation flow"
             width={1600}
             height={900}
             className="w-full h-auto"
