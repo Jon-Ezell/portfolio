@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import PageTransition from "@/components/PageTransition";
 import CustomCursor from "@/components/CustomCursor";
+import ThemeSelector from "@/components/ThemeSelector";
 
 export const metadata: Metadata = {
   title: "Jon Ezell — Senior Product Designer",
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className="antialiased">
         <PageTransition />
         <CustomCursor />
+        <ThemeSelector />
         {children}
       </body>
     </html>

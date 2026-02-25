@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function WhoIAm() {
   return (
-    <section style={{ backgroundColor: "#f5f0e8", paddingBottom: "clamp(60px, 8vw, 120px)" }}>
+    <section style={{ backgroundColor: "var(--theme-bg)", paddingBottom: "clamp(60px, 8vw, 120px)" }}>
       <div
         style={{
           maxWidth: "760px",
@@ -21,7 +21,7 @@ export default function WhoIAm() {
             fontFamily: '"MD Nichrome Dark", Verdana, sans-serif',
             fontSize: "22px",
             letterSpacing: "0.08em",
-            color: "#000",
+            color: "var(--theme-text)",
             marginBottom: "clamp(20px, 3vw, 32px)",
           }}
         >
@@ -44,7 +44,7 @@ export default function WhoIAm() {
               fontSize: "clamp(14px, 1.5vw, 17px)",
               fontWeight: 300,
               lineHeight: 1.75,
-              color: "#3a3a3a",
+              color: "var(--theme-muted)",
               marginBottom: i < 2 ? "1.4em" : 0,
             }}
           >

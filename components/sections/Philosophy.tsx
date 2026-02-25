@@ -7,7 +7,7 @@ export default function Philosophy() {
   return (
     <section
       className="overflow-hidden"
-      style={{ backgroundColor: "#f5f0e8", position: "relative" }}
+      style={{ backgroundColor: "var(--theme-bg)", position: "relative" }}
     >
       {/* ── Top headline ── */}
       <div className="pt-20 pb-10 px-8 text-center relative" style={{ zIndex: 1 }}>
@@ -34,7 +34,7 @@ export default function Philosophy() {
             fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif',
             fontSize: "clamp(2rem, 5.5vw, 5rem)",
             lineHeight: 1.0,
-            color: "#000",
+            color: "var(--theme-text)",
             margin: 0,
           }}
         >
@@ -63,7 +63,7 @@ export default function Philosophy() {
         <div style={{ maxWidth: "560px", margin: "0 auto" }}>
           {[
             <>My work sits at the intersection of AI-native interaction design, systems thinking, and visual craft.</>,
-            <>I take a <span style={{ color: "#e76e52" }}>people first, AI integrated, and engineering involved</span> approach to all of my work – helping teams converge on high-confidence solutions faster.</>,
+            <>I take a <span style={{ color: "var(--theme-accent)" }}>people first, AI integrated, and engineering involved</span> approach to all of my work – helping teams converge on high-confidence solutions faster.</>,
             <>With 5+ years in growth startups I&apos;m able to guide your product to success. I&apos;m capable of discovering, ideating, testing and shipping winning experiences that will grow your business.</>,
           ].map((content, i) => (
             <motion.p
@@ -77,7 +77,7 @@ export default function Philosophy() {
                 fontSize: "clamp(13px, 1.2vw, 15px)",
                 fontWeight: 300,
                 lineHeight: 1.75,
-                color: "#3a3a3a",
+                color: "var(--theme-muted)",
                 marginBottom: i < 2 ? "1.2em" : 0,
               }}
             >
@@ -101,7 +101,7 @@ export default function Philosophy() {
             width={480}
             height={480}
             className="w-auto select-none"
-            style={{ height: "clamp(280px, 35vw, 480px)", width: "auto" }}
+            style={{ height: "clamp(280px, 35vw, 480px)", width: "auto", filter: "var(--theme-venn-filter)" }}
           />
         </motion.div>
       </div>
@@ -117,16 +117,17 @@ export default function Philosophy() {
             fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif',
             fontSize: "clamp(2rem, 5.5vw, 5rem)",
             lineHeight: 1.0,
-            color: "#000",
-            margin: 0,
+            color: "var(--theme-text)",
+            margin: "0 auto",
+            maxWidth: "70vw",
           }}
         >
           TRANSLATING USER, BUSINESS, AND
           <br />
           STAKEHOLDER NEEDS INTO{" "}
-          <span style={{ color: "#e76e52" }}>MEANINGFUL</span>
+          <span style={{ color: "var(--theme-accent)" }}>MEANINGFUL</span>
           {" "}AND{" "}
-          <span style={{ color: "#e76e52" }}>ELEGANT</span>
+          <span style={{ color: "var(--theme-accent)" }}>ELEGANT</span>
           <br />
           EXPERIENCES.
         </motion.h2>
@@ -159,13 +160,13 @@ export default function Philosophy() {
               fontFamily: '"MD Nichrome Dark", Verdana, sans-serif',
               fontSize: "22px",
               letterSpacing: "0.08em",
-              color: "#000",
+              color: "var(--theme-text)",
               marginBottom: "12px",
             }}
           >
             SEE HOW I DO IT
           </p>
-          <p style={{ fontSize: "24px", color: "#000", lineHeight: 1 }}>↓</p>
+          <p style={{ fontSize: "24px", color: "var(--theme-text)", lineHeight: 1 }}>↓</p>
         </motion.div>
       </div>
     </section>

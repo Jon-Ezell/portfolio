@@ -6,37 +6,40 @@ import Image from "next/image";
 const testimonials = [
   {
     quote:
-      "Jon has a rare ability to hold the big picture and the pixel-level detail at the same time. He ships work that looks as good as it functions.",
-    name: "Testimonial Name",
-    title: "Title, Company",
-    headshot: "/headshot-1.png",
+      "Jon is a talented designer with a thoughtful approach to his work. He has a solid understanding of user experience across various devices and platforms. He also has a really good eye and knows what is beautiful and what is not.",
+    name: "Ed Stevens",
+    title: "CEO & Founder – Scoot",
+    headshot: "/ed.png",
   },
   {
     quote:
-      "Working with Jon was one of the best creative experiences I've had. He asked the right questions before ever opening Figma.",
-    name: "Testimonial Name",
-    title: "Title, Company",
-    headshot: "/headshot-2.png",
+      "Jon's expertise in UX design and his ability to quickly understand our business needs is truly impressive. His professionalism, responsiveness, and attention to detail are top-notch, and he is a pleasure to work with.",
+    name: "Shaun Wood",
+    title: "CTO – Reflection Sciences",
+    headshot: "/shaun.png",
   },
   {
     quote:
-      "Jon brings a systems mindset to every project. His design decisions always trace back to user needs and business goals.",
-    name: "Testimonial Name",
-    title: "Title, Company",
-    headshot: "/headshot-3.png",
+      "Jon gladly takes on large product work. He will research and mock up thoughtful solutions. Whether it's a new product feature, or solving an issue in the product, he takes pride in the UX process.",
+    name: "Kate McCarter",
+    title: "Senior UX Designer – Datadog",
+    headshot: "/kate.png",
   },
   {
     quote:
-      "The quality of Jon's work speaks for itself, but it's his process and communication that set him apart.",
-    name: "Testimonial Name",
-    title: "Title, Company",
-    headshot: "/headshot-4.png",
+      "His work consistently reflects aesthetic excellence and strategic depth. Jon is an amazing human who deeply cares about his work and teammates. Any team would be lucky to work with him!",
+    name: "Lukas Kelsey",
+    title: "Software Engineer – Stripe",
+    headshot: "/lukas.png",
   },
 ];
 
 export default function Testimonials() {
   return (
-    <section className="bg-black px-8 py-32" style={{ position: "relative", overflow: "hidden" }}>
+    <section
+      className="px-8 py-32"
+      style={{ backgroundColor: "var(--theme-bg)", position: "relative", overflow: "hidden" }}
+    >
       {/* Background vase — sits behind all content */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none" }}>
         <Image
@@ -44,7 +47,13 @@ export default function Testimonials() {
           alt=""
           width={700}
           height={900}
-          style={{ width: "clamp(400px, 55vw, 800px)", height: "auto", objectFit: "contain", opacity: 0.35, mixBlendMode: "screen" }}
+          style={{
+            width: "clamp(400px, 55vw, 800px)",
+            height: "auto",
+            objectFit: "contain",
+            opacity: 0.35,
+            mixBlendMode: "var(--theme-vase-blend)" as React.CSSProperties["mixBlendMode"],
+          }}
         />
       </div>
 
@@ -58,7 +67,7 @@ export default function Testimonials() {
           style={{
             fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif',
             fontSize: "44px",
-            color: "#fff",
+            color: "var(--theme-text)",
           }}
         >
           DON&apos;T JUST TAKE MY WORD FOR IT
@@ -77,7 +86,12 @@ export default function Testimonials() {
                 ease: [0.16, 1, 0.3, 1],
               }}
               className="rounded-[10px] p-8 flex flex-col gap-6"
-              style={{ backgroundColor: "#191919cc" }}
+              style={{
+                backgroundColor: "color-mix(in srgb, var(--theme-surface) 60%, transparent)",
+                backdropFilter: "blur(16px)",
+                WebkitBackdropFilter: "blur(16px)",
+                border: "1px solid var(--theme-divider)",
+              }}
             >
               <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
                 <Image
@@ -94,7 +108,7 @@ export default function Testimonials() {
                   fontSize: "16px",
                   fontWeight: 300,
                   lineHeight: 1.7,
-                  color: "rgba(255,255,255,0.8)",
+                  color: "var(--theme-text)",
                 }}
               >
                 &ldquo;{t.quote}&rdquo;
@@ -104,7 +118,7 @@ export default function Testimonials() {
                   style={{
                     fontFamily: '"MD Nichrome Dark", Verdana, sans-serif',
                     fontSize: "14px",
-                    color: "#fff",
+                    color: "var(--theme-text)",
                   }}
                 >
                   {t.name}
@@ -114,7 +128,7 @@ export default function Testimonials() {
                     fontFamily: '"PP Neue Machina", Arial, sans-serif',
                     fontSize: "12px",
                     fontWeight: 300,
-                    color: "#8a8a8a",
+                    color: "var(--theme-muted)",
                   }}
                 >
                   {t.title}

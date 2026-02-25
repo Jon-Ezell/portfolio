@@ -24,13 +24,14 @@ export default function Outcomes() {
     <section
       ref={sectionRef}
       style={{
-        backgroundColor: "#f5f0e8",
+        backgroundColor: "var(--theme-bg)",
         position: "relative",
         overflow: "hidden",
-        minHeight: "max(680px, 85vh)",
+        height: "max(680px, 85vh)",
       }}
     >
       <div
+        className="outcomes-grid"
         style={{
           position: "relative",
           width: "100%",
@@ -44,6 +45,7 @@ export default function Outcomes() {
       >
         {/* Top-left: REAL PRODUCTS — z20 so it sits above video */}
         <motion.div
+          className="outcomes-text-left"
           style={{ x: leftX, gridColumn: "1", gridRow: "1", alignSelf: "start", zIndex: 20, position: "relative" }}
         >
           <h2
@@ -51,7 +53,7 @@ export default function Outcomes() {
               fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif',
               fontSize: "clamp(3.5rem, 9vw, 9rem)",
               lineHeight: 0.92,
-              color: "#000",
+              color: "var(--theme-text)",
               margin: 0,
             }}
           >
@@ -63,6 +65,7 @@ export default function Outcomes() {
 
         {/* Top-right: diamond decoration — larger, shifted ~50px toward center */}
         <div
+          className="outcomes-diamond"
           style={{
             gridColumn: "2",
             gridRow: "1",
@@ -85,6 +88,7 @@ export default function Outcomes() {
 
         {/* Bottom-left: Vector decoration */}
         <div
+          className="outcomes-spiral"
           style={{
             gridColumn: "1",
             gridRow: "2",
@@ -106,6 +110,7 @@ export default function Outcomes() {
 
         {/* Bottom-right: REAL IMPACT — z20 above video */}
         <motion.div
+          className="outcomes-text-right"
           style={{
             x: rightX,
             gridColumn: "2",
@@ -122,7 +127,7 @@ export default function Outcomes() {
               fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif',
               fontSize: "clamp(3.5rem, 9vw, 9rem)",
               lineHeight: 0.92,
-              color: "#000",
+              color: "var(--theme-text)",
               margin: 0,
               textAlign: "right",
             }}
@@ -134,16 +139,7 @@ export default function Outcomes() {
         </motion.div>
 
         {/* Center: looping video — z10, sits behind text */}
-        <div
-          style={{
-            position: "absolute",
-            left: "50%",
-            top: "50%",
-            transform: "translate(-50%, -50%)",
-            zIndex: 10,
-            width: "min(420px, 38vw)",
-          }}
-        >
+        <div className="outcomes-video-wrap">
           <motion.div style={{ y: videoY, scale: videoScale }}>
             <video
               autoPlay
