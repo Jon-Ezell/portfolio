@@ -9,6 +9,20 @@ export const metadata: Metadata = {
   description:
     "Senior Product Designer specializing in AI-powered products, systems thinking, and consumer experience.",
   metadataBase: new URL("https://ezell.guru"),
+  openGraph: {
+    title: "Jon Ezell — Senior Product Designer",
+    description:
+      "Senior Product Designer specializing in AI-powered products, systems thinking, and consumer experience.",
+    url: "https://ezell.guru",
+    images: [{ url: "/transition.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jon Ezell — Senior Product Designer",
+    description:
+      "Senior Product Designer specializing in AI-powered products, systems thinking, and consumer experience.",
+    images: ["/transition.png"],
+  },
 };
 
 export default function RootLayout({
