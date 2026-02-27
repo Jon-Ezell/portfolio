@@ -252,14 +252,21 @@ a {
 .page-transition__panel {
   position: absolute;
   inset: 0;
-  background-color: #000;
+  background-color: #f5f0e8;
+  background-image: url('/transitioncream.png');
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
   transform: translateY(0);
   transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: all;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
+
+/* Per-theme bg color + image — applied immediately from data-theme set by blocking script */
+[data-theme="midnight"] .page-transition__panel { background-color: #0d0d0f; background-image: url('/transition.png'); }
+[data-theme="ice"]      .page-transition__panel { background-color: #f0f5fb; background-image: url('/transitionice.png'); }
+[data-theme="forest"]   .page-transition__panel { background-color: #0e1a10; background-image: url('/transitionforest.png'); }
+[data-theme="dusk"]     .page-transition__panel { background-color: #0e0b1a; background-image: url('/transitiondusk.png'); }
 
 html.pt-up .page-transition__panel {
   transform: translateY(-100%);

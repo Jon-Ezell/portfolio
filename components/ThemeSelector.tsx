@@ -189,7 +189,7 @@ export default function ThemeSelector() {
         backdropFilter: "blur(12px)",
         borderRadius: "999px",
         padding: "6px 7px",
-        overflow: "hidden",
+        overflow: "visible",
       }}
     >
       {/* Toggle button */}
@@ -231,7 +231,7 @@ export default function ThemeSelector() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", overflow: "hidden" }}
+            style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", overflow: "hidden", padding: "3px 3px" }}
           >
             {themes.map((t) => (
               <motion.button
