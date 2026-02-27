@@ -138,11 +138,11 @@ export default function ScootSolution() {
           headline="Presentation mode experience uniquely designed for engagement"
           body="Redefined presentation mode from passive broadcasting into a socially-aware experience. Leveraged real-time behavioral signals and visual indicators to surface audience dynamics, enabling presenters to adapt in the moment and drive engagement beyond traditional webinar paradigms."
         >
-          <div className="flex flex-col md:flex-row gap-4 md:items-end">
+          <div className="flex flex-col md:flex-row gap-4 md:items-end w-full overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/scoot-presenter-mobile.png" alt="" style={{ width: "100%", height: "auto", borderRadius: "12px", display: "block" }} className="md:w-auto md:h-[clamp(300px,35vw,500px)]" />
+            <img src="/scoot-presenter-mobile.png" alt="" style={{ borderRadius: "12px", display: "block" }} className="w-full md:flex-1 md:min-w-0 md:w-0 h-auto" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/scoot-presenter-desktop.png" alt="" style={{ width: "100%", height: "auto", borderRadius: "12px", display: "block" }} className="md:w-auto md:h-[clamp(300px,35vw,500px)]" />
+            <img src="/scoot-presenter-desktop.png" alt="" style={{ borderRadius: "12px", display: "block" }} className="w-full md:flex-1 md:min-w-0 md:w-0 h-auto" />
           </div>
         </SolutionBlock>
 
