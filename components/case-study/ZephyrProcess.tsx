@@ -75,7 +75,9 @@ function CaptionedImage({ src, caption, themeFilter }: { src: string; caption?: 
           </p>
         </div>
       )}
-      <Image src={src} alt={caption ?? ""} width={800} height={500} style={{ width: "100%", height: "auto", display: "block", ...(themeFilter ? { filter: "var(--theme-graphic-filter)" } : {}) }} />
+      <div style={{ padding: "0.75rem" }}>
+        <Image src={src} alt={caption ?? ""} width={800} height={500} style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px", ...(themeFilter ? { filter: "var(--theme-graphic-filter)" } : {}) }} />
+      </div>
     </div>
   );
 }

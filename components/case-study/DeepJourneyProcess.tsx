@@ -82,7 +82,9 @@ function CaptionedImage({ src, caption }: { src: string; caption?: string }) {
           </p>
         </div>
       )}
-      <Image src={src} alt={caption ?? ""} width={800} height={500} style={{ width: "100%", height: "auto", display: "block" }} />
+      <div style={{ padding: "0.75rem" }}>
+        <Image src={src} alt={caption ?? ""} width={800} height={500} style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px" }} />
+      </div>
     </div>
   );
 }

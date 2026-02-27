@@ -100,7 +100,9 @@ function CaptionedImage({ src, caption }: { src: string; caption?: string }) {
           </p>
         </div>
       )}
-      <Image src={src} alt={caption ?? ""} width={800} height={500} style={{ width: "100%", height: "auto", display: "block" }} />
+      <div style={{ padding: "0.75rem" }}>
+        <Image src={src} alt={caption ?? ""} width={800} height={500} style={{ width: "100%", height: "auto", display: "block", borderRadius: "6px" }} />
+      </div>
     </div>
   );
 }
@@ -208,7 +210,7 @@ export default function ScootProcess() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{ paddingLeft: "3rem", paddingTop: "2rem", paddingBottom: "5rem" }}
           >
-            <CaptionedImage src="/scoot-entry-flows-map.png" caption="Entry Flow Map" />
+            <CaptionedImage src="/scoot-entry-flows-map.png" caption="Notebook LM Example Query" />
           </motion.div>
 
           {/* ── ROW 3 ── */}
@@ -220,7 +222,7 @@ export default function ScootProcess() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             style={{ paddingRight: "3rem", paddingBottom: "5rem", display: "flex", justifyContent: "flex-end" }}
           >
-            <CaptionedImage src="/scoot-notebook-lm.png" caption="Notebook LM example queries" />
+            <CaptionedImage src="/scoot-notebook-lm.png" caption="Pain Point Research Synthesis" />
           </motion.div>
 
           <TimelineNode icon={<NetworkIcon />} />
