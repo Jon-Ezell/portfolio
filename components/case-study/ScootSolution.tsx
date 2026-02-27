@@ -142,7 +142,7 @@ export default function ScootSolution() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/scoot-presenter-mobile.png" alt="" style={{ borderRadius: "12px", display: "block", flexShrink: 0 }} className="w-full h-auto md:h-[clamp(260px,28vw,420px)] md:w-auto" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/scoot-presenter-desktop.png" alt="" style={{ borderRadius: "12px", display: "block" }} className="w-full h-auto md:h-[clamp(260px,28vw,420px)] md:w-auto md:flex-1 md:min-w-0" />
+            <img src="/scoot-presenter-desktop.png" alt="" style={{ borderRadius: "12px", display: "block" }} className="w-full h-auto md:h-[clamp(260px,28vw,420px)] md:w-auto" />
           </div>
         </SolutionBlock>
 
