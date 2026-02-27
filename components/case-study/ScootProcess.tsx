@@ -92,15 +92,15 @@ function Bullets({ items }: { items: string[] }) {
 
 function CaptionedImage({ src, caption }: { src: string; caption?: string }) {
   return (
-    <div style={{ maxWidth: "min(280px, 100%)" }}>
-      <div style={{ overflow: "hidden" }}>
-        <Image src={src} alt={caption ?? ""} width={800} height={500} className="w-full h-auto" />
-      </div>
+    <div style={{ border: "1px solid var(--theme-divider)", borderRadius: "12px", overflow: "hidden", backgroundColor: "var(--theme-surface)", maxWidth: "min(320px, 100%)" }}>
       {caption && (
-        <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "11px", fontWeight: 300, color: "var(--theme-muted)", marginTop: "0.6rem", textAlign: "center" }}>
-          {caption}
-        </p>
+        <div style={{ padding: "0.75rem 1.25rem", borderBottom: "1px solid var(--theme-divider)" }}>
+          <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "11px", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--theme-accent)", margin: 0 }}>
+            {caption}
+          </p>
+        </div>
       )}
+      <Image src={src} alt={caption ?? ""} width={800} height={500} style={{ width: "100%", height: "auto", display: "block" }} />
     </div>
   );
 }
@@ -158,7 +158,7 @@ export default function ScootProcess() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             style={{ paddingRight: "3rem", paddingBottom: "5rem", display: "flex", justifyContent: "flex-end" }}
           >
-            <CaptionedImage src="/scoot-activation-research.png" />
+            <CaptionedImage src="/scoot-activation-research.png" caption="UX Audit" />
           </motion.div>
 
           <TimelineNode icon={<SearchIcon />} isFirst />
@@ -208,7 +208,7 @@ export default function ScootProcess() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{ paddingLeft: "3rem", paddingTop: "2rem", paddingBottom: "5rem" }}
           >
-            <CaptionedImage src="/scoot-entry-flows-map.png" />
+            <CaptionedImage src="/scoot-entry-flows-map.png" caption="Entry Flow Map" />
           </motion.div>
 
           {/* ── ROW 3 ── */}
@@ -267,7 +267,7 @@ export default function ScootProcess() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{ paddingLeft: "3rem", paddingTop: "2rem", paddingBottom: "2rem" }}
           >
-            <CaptionedImage src="/scoot-design-system.png" />
+            <CaptionedImage src="/scoot-design-system.png" caption="Design System" />
           </motion.div>
 
         </div>
