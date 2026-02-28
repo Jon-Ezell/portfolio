@@ -6,6 +6,7 @@ import CustomCursor from "@/components/CustomCursor";
 import ThemeSelector from "@/components/ThemeSelector";
 
 export const metadata: Metadata = {
+  icons: { icon: "/favicon.png" },
   title: "Jon Ezell — Senior Product Designer",
   description:
     "Senior Product Designer specializing in AI-powered products, systems thinking, and consumer experience.",
