@@ -336,120 +336,109 @@ export default function AboutPage() {
 
         {/* ── HERO ── */}
         <section style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(40px, 6vw, 80px) clamp(24px, 5vw, 60px)" }}>
-          {/* Two-col: text left, photo right on desktop; photo above text on mobile */}
-          <div className="flex flex-col-reverse gap-8 sm:flex-row sm:items-start sm:gap-12">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              fontFamily: '"MD Nichrome Dark", Verdana, sans-serif',
+              fontSize: "13px",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "var(--theme-accent)",
+              marginBottom: "16px",
+            }}
+          >
+            About
+          </motion.p>
 
-            {/* Text */}
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                style={{
-                  fontFamily: '"MD Nichrome Dark", Verdana, sans-serif',
-                  fontSize: "13px",
-                  letterSpacing: "0.2em",
-                  textTransform: "uppercase",
-                  color: "var(--theme-accent)",
-                  marginBottom: "16px",
-                }}
-              >
-                About
-              </motion.p>
-
-              <motion.h1
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-                style={{
-                  fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif',
-                  fontSize: "clamp(2.4rem, 6vw, 5rem)",
-                  lineHeight: 0.95,
-                  color: "var(--theme-text)",
-                  margin: "0 0 clamp(20px, 3vw, 32px)",
-                }}
-              >
-                Jon Ezell
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                style={{
-                  fontFamily: '"PP Neue Machina", Arial, sans-serif',
-                  fontSize: "clamp(14px, 1.6vw, 17px)",
-                  fontWeight: 300,
-                  lineHeight: 1.75,
-                  color: "var(--theme-muted)",
-                  marginBottom: "clamp(20px, 3vw, 28px)",
-                }}
-              >
-                Senior Product Designer with 5+ years shipping at growth startups.
-                I work at the intersection of{" "}
-                <span style={{ color: "var(--theme-text)", fontWeight: 400 }}>AI-native interaction design</span>,{" "}
-                <span style={{ color: "var(--theme-text)", fontWeight: 400 }}>systems thinking</span>, and{" "}
-                <span style={{ color: "var(--theme-text)", fontWeight: 400 }}>visual craft</span> —
-                building products that feel intelligent and human at the same time.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-                style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}
-              >
-                {[
-                  { label: "jon@ezell.guru", href: "mailto:jon@ezell.guru" },
-                  { label: "LinkedIn", href: "https://www.linkedin.com/in/jonezell/", target: "_blank" },
-                ].map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target={(link as { target?: string }).target}
-                    rel={(link as { target?: string }).target === "_blank" ? "noopener noreferrer" : undefined}
-                    style={{
-                      fontFamily: '"PP Neue Machina", Arial, sans-serif',
-                      fontSize: "13px",
-                      fontWeight: 400,
-                      letterSpacing: "0.05em",
-                      color: "var(--theme-accent)",
-                      textDecoration: "none",
-                      borderBottom: "1px solid var(--theme-accent)",
-                      paddingBottom: "2px",
-                    }}
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </motion.div>
-            </div>
-
-            {/* Photo */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.93 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-              style={{
-                width: "clamp(120px, 18vw, 200px)",
-                height: "clamp(120px, 18vw, 200px)",
-                borderRadius: "50%",
-                overflow: "hidden",
-                flexShrink: 0,
-                border: "2px solid var(--theme-divider)",
-              }}
-            >
+          {/* Name + photo inline */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+            style={{ display: "flex", alignItems: "center", gap: "clamp(14px, 2vw, 22px)", marginBottom: "clamp(20px, 3vw, 32px)" }}
+          >
+            <div style={{
+              width: "clamp(44px, 5.5vw, 68px)",
+              height: "clamp(44px, 5.5vw, 68px)",
+              borderRadius: "50%",
+              overflow: "hidden",
+              flexShrink: 0,
+              border: "1.5px solid var(--theme-divider)",
+            }}>
               <Image
                 src="/IMG_1116.jpg"
                 alt="Jon Ezell"
-                width={400}
-                height={400}
+                width={136}
+                height={136}
                 style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
                 priority
               />
-            </motion.div>
+            </div>
+            <h1 style={{
+              fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif',
+              fontSize: "clamp(2.4rem, 6vw, 5rem)",
+              lineHeight: 0.95,
+              color: "var(--theme-text)",
+              margin: 0,
+            }}>
+              Jon Ezell
+            </h1>
+          </motion.div>
 
-          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              fontFamily: '"PP Neue Machina", Arial, sans-serif',
+              fontSize: "clamp(14px, 1.6vw, 17px)",
+              fontWeight: 300,
+              lineHeight: 1.75,
+              color: "var(--theme-muted)",
+              maxWidth: "600px",
+              marginBottom: "clamp(20px, 3vw, 28px)",
+            }}
+          >
+            Senior Product Designer with 5+ years shipping at growth startups.
+            I work at the intersection of{" "}
+            <span style={{ color: "var(--theme-text)", fontWeight: 400 }}>AI-native interaction design</span>,{" "}
+            <span style={{ color: "var(--theme-text)", fontWeight: 400 }}>systems thinking</span>, and{" "}
+            <span style={{ color: "var(--theme-text)", fontWeight: 400 }}>visual craft</span> —
+            building products that feel intelligent and human at the same time.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+            style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}
+          >
+            {[
+              { label: "jon@ezell.guru", href: "mailto:jon@ezell.guru" },
+              { label: "LinkedIn", href: "https://www.linkedin.com/in/jonezell/", target: "_blank" },
+            ].map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={(link as { target?: string }).target}
+                rel={(link as { target?: string }).target === "_blank" ? "noopener noreferrer" : undefined}
+                style={{
+                  fontFamily: '"PP Neue Machina", Arial, sans-serif',
+                  fontSize: "13px",
+                  fontWeight: 400,
+                  letterSpacing: "0.05em",
+                  color: "var(--theme-accent)",
+                  textDecoration: "none",
+                  borderBottom: "1px solid var(--theme-accent)",
+                  paddingBottom: "2px",
+                }}
+              >
+                {link.label}
+              </a>
+            ))}
+          </motion.div>
         </section>
 
         <div style={{ height: "1px", backgroundColor: "var(--theme-divider)", maxWidth: "860px", margin: "0 auto clamp(40px,6vw,80px)" }} />
