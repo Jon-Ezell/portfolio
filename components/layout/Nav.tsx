@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
+import ContactModal from "@/components/ui/ContactModal";
 
 const caseStudies = [
   {
@@ -68,6 +69,7 @@ const ChevronIcon = ({ open }: { open: boolean }) => (
 
 export default function Nav() {
   const [workOpen, setWorkOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -81,6 +83,8 @@ export default function Nav() {
   }, []);
 
   return (
+    <>
+    <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
     <nav
       ref={navRef}
       className="fixed z-50 left-1/2 -translate-x-1/2"
@@ -133,14 +137,13 @@ export default function Nav() {
 
         {/* CONTACT */}
         <li>
-          <Link
-            href="/#contact"
-            onClick={(e) => handleAnchorClick(e, "contact")}
+          <button
+            onClick={() => setContactOpen(true)}
             className="global-nav-link flex items-center px-3 py-[6px] text-white/90 hover:bg-white/10 rounded-[4px] transition-colors duration-300"
-            style={navLinkStyle}
+            style={{ ...navLinkStyle, background: "none", border: "none", cursor: "pointer", color: "rgba(255,255,255,0.9)" }}
           >
             CONTACT
-          </Link>
+          </button>
         </li>
       </ul>
 
@@ -268,5 +271,6 @@ export default function Nav() {
         )}
       </AnimatePresence>
     </nav>
+    </>
   );
 }
