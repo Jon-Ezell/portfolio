@@ -120,16 +120,14 @@ export default function Nav() {
           </button>
         </li>
 
-        {/* RESUME */}
+        {/* ABOUT */}
         <li>
           <Link
-            href="/Jon_Ezell_Resume_26.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/about"
             className="global-nav-link flex items-center px-3 py-[6px] text-white/90 hover:bg-white/10 rounded-[4px] transition-colors duration-300"
             style={navLinkStyle}
           >
-            RESUME
+            ABOUT
           </Link>
         </li>
 
