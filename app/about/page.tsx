@@ -4,6 +4,7 @@ import Nav from "@/components/layout/Nav";
 import FooterCTA from "@/components/sections/FooterCTA";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import Image from "next/image";
 
 const principles = [
   {
@@ -335,6 +336,31 @@ export default function AboutPage() {
 
         {/* ── HERO ── */}
         <section style={{ maxWidth: "860px", margin: "0 auto", padding: "clamp(40px, 6vw, 80px) clamp(24px, 5vw, 60px)" }}>
+          {/* Profile photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              width: "clamp(88px, 12vw, 128px)",
+              height: "clamp(88px, 12vw, 128px)",
+              borderRadius: "50%",
+              overflow: "hidden",
+              marginBottom: "clamp(20px, 3vw, 32px)",
+              border: "2px solid var(--theme-divider)",
+              flexShrink: 0,
+            }}
+          >
+            <Image
+              src="/IMG_1116.jpg"
+              alt="Jon Ezell"
+              width={256}
+              height={256}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              priority
+            />
+          </motion.div>
+
           <motion.p
             {...fadeUp}
             style={{
