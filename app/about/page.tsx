@@ -359,6 +359,15 @@ export default function AboutPage() {
             transition={{ duration: 0.7, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
             style={{ display: "flex", alignItems: "center", gap: "clamp(14px, 2vw, 22px)", marginBottom: "clamp(20px, 3vw, 32px)" }}
           >
+            <h1 style={{
+              fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif',
+              fontSize: "clamp(2.4rem, 6vw, 5rem)",
+              lineHeight: 0.95,
+              color: "var(--theme-text)",
+              margin: 0,
+            }}>
+              Jon Ezell
+            </h1>
             <div style={{
               width: "clamp(44px, 5.5vw, 68px)",
               height: "clamp(44px, 5.5vw, 68px)",
@@ -376,15 +385,6 @@ export default function AboutPage() {
                 priority
               />
             </div>
-            <h1 style={{
-              fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif',
-              fontSize: "clamp(2.4rem, 6vw, 5rem)",
-              lineHeight: 0.95,
-              color: "var(--theme-text)",
-              margin: 0,
-            }}>
-              Jon Ezell
-            </h1>
           </motion.div>
 
           <motion.p
