@@ -1,15 +1,21 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import ContactModal from "@/components/ui/ContactModal";
 
 interface FooterCTAProps {
   nextProject?: { href: string; label: string };
 }
 
 export default function FooterCTA({ nextProject }: FooterCTAProps = {}) {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
+    <>
+    <ContactModal open={modalOpen} onClose={() => setModalOpen(false)} />
     <section
       id="contact"
       style={{
@@ -54,8 +60,8 @@ export default function FooterCTA({ nextProject }: FooterCTAProps = {}) {
         </motion.h2>
 
         {/* Orange circle CTA */}
-        <motion.a
-          href="mailto:jon@ezell.guru"
+        <motion.button
+          onClick={() => setModalOpen(true)}
           className="footer-cta-circle"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -73,7 +79,7 @@ export default function FooterCTA({ nextProject }: FooterCTAProps = {}) {
             flexShrink: 0,
             marginLeft: "clamp(24px, 4vw, 60px)",
             cursor: "pointer",
-            textDecoration: "none",
+            border: "none",
           }}
         >
           <p
@@ -90,7 +96,7 @@ export default function FooterCTA({ nextProject }: FooterCTAProps = {}) {
             <br />
             SAY HELLO
           </p>
-        </motion.a>
+        </motion.button>
       </div>
 
       {/* Next project pill */}
@@ -302,5 +308,6 @@ export default function FooterCTA({ nextProject }: FooterCTAProps = {}) {
         </p>
       </div>
     </section>
+    </>
   );
 }
