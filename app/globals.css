@@ -328,6 +328,14 @@ html.pt-up .page-transition__panel {
   --theme-vase-blend: multiply;
   --theme-tree-blend: screen;
   --theme-tree-opacity: 0.45;
+  /* Hero-specific vars — cream defaults to midnight look */
+  --theme-hero-bg: #0d0d0f;
+  --theme-hero-text: #f0ebe2;
+  --theme-hero-muted: #9a9590;
+  --theme-hero-surface: #1a1a1c;
+  --theme-hero-logo-filter: brightness(0) invert(1);
+  --theme-hero-tree-blend: luminosity;
+  --theme-hero-tree-opacity: 0.9;
 }
 
 /* Nav pill picks up the theme nav variable */

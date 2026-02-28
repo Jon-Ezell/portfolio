@@ -26,7 +26,7 @@ export default function Hero() {
   return (
     <section
       className="relative overflow-hidden"
-      style={{ backgroundColor: "var(--theme-bg)", height: "100svh", minHeight: "600px" }}
+      style={{ backgroundColor: "var(--theme-hero-bg, var(--theme-bg))", height: "100svh", minHeight: "600px" }}
     >
       {/* Layer 0 — Tree */}
       <motion.div
@@ -45,8 +45,8 @@ export default function Hero() {
             height: "130vh",
             width: "auto",
             maxWidth: "none",
-            mixBlendMode: "var(--theme-tree-blend)" as React.CSSProperties["mixBlendMode"],
-            opacity: "var(--theme-tree-opacity)" as unknown as number,
+            mixBlendMode: "var(--theme-hero-tree-blend, var(--theme-tree-blend))" as React.CSSProperties["mixBlendMode"],
+            opacity: "var(--theme-hero-tree-opacity, var(--theme-tree-opacity))" as unknown as number,
           }}
           priority
         />
@@ -82,7 +82,7 @@ export default function Hero() {
                 textAlign: "center",
               }}
             >
-              <span style={{ color: "var(--theme-text)" }}>{phrases[index].line1}</span>
+              <span style={{ color: "var(--theme-hero-text, var(--theme-text))" }}>{phrases[index].line1}</span>
               <br />
               <span style={{ color: "var(--theme-accent)" }}>{phrases[index].line2}</span>
             </h1>
@@ -109,7 +109,7 @@ export default function Hero() {
       >
         <div
           className="rounded-xl px-6 py-5 relative"
-          style={{ backgroundColor: "var(--theme-surface)", backdropFilter: "blur(8px)" }}
+          style={{ backgroundColor: "var(--theme-hero-surface, var(--theme-surface))", backdropFilter: "blur(8px)" }}
         >
           {/* ae logo mark — top right */}
           <div className="absolute top-4 right-5">
@@ -119,7 +119,7 @@ export default function Hero() {
               width={26}
               height={26}
               className="select-none"
-              style={{ width: 26, height: 26, objectFit: "contain", filter: "var(--theme-logo-filter)" }}
+              style={{ width: 26, height: 26, objectFit: "contain", filter: "var(--theme-hero-logo-filter, var(--theme-logo-filter))" }}
             />
           </div>
 
@@ -130,7 +130,7 @@ export default function Hero() {
                 fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif',
                 fontSize: "38px",
                 lineHeight: 1,
-                color: "var(--theme-text)",
+                color: "var(--theme-hero-text, var(--theme-text))",
               }}
             >
               GURU{" "}
@@ -155,7 +155,7 @@ export default function Hero() {
               fontSize: "13px",
               fontWeight: 300,
               lineHeight: 1.6,
-              color: "var(--theme-muted)",
+              color: "var(--theme-hero-muted, var(--theme-muted))",
             }}
           >
             A design philosophy guided by clarity and systems awareness —
