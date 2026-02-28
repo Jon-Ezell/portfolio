@@ -447,11 +447,12 @@ nav ul {
   }
   .outcomes-text-right {
     order: 3;
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
+    justify-content: flex-end !important;
+    align-items: flex-end !important;
+    width: 100%;
   }
   .outcomes-text-right h2 {
-    text-align: left !important;
+    text-align: right !important;
   }
 
   /* WorkHistory: collapse 3-col grid to vertical list, centered */
