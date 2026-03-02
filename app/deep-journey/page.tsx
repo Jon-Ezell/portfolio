@@ -56,7 +56,8 @@ export default function DeepJourneyPage() {
         {/* ─── FUTURE VISION ─── */}
         <DeepJourneyFutureVision />
 
-        <FooterCTA nextProject={{ href: "/zephyr", label: "Zephyr" }} />
+        {/* ZEPHYR HIDDEN — restore nextProject when re-enabling: nextProject={{ href: "/zephyr", label: "Zephyr" }} */}
+        <FooterCTA />
       </main>
     </>
   );

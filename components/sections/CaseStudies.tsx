@@ -32,15 +32,16 @@ const projects = [
     tags: ["AI Product", "Web", "2024"],
     thumbnail: "/deep-journey-laptop.png",
   },
-  {
-    slug: "zephyr",
-    title: "Zephyr",
-    headline: "BREATH ON / STRESS OFF",
-    description:
-      "A wearable and app designed to regulate your nervous system anywhere, in seconds.",
-    tags: ["Wearable", "iOS", "2023"],
-    thumbnail: "/zephyr-app-mockup.png",
-  },
+  // ZEPHYR HIDDEN — uncomment to re-enable
+  // {
+  //   slug: "zephyr",
+  //   title: "Zephyr",
+  //   headline: "BREATH ON / STRESS OFF",
+  //   description:
+  //     "A wearable and app designed to regulate your nervous system anywhere, in seconds.",
+  //   tags: ["Wearable", "iOS", "2023"],
+  //   thumbnail: "/zephyr-app-mockup.png",
+  // },
 ];
 
 export default function CaseStudies() {

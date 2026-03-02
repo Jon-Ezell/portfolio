@@ -25,12 +25,13 @@ const caseStudies = [
     description: "AI research tool for Chief Revenue Officers",
     thumb: "/deep-journey-laptop.png",
   },
-  {
-    slug: "zephyr",
-    title: "Zephyr",
-    description: "Biofeedback wristband and companion app",
-    thumb: "/zephyr-phone-hero.png",
-  },
+  // ZEPHYR HIDDEN — uncomment to re-enable
+  // {
+  //   slug: "zephyr",
+  //   title: "Zephyr",
+  //   description: "Biofeedback wristband and companion app",
+  //   thumb: "/zephyr-phone-hero.png",
+  // },
 ];
 
 const navLinkStyle: React.CSSProperties = {
