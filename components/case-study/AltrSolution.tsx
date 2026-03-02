@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const RefreshIcon = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -235,7 +236,24 @@ export default function AltrSolution() {
           </div>
         </SolutionBlock>
 
-        {/* ── Block 3: Progress and form integrity ── */}
+        {/* ── Block 3: Simplifying high-risk configuration ── */}
+        <SolutionBlock
+          headline="Simplifying High-Risk Configuration"
+          body="Enterprise customers were required to grant elevated Snowflake permissions before experiencing value. This created hesitation and stalled onboarding. I introduced a clear, opinionated split between Express and Manual configuration, explicitly surfacing the tradeoff between speed and granular control. By recommending the lower-friction path while preserving transparency, we reduced decision paralysis without compromising trust. This shift helped remove a key barrier to activation."
+          delay={0.05}
+        >
+          <div style={{ borderRadius: "12px", overflow: "hidden" }}>
+            <Image
+              src="/expressALTR.png"
+              alt="Express vs Manual configuration screen"
+              width={1600}
+              height={900}
+              style={{ width: "100%", height: "auto", display: "block" }}
+            />
+          </div>
+        </SolutionBlock>
+
+        {/* ── Block 4: Progress and form integrity ── */}
         <SolutionBlock
           headline="Progress transparency and form integrity gave users the confidence to complete the process"
           body="Two small changes had an outsized impact on completion: progress indicators so users always knew how far they were from done, and form state persistence so a failed connection attempt didn't wipe out everything they'd typed. Together they addressed the two biggest drivers of abandonment identified in the usability research."

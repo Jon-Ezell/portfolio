@@ -55,9 +55,7 @@ export default function AltrTLDR({
               marginBottom: "clamp(2rem, 5vw, 4rem)",
             }}
           >
-            When only 7% of users can activate without hand-holding from the internal team,
-            the product can&apos;t scale. ALTR needed a fundamentally different onboarding experience
-            — one that empowered users to get to value on their own.
+            ALTR&apos;s activation stalled at 7%, constraining scalable revenue growth despite strong technical capability. I identified onboarding as the primary revenue bottleneck and re-architected it around guided value discovery rather than configuration and documentation. Activation increased to 50%+, unlocking scalable self-serve growth and supporting ARR expansion from $100K to over $1M within two years.
           </p>
 
           {/* 3-column breakdown */}

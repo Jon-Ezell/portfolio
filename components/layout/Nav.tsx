@@ -16,7 +16,7 @@ const caseStudies = [
   {
     slug: "altr",
     title: "ALTR",
-    description: "Database onboarding redesign — 7% → 60% activation",
+    description: "Data governance onboarding redesign — 7% → 60% activation",
     thumb: "/altrhero.png",
   },
   {
