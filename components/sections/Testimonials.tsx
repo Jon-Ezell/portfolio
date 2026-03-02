@@ -22,7 +22,7 @@ const testimonials = [
     quote:
       "Jon gladly takes on large product work. He will research and mock up thoughtful solutions. Whether it's a new product feature, or solving an issue in the product, he takes pride in the UX process.",
     name: "Kate McCarter",
-    title: "Senior UX Designer – Datadog (managed Jon at ALTR)",
+    title: "Senior UX Designer – Datadog (Managed Jon at ALTR)",
     headshot: "/kate.png",
   },
   {
