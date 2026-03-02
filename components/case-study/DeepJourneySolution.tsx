@@ -15,10 +15,11 @@ interface SolutionBlockProps {
   headline: string;
   body: string;
   children: React.ReactNode;
+  caption?: { title: string; body: string };
   delay?: number;
 }
 
-function SolutionBlock({ headline, body, children, delay = 0 }: SolutionBlockProps) {
+function SolutionBlock({ headline, body, children, caption, delay = 0 }: SolutionBlockProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 32 }}
@@ -64,6 +65,16 @@ function SolutionBlock({ headline, body, children, delay = 0 }: SolutionBlockPro
       }}>
         {body}
       </p>
+
+      {/* Caption callout */}
+      {caption && (
+        <div style={{ borderLeft: "2px solid #ffffff", paddingLeft: "clamp(1.25rem, 3vw, 2rem)", maxWidth: "720px", marginBottom: "2.5rem" }}>
+          <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.8, color: "#ffffff" }}>
+            <strong style={{ fontWeight: 700 }}>{caption.title}</strong>{" "}
+            {caption.body}
+          </p>
+        </div>
+      )}
 
       {/* Media */}
       {children}
@@ -138,6 +149,10 @@ export default function DeepJourneySolution() {
         <SolutionBlock
           headline="Contextual continuity – from thousands of conversations to a single quotation"
           body="Designed traceable insight architecture that allows users to move seamlessly from high-level summaries to source-level quotations, ensuring trust and verifiability — a critical requirement for AI-assisted decision making."
+          caption={{
+            title: "Strategic Trade-off —",
+            body: "We prioritized traceability and context continuity over raw generation speed because accurate, auditable insights were essential to executive confidence and operational decision-making.",
+          }}
         >
           <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
             <FullImage src="/cc1.png" alt="Deep Journey — Ask interface with context filtering" />
