@@ -21,12 +21,11 @@ export default function AltrPage() {
         {/* ─── HERO + META ─── */}
         <AltrHero
           metaItems={[
-            { label: "Client", value: "ALTR Solution Inc." },
-            { label: "Project", value: "Onboarding Redesign" },
-            { label: "Year", value: "2022" },
-            { label: "My Role", value: "Project Lead — Research, UX/UI, Handoff" },
-            { label: "Team", value: "Kate McCarter (Design), Jacob Wagh (Supervisor), Kevin Rose (Engineering)" },
-            { label: "Timeline", value: "Jan 2022 – May 2022" },
+            { label: "Company", value: "ALTR — Enterprise data security platform" },
+            { label: "Role", value: "Lead Product Designer" },
+            { label: "Scope", value: "Owned onboarding in close partnership with product and engineering" },
+            { label: "Business Model", value: "B2B SaaS serving enterprise data teams" },
+            { label: "Primary Focus", value: "Activation, value discovery, and scalable self-serve growth" },
           ]}
         />
 
