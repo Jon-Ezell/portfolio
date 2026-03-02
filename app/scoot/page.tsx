@@ -21,10 +21,10 @@ export default function ScootPage() {
         {/* ─── HERO + META ─── */}
         <ScootHero
           metaItems={[
-            { label: "Company", value: "Scoot" },
-            { label: "Project", value: "Scoot Engage" },
-            { label: "Year", value: "2025" },
-            { label: "My Role", value: "Director of Product Design — Lead IC" },
+            { label: "Company", value: "Scoot — Immersive enterprise event platform" },
+            { label: "Role", value: "Director of Product Design — Lead IC", subvalue: "Owned product strategy, design execution, and cross-functional decision making with founders" },
+            { label: "Business Model", value: "B2B SaaS powering virtual events with measurable engagement and sales outcomes" },
+            { label: "Primary Focus", value: "Activation, engagement, and enterprise adoption" },
           ]}
         />
 

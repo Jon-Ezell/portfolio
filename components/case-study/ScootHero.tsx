@@ -6,6 +6,7 @@ import Image from "next/image";
 interface MetaItem {
   label: string;
   value: string;
+  subvalue?: string;
 }
 
 interface ScootHeroProps {
@@ -135,17 +136,35 @@ export default function ScootHero({ metaItems = [] }: ScootHeroProps) {
                 >
                   {item.label}
                 </p>
-                <p
-                  style={{
-                    fontFamily: '"PP Neue Machina", Arial, sans-serif',
-                    fontSize: "15px",
-                    fontWeight: 300,
-                    color: "var(--theme-text)",
-                    lineHeight: 1.5,
-                  }}
-                >
-                  {item.value}
-                </p>
+                <div>
+                  <p
+                    style={{
+                      fontFamily: '"PP Neue Machina", Arial, sans-serif',
+                      fontSize: "15px",
+                      fontWeight: 300,
+                      color: "var(--theme-text)",
+                      lineHeight: 1.5,
+                      margin: 0,
+                    }}
+                  >
+                    {item.value}
+                  </p>
+                  {item.subvalue && (
+                    <p
+                      style={{
+                        fontFamily: '"PP Neue Machina", Arial, sans-serif',
+                        fontSize: "12px",
+                        fontWeight: 300,
+                        color: "var(--theme-muted)",
+                        lineHeight: 1.6,
+                        marginTop: "4px",
+                        marginBottom: 0,
+                      }}
+                    >
+                      {item.subvalue}
+                    </p>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>

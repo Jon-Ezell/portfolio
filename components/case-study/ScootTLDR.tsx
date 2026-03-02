@@ -9,7 +9,7 @@ interface ScootTLDRProps {
 export default function ScootTLDR({
   metrics = [
     { value: "60→95%", label: "Mobile Activation Improvement" },
-    { value: "+20%", label: "Web First-Time Activation Increase" },
+    { value: "10x", label: "Monthly Attendee Growth" },
     { value: "400+", label: "Screens Designed" },
     { value: "212", label: "Components Built" },
   ],
@@ -56,9 +56,7 @@ export default function ScootTLDR({
               marginBottom: "clamp(2rem, 5vw, 4rem)",
             }}
           >
-            I joined Scoot when a barebones prototype existed and left having shipped 30+ feature sets,
-            a 212-component design system, and the platform that closed Scoot&apos;s first Fortune 500
-            deals. Here&apos;s how we got there.
+            Scoot lacked a clear wedge in a crowded virtual events market. I partnered with founders to redefine the product around immersive engagement and actionable sales intelligence, re-architecting the platform across the full event lifecycle. During this period, monthly attendees grew 10x, mobile activation reached 95%, and the company closed its first Fortune 500 contracts for the sales use case.
           </p>
 
           {/* 3-column breakdown */}
@@ -71,9 +69,7 @@ export default function ScootTLDR({
                 The Problem
               </p>
               <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.7, color: "var(--theme-text)" }}>
-                Traditional webinars don&apos;t even come close to in person events from an
-                experiential and business outcomes standpoint. A few voices can speak, and many
-                will listen, but not a lot of connection, business, or engagement happens.
+                Virtual events had become interchangeable and low signal. Engagement was shallow, differentiation was weak, and sales teams left without actionable data. Without a defensible wedge, Scoot risked becoming another webinar tool in a crowded market.
               </p>
             </div>
 
@@ -82,12 +78,7 @@ export default function ScootTLDR({
                 The Opportunity
               </p>
               <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.7, color: "var(--theme-text)" }}>
-                After synthesizing
-                customer interviews, usage data, and competitive context, I discovered that the
-                biggest barrier wasn&apos;t format — it was{" "}
-                <em>lack of conversational agency</em> in the experience. Webinars force
-                attention to speakers; virtual events needed{" "}
-                <em>participant agency</em> to drive connection.
+                Through customer interviews, usage analysis, and competitive research, I identified the core constraint: the platform needed to generate both immersive engagement and usable revenue signal. The opportunity was to move beyond format and redesign the full event lifecycle to capture behavioral data before, during, and after live experiences.
               </p>
             </div>
 
@@ -96,20 +87,8 @@ export default function ScootTLDR({
                 The Results
               </p>
               <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.7, color: "var(--theme-text)" }}>
-                Designed and shipped a complete immersive virtual event experience that:
+                I re-architected the product across the full event lifecycle, introducing registration infrastructure, pre- and post-event touchpoints, and AI-driven reporting workflows that transformed engagement data into actionable sales intelligence. These improvements resulted in the company&apos;s first sales-oriented Fortune 500 deals.
               </p>
-              <ul style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.7, color: "var(--theme-text)", marginTop: "0.4rem", paddingLeft: 0, listStyle: "none" }}>
-                {[
-                  "Allows for spontaneous and organic conversation.",
-                  "Is even easier to find and connect with relevant people than in person",
-                  "Allows sales people to leverage conversational and meeting data to manage, convert, and sell even more effectively than in person",
-                ].map((item, i) => (
-                  <li key={i} style={{ display: "flex", gap: "0.4rem", marginTop: "0.3rem" }}>
-                    <span style={{ flexShrink: 0 }}>•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
 
