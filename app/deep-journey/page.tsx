@@ -21,10 +21,11 @@ export default function DeepJourneyPage() {
         {/* ─── HERO + META ─── */}
         <DeepJourneyHero
           metaItems={[
-            { label: "Company", value: "Scoot" },
-            { label: "Project", value: "Deep Journey" },
-            { label: "Year", value: "2025" },
-            { label: "My Role", value: "End-to-end — Research, Strategy, UX/UI, Handoff" },
+            { label: "Company", value: "Scoot — Enterprise virtual events platform" },
+            { label: "Role", value: "Design Lead" },
+            { label: "Scope", value: "Defined and shipped an AI-driven sales intelligence interface to consolidate fragmented revenue workflows" },
+            { label: "Business Context", value: "Enterprise B2B SaaS serving revenue and sales leadership teams" },
+            { label: "Primary Focus", value: "Reducing reporting time and increasing confidence in sales insights" },
           ]}
         />
 
