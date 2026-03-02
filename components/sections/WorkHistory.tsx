@@ -21,7 +21,7 @@ const history = [
     role: "CO-FOUNDER",
     company: "ZEPHYR",
     description:
-      "Created cutting edge heath and wellness branding, product, and experience.",
+      "Created cutting edge health and wellness branding, product, and experience.",
   },
   {
     year: "2023",
