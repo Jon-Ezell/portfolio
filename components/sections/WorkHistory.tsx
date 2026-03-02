@@ -21,7 +21,7 @@ const history = [
     role: "CO-FOUNDER",
     company: "ZEPHYR",
     description:
-      "Created cutting edge health and wellness branding, product, and experience.",
+      "Co-founded funded health-tech startup, biofeedback wearable + companion app using HRV science, Top 10% CU Boulder New Venture Challenge.",
   },
   {
     year: "2023",
