@@ -22,14 +22,14 @@ const testimonials = [
     quote:
       "Jon gladly takes on large product work. He will research and mock up thoughtful solutions. Whether it's a new product feature, or solving an issue in the product, he takes pride in the UX process.",
     name: "Kate McCarter",
-    title: "Senior UX Designer – Datadog",
+    title: "Senior UX Designer – Datadog (managed Jon at ALTR)",
     headshot: "/kate.png",
   },
   {
     quote:
       "His work consistently reflects aesthetic excellence and strategic depth. Jon is an amazing human who deeply cares about his work and teammates. Any team would be lucky to work with him!",
     name: "Lukas Kelsey",
-    title: "Software Engineer – Stripe",
+    title: "Software Engineer – Stripe (Hired Jon at Well YC W23)",
     headshot: "/lukas.png",
   },
 ];
