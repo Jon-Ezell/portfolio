@@ -458,7 +458,7 @@ export default function AboutPage() {
               marginBottom: "clamp(12px, 2vw, 18px)",
             }}
           >
-            I&apos;m a product strategist and designer who brings clarity to high-stakes systems where decisions have real consequences. I work on products where accuracy, trust, and workflow efficiency matter more than visual polish.
+            I&apos;m a product designer and strategist who builds high-fidelity systems for high-stakes environments. I specialize in bringing clarity to complex AI and enterprise workflows where precision, trust, and interaction craft are the difference between a tool and a solution.
           </motion.p>
 
           <motion.p
@@ -475,7 +475,7 @@ export default function AboutPage() {
               marginBottom: "clamp(24px, 3.5vw, 36px)",
             }}
           >
-            I&apos;ve led product direction across AI experiences and enterprise systems, aligning design decisions to measurable outcomes like activation, retention, and revenue growth.
+            From defining product direction to perfecting every pixel, I align design to measurable outcomes—turning technical ambiguity into intuitive, revenue-driving experiences.
           </motion.p>
 
           {/* Highlights */}
