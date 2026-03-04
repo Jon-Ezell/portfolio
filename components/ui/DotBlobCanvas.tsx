@@ -44,8 +44,8 @@ const NUMERIC_DEFAULTS: NumericParams = {
 // All hero backgrounds are dark — cream and midnight share the same dark hero bg.
 // Keep colors desaturated and muted so the blob reads as background texture.
 const PAGE_BLOB_COLORS: Record<string, BlobColors> = {
-  cream:    { colorCore: '#000000', colorHighlight: '#474747', colorRim: '#8f4000' },
-  midnight: { colorCore: '#000000', colorHighlight: '#474747', colorRim: '#8f4000' },
+  cream:    { colorCore: '#ffae6b', colorHighlight: '#fb2718', colorRim: '#ffffff' },
+  midnight: { colorCore: '#ffae6b', colorHighlight: '#fb2718', colorRim: '#ffffff' },
   ice:      { colorCore: '#ffffff', colorHighlight: '#ffffff', colorRim: '#ffffff' },
   forest:   { colorCore: '#17351f', colorHighlight: '#153520', colorRim: '#336644' },
   dusk:     { colorCore: '#5a428a', colorHighlight: '#251040', colorRim: '#604488' },
@@ -98,9 +98,15 @@ const sectionLabelStyle: React.CSSProperties = {
 export default function DotBlobCanvas({
   theme = "warm",
   debug = false,
+  fixed = false,
+  opacity = 1,
+  initialParams,
 }: {
   theme?: string;
   debug?: boolean;
+  fixed?: boolean;
+  opacity?: number;
+  initialParams?: Partial<NumericParams>;
 }) {
   const containerRef  = useRef<HTMLDivElement>(null);
   const setParamsRef  = useRef<((p: Record<string, string | number>) => void) | null>(null);
@@ -131,6 +137,7 @@ export default function DotBlobCanvas({
       const pageColors = PAGE_BLOB_COLORS[pageTheme] ?? PAGE_BLOB_COLORS.cream;
       sp(pageColors);
       setColorsState(pageColors);
+      if (initialParams) sp(initialParams as Record<string, number>);
     });
 
     return () => {
@@ -181,7 +188,7 @@ export default function DotBlobCanvas({
     <>
       <div
         ref={containerRef}
-        style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none" }}
+        style={{ position: fixed ? "fixed" : "absolute", inset: 0, zIndex: 0, pointerEvents: "none", opacity }}
       />
 
       {debug && (

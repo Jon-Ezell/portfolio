@@ -2,6 +2,7 @@ import Nav from "@/components/layout/Nav";
 import Hero from "@/components/sections/Hero";
 import Outcomes from "@/components/sections/Outcomes";
 import WhoIAm from "@/components/sections/WhoIAm";
+import Highlights from "@/components/sections/Highlights";
 import Testimonials from "@/components/sections/Testimonials";
 import Philosophy from "@/components/sections/Philosophy";
 import CaseStudies from "@/components/sections/CaseStudies";
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <Outcomes />
         <WhoIAm />
+        <Highlights />
         <Testimonials />
         <Philosophy />
         <CaseStudies />
