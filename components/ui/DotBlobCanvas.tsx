@@ -101,12 +101,14 @@ export default function DotBlobCanvas({
   fixed = false,
   opacity = 1,
   initialParams,
+  touchEnabled = false,
 }: {
   theme?: string;
   debug?: boolean;
   fixed?: boolean;
   opacity?: number;
   initialParams?: Partial<NumericParams>;
+  touchEnabled?: boolean;
 }) {
   const containerRef  = useRef<HTMLDivElement>(null);
   const setParamsRef  = useRef<((p: Record<string, string | number>) => void) | null>(null);
@@ -127,6 +129,7 @@ export default function DotBlobCanvas({
       const { dispose, setParams: sp, setTheme: st } = initDotBlobHero({
         container: containerRef.current,
         theme: activeTheme,
+        windowTouch: touchEnabled,
       });
       disposeBlob = dispose;
       setParamsRef.current = sp;

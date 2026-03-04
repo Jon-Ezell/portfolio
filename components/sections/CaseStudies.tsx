@@ -49,7 +49,7 @@ export default function CaseStudies() {
     <section
       id="work"
       className="px-8 py-32"
-      style={{ backgroundColor: "var(--theme-bg)", position: "relative", overflow: "hidden" }}
+      style={{ position: "relative", overflow: "hidden" }}
     >
       {/* Background rocks — sits behind all content */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none" }}>

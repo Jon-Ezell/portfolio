@@ -173,7 +173,7 @@ void main(){
 }`;
 
 // ── Main export ───────────────────────────────────────────────────────────────
-export function initDotBlobHero({ container, theme = 'warm' } = {}) {
+export function initDotBlobHero({ container, theme = 'warm', windowTouch = false } = {}) {
   const isMobile      = window.innerWidth < 768;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -272,8 +272,8 @@ export function initDotBlobHero({ container, theme = 'warm' } = {}) {
     if (lastTouchX !== null) {
       const dx = t.clientX - lastTouchX;
       const dy = t.clientY - lastTouchY;
-      angVelY += dx * live.mouseSensitivity * live.parallaxStrength * 0.5;
-      angVelX += dy * live.mouseSensitivity * live.parallaxStrength * 0.5;
+      angVelY += dx * live.mouseSensitivity * live.parallaxStrength * 4.0;
+      angVelX += dy * live.mouseSensitivity * live.parallaxStrength * 4.0;
     }
     lastTouchX = t.clientX;
     lastTouchY = t.clientY;
@@ -282,10 +282,11 @@ export function initDotBlobHero({ container, theme = 'warm' } = {}) {
     lastTouchX = null;
     lastTouchY = null;
   }
+  const touchTarget = windowTouch ? window : container;
   window.addEventListener('mousemove',  onMouseMove,  { passive: true });
   window.addEventListener('mouseleave', onMouseLeave, { passive: true });
-  container.addEventListener('touchmove', onTouchMove, { passive: true });
-  container.addEventListener('touchend',  onTouchEnd,  { passive: true });
+  touchTarget.addEventListener('touchmove', onTouchMove, { passive: true });
+  touchTarget.addEventListener('touchend',  onTouchEnd,  { passive: true });
 
   // ── Resize ────────────────────────────────────────────────────────────────
   let resizeTimer;
@@ -368,8 +369,8 @@ export function initDotBlobHero({ container, theme = 'warm' } = {}) {
     window.removeEventListener('mousemove',  onMouseMove);
     window.removeEventListener('mouseleave', onMouseLeave);
     window.removeEventListener('resize',     onResize);
-    container.removeEventListener('touchmove', onTouchMove);
-    container.removeEventListener('touchend',  onTouchEnd);
+    touchTarget.removeEventListener('touchmove', onTouchMove);
+    touchTarget.removeEventListener('touchend',  onTouchEnd);
     geo.dispose();
     mat.dispose();
     renderer.dispose();

@@ -7,7 +7,7 @@ export default function Philosophy() {
   return (
     <section
       className="overflow-hidden"
-      style={{ backgroundColor: "var(--theme-bg)", position: "relative" }}
+      style={{ position: "relative" }}
     >
       {/* ── Top headline ── */}
       <div className="pt-20 pb-10 px-8 text-center relative" style={{ zIndex: 1 }}>

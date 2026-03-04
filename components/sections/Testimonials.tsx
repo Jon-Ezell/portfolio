@@ -38,7 +38,7 @@ export default function Testimonials() {
   return (
     <section
       className="px-8 py-32"
-      style={{ backgroundColor: "var(--theme-bg)", position: "relative", overflow: "hidden" }}
+      style={{ position: "relative", overflow: "hidden" }}
     >
       {/* Background vase — sits behind all content */}
       <div style={{ position: "absolute", inset: 0, zIndex: 0, display: "flex", alignItems: "center", justifyContent: "center", pointerEvents: "none" }}>

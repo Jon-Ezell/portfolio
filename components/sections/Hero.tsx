@@ -106,7 +106,12 @@ export default function Hero() {
       >
         <div
           className="rounded-xl px-6 py-5 relative"
-          style={{ backgroundColor: "var(--theme-hero-surface, var(--theme-surface))", backdropFilter: "blur(8px)" }}
+          style={{
+            backgroundColor: "color-mix(in srgb, var(--theme-hero-surface, var(--theme-surface)) 40%, transparent)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+            border: "1px solid color-mix(in srgb, var(--theme-divider) 60%, transparent)",
+          }}
         >
           {/* ae logo mark — top right */}
           <div className="absolute top-4 right-5">

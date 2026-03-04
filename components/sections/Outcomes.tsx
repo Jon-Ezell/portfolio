@@ -24,7 +24,6 @@ export default function Outcomes() {
     <section
       ref={sectionRef}
       style={{
-        backgroundColor: "var(--theme-bg)",
         position: "relative",
         overflow: "hidden",
         height: "max(680px, 85vh)",
