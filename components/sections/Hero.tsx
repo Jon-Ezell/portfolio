@@ -30,8 +30,24 @@ export default function Hero() {
       style={{ backgroundColor: "var(--theme-hero-bg, var(--theme-bg))", height: "100svh", minHeight: "600px" }}
     >
       {/* Layer 0 — Blob */}
-      {/* debug prop re-enables the slider panel: <DotBlobCanvas theme="warm" debug /> */}
-      <DotBlobCanvas theme="warm" />
+      <DotBlobCanvas
+        theme="warm"
+        opacity={0.35}
+        initialParams={{
+          noiseAmp: 0.91,
+          noiseFreq: 2.3,
+          scale: 1.45,
+          noiseSpeed: 0.46,
+          autoRotateSpeed: 0.0006,
+          parallaxStrength: 0.08,
+          mouseSensitivity: 0.0007,
+          friction: 0.99,
+          pointSize: 0.2,
+          glowAmount: 2.0,
+          glowFalloff: 4.5,
+          xOffset: 0,
+        }}
+      />
 
       {/* Layer 1 — Text carousel, upper third */}
       <div

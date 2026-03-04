@@ -29,9 +29,9 @@ const CFG = {
 // ── Themes ───────────────────────────────────────────────────────────────────
 const THEMES = {
   warm: {
-    colorCore      : new THREE.Color(0.72, 0.08, 0.02),
-    colorHighlight : new THREE.Color(1.00, 0.50, 0.08),
-    colorRim       : new THREE.Color(1.00, 0.82, 0.45),
+    colorCore      : new THREE.Color('#ffae6b'),
+    colorHighlight : new THREE.Color('#fb2718'),
+    colorRim       : new THREE.Color('#ffffff'),
   },
   mono: {
     colorCore      : new THREE.Color(0.15, 0.15, 0.15),
