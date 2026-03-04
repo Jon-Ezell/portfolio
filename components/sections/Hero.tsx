@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import DotBlobCanvas from "@/components/ui/DotBlobCanvas";
 
 const phrases = [
   { line1: "COMPLEX PRODUCTS", line2: "SHOULD FEEL EFFORTLESS" },
@@ -28,29 +29,9 @@ export default function Hero() {
       className="relative overflow-hidden"
       style={{ backgroundColor: "var(--theme-hero-bg, var(--theme-bg))", height: "100svh", minHeight: "600px" }}
     >
-      {/* Layer 0 — Tree */}
-      <motion.div
-        className="absolute inset-0 pointer-events-none"
-        style={{ zIndex: 0, display: "flex", alignItems: "center", justifyContent: "center", paddingTop: "100px" }}
-        animate={{ scale: [1, 1.04, 1] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <Image
-          src="/hero-tree.png"
-          alt=""
-          width={800}
-          height={900}
-          className="select-none"
-          style={{
-            height: "130vh",
-            width: "auto",
-            maxWidth: "none",
-            mixBlendMode: "var(--theme-hero-tree-blend, var(--theme-tree-blend))" as React.CSSProperties["mixBlendMode"],
-            opacity: "var(--theme-hero-tree-opacity, var(--theme-tree-opacity))" as unknown as number,
-          }}
-          priority
-        />
-      </motion.div>
+      {/* Layer 0 — Blob */}
+      {/* debug prop re-enables the slider panel: <DotBlobCanvas theme="warm" debug /> */}
+      <DotBlobCanvas theme="warm" />
 
       {/* Layer 1 — Text carousel, upper third */}
       <div
