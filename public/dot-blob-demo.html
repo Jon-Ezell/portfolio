@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blob Lab</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0a0a0c;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    #stage {
+      position: fixed;
+      inset: 0;
+      background: #0a0a0c;
+    }
+
+    #panel {
+      position: fixed;
+      top: 50%;
+      right: 1.25rem;
+      transform: translateY(-50%);
+      z-index: 100;
+      width: 224px;
+      max-height: 92vh;
+      overflow-y: auto;
+      background: rgba(10, 10, 14, 0.85);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1rem;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.12) transparent;
+    }
+
+    #panel h2 {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 0.9rem;
+    }
+
+    .section-label {
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #e76e52;
+      margin: 1rem 0 0.5rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid rgba(231,110,82,0.2);
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .row label {
+      font-size: 10px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      white-space: nowrap;
+      flex-shrink: 0;
+      width: 86px;
+    }
+
+    .row input[type="range"] {
+      flex: 1;
+      -webkit-appearance: none;
+      height: 2px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 2px;
+      outline: none;
+      cursor: pointer;
+    }
+    .row input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 11px; height: 11px;
+      border-radius: 50%;
+      background: #e76e52;
+      cursor: pointer;
+      transition: transform 150ms;
+    }
+    .row input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.3); }
+    .row input[type="range"]::-moz-range-thumb {
+      width: 11px; height: 11px;
+      border-radius: 50%;
+      background: #e76e52;
+      border: none;
+      cursor: pointer;
+    }
+
+    .val {
+      font-size: 9px;
+      color: rgba(255,255,255,0.35);
+      min-width: 32px;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .themes {
+      display: flex;
+      gap: 0.3rem;
+      margin-top: 0.25rem;
+      flex-wrap: wrap;
+    }
+    .themes button {
+      padding: 0.3rem 0.5rem;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: transparent;
+      color: rgba(255,255,255,0.45);
+      cursor: pointer;
+      transition: all 150ms;
+      white-space: nowrap;
+    }
+    .themes button:hover { border-color: rgba(255,255,255,0.3); color: #fff; }
+    .themes button.active { border-color: #e76e52; color: #e76e52; background: rgba(231,110,82,0.08); }
+
+    #copy-btn {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.45rem;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: all 150ms;
+    }
+    #copy-btn:hover { background: rgba(255,255,255,0.09); color: #fff; border-color: rgba(255,255,255,0.3); }
+    #copy-btn.copied { border-color: #29ea89; color: #29ea89; background: rgba(41,234,137,0.07); }
+  </style>
+</head>
+<body>
+
+<div id="stage"></div>
+
+<div id="panel">
+  <h2>Blob Lab</h2>
+
+  <div class="section-label">Shape</div>
+  <div class="row">
+    <label>Noise Amp</label>
+    <input type="range" id="noiseAmp" min="0" max="1" step="0.01" value="0.91">
+    <span class="val" id="noiseAmp-val">0.91</span>
+  </div>
+  <div class="row">
+    <label>Noise Freq</label>
+    <input type="range" id="noiseFreq" min="0.1" max="4" step="0.05" value="0.3">
+    <span class="val" id="noiseFreq-val">0.30</span>
+  </div>
+  <div class="row">
+    <label>Scale</label>
+    <input type="range" id="scale" min="0.2" max="2.5" step="0.05" value="0.85">
+    <span class="val" id="scale-val">0.85</span>
+  </div>
+
+  <div class="section-label">Motion</div>
+  <div class="row">
+    <label>Noise Speed</label>
+    <input type="range" id="noiseSpeed" min="0" max="0.8" step="0.01" value="0.46">
+    <span class="val" id="noiseSpeed-val">0.46</span>
+  </div>
+  <div class="row">
+    <label>Auto Rotate</label>
+    <input type="range" id="autoRotate" min="0" max="0.005" step="0.0001" value="0.0006">
+    <span class="val" id="autoRotate-val">0.0006</span>
+  </div>
+  <div class="row">
+    <label>Mouse Influence</label>
+    <input type="range" id="parallax" min="0" max="1" step="0.01" value="0.53">
+    <span class="val" id="parallax-val">0.53</span>
+  </div>
+  <div class="row">
+    <label>Mouse Speed</label>
+    <input type="range" id="mouseSensitivity" min="0.0001" max="0.01" step="0.0001" value="0.003">
+    <span class="val" id="mouseSensitivity-val">0.0030</span>
+  </div>
+  <div class="row">
+    <label>Coasting</label>
+    <input type="range" id="friction" min="0.80" max="0.99" step="0.01" value="0.96">
+    <span class="val" id="friction-val">0.96</span>
+  </div>
+
+  <div class="section-label">Dots</div>
+  <div class="row">
+    <label>Point Size</label>
+    <input type="range" id="pointSize" min="0.1" max="20" step="0.1" value="0.2">
+    <span class="val" id="pointSize-val">0.2</span>
+  </div>
+
+  <div class="section-label">Glow</div>
+  <div class="row">
+    <label>Amount</label>
+    <input type="range" id="glowAmount" min="0" max="2" step="0.05" value="2">
+    <span class="val" id="glowAmount-val">2.00</span>
+  </div>
+  <div class="row">
+    <label>Falloff</label>
+    <input type="range" id="glowFalloff" min="1" max="20" step="0.25" value="4.5">
+    <span class="val" id="glowFalloff-val">4.50</span>
+  </div>
+
+  <div class="section-label">Position</div>
+  <div class="row">
+    <label>X Offset</label>
+    <input type="range" id="xOffset" min="-0.5" max="0.5" step="0.01" value="0">
+    <span class="val" id="xOffset-val">0.00</span>
+  </div>
+
+  <div class="section-label">Theme</div>
+  <div class="themes">
+    <button id="t-warm"   class="active">Warm</button>
+    <button id="t-ember"              >Ember</button>
+    <button id="t-sunset"             >Sunset</button>
+    <button id="t-plasma"             >Plasma</button>
+    <button id="t-cool"               >Cool</button>
+    <button id="t-aurora"             >Aurora</button>
+    <button id="t-ghost"              >Ghost</button>
+    <button id="t-mono"               >Mono</button>
+  </div>
+
+  <button id="copy-btn">Copy Config</button>
+</div>
+
+<script type="importmap">
+  { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+
+<script type="module">
+  import { initDotBlobHero } from './dotBlobHero.js';
+
+  const stage = document.getElementById('stage');
+  const { setTheme, setParams } = initDotBlobHero({ container: stage, theme: 'warm' });
+
+  // Apply initial centred/scaled state to match slider starting values
+  setParams({ xOffset: 0, scale: 0.85 });
+
+  // ── Slider registry (id, setParams key, display decimals) ────────────────
+  const SLIDERS = [
+    ['noiseAmp',         'noiseAmp',          2],
+    ['noiseFreq',        'noiseFreq',         2],
+    ['scale',            'scale',             2],
+    ['noiseSpeed',       'noiseSpeed',        2],
+    ['autoRotate',       'autoRotateSpeed',   4],
+    ['parallax',         'parallaxStrength',  2],
+    ['mouseSensitivity', 'mouseSensitivity',  4],
+    ['friction',         'friction',          2],
+    ['pointSize',        'pointSize',         1],
+    ['glowAmount',       'glowAmount',        2],
+    ['glowFalloff',      'glowFalloff',       2],
+    ['xOffset',          'xOffset',           2],
+  ];
+
+  SLIDERS.forEach(([id, param, dec]) => {
+    const input   = document.getElementById(id);
+    const display = document.getElementById(id + '-val');
+    input.addEventListener('input', () => {
+      const v = parseFloat(input.value);
+      display.textContent = v.toFixed(dec);
+      setParams({ [param]: v });
+    });
+  });
+
+  // ── Theme buttons ─────────────────────────────────────────────────────────
+  const themeNames = ['warm','ember','sunset','plasma','cool','aurora','ghost','mono'];
+  themeNames.forEach(name => {
+    document.getElementById('t-' + name).addEventListener('click', () => {
+      setTheme(name);
+      document.querySelectorAll('.themes button').forEach(b => b.classList.remove('active'));
+      document.getElementById('t-' + name).classList.add('active');
+    });
+  });
+
+  // ── Copy Config ───────────────────────────────────────────────────────────
+  document.getElementById('copy-btn').addEventListener('click', () => {
+    const cfg = {};
+    SLIDERS.forEach(([id, param, dec]) => {
+      const v = parseFloat(document.getElementById(id).value);
+      cfg[param] = parseFloat(v.toFixed(dec));
+    });
+    const activeTheme = document.querySelector('.themes button.active')?.id.replace('t-','') ?? 'warm';
+    cfg.theme = activeTheme;
+
+    const text = JSON.stringify(cfg, null, 2);
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy Config'; btn.classList.remove('copied'); }, 1800);
+    });
+  });
+</script>
+
+</body>
+</html>
