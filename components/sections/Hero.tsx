@@ -32,7 +32,7 @@ export default function Hero() {
       {/* Layer 0 — Blob */}
       <DotBlobCanvas
         theme="warm"
-        opacity={0.35}
+        opacity={0.75}
         initialParams={{
           noiseAmp: 0.91,
           noiseFreq: 2.3,
@@ -107,10 +107,10 @@ export default function Hero() {
         <div
           className="rounded-xl px-6 py-5 relative"
           style={{
-            backgroundColor: "color-mix(in srgb, var(--theme-hero-surface, var(--theme-surface)) 40%, transparent)",
+            backgroundColor: "rgba(26, 26, 28, 0.12)",
             backdropFilter: "blur(20px)",
             WebkitBackdropFilter: "blur(20px)",
-            border: "1px solid color-mix(in srgb, var(--theme-divider) 60%, transparent)",
+            border: "1px solid rgba(255, 255, 255, 0.12)",
           }}
         >
           {/* ae logo mark — top right */}
