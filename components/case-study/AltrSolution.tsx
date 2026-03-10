@@ -183,59 +183,6 @@ export default function AltrSolution() {
           </div>
         </SolutionBlock>
 
-        {/* ── Block 2: Express configuration ── */}
-        <SolutionBlock
-          headline="Express Configuration eliminated the need for external documentation"
-          body="The original flow required users to find ALTR's documentation, navigate to the Snowflake connection page, copy two separate code snippets, switch to Snowflake to paste them, then return to ALTR to manually enter credentials. Express Configuration collapsed all of this into a single in-product step: one consolidated snippet, copied from within the onboarding wizard itself."
-          delay={0.05}
-        >
-          <div style={{
-            border: "1px solid rgba(255,255,255,0.12)",
-            borderRadius: "14px",
-            padding: "clamp(1.5rem, 4vw, 3rem)",
-            backgroundColor: "rgba(255,255,255,0.04)",
-          }}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
-              <div>
-                <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "11px", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--theme-accent)", marginBottom: "1rem" }}>Before</p>
-                {[
-                  "Find ALTR documentation (external URL)",
-                  "Navigate to Snowflake connection page in docs",
-                  "Copy first code snippet from docs",
-                  "Log into Snowflake and select account admin",
-                  "Paste first snippet, run it",
-                  "Return to docs for second snippet",
-                  "Back to Snowflake to paste and run second snippet",
-                  "Return to ALTR and enter all credentials manually",
-                  "Press Connect and hope nothing clears",
-                ].map((step, i) => (
-                  <div key={i} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", marginTop: i > 0 ? "0.5rem" : 0 }}>
-                    <span style={{ fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif', fontSize: "11px", color: "rgba(255,255,255,0.3)", flexShrink: 0, marginTop: "0.1rem" }}>{String(i + 1).padStart(2, "0")}</span>
-                    <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "12px", fontWeight: 300, lineHeight: 1.5, color: "rgba(255,255,255,0.45)" }}>{step}</p>
-                  </div>
-                ))}
-              </div>
-              <div>
-                <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "11px", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--theme-accent)", marginBottom: "1rem" }}>After</p>
-                {[
-                  "Sign into Snowflake",
-                  "Find ALTR partner connect in Snowflake",
-                  "Log into ALTR — onboarding launches automatically",
-                  "Copy consolidated snippet directly from onboarding wizard",
-                  "Paste into Snowflake",
-                  "Select databases in ALTR — credentials auto-populated",
-                  "Activation complete",
-                ].map((step, i) => (
-                  <div key={i} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", marginTop: i > 0 ? "0.5rem" : 0 }}>
-                    <span style={{ fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif', fontSize: "11px", color: "var(--theme-accent)", flexShrink: 0, marginTop: "0.1rem" }}>{String(i + 1).padStart(2, "0")}</span>
-                    <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "12px", fontWeight: 300, lineHeight: 1.5, color: "rgba(255,255,255,0.75)" }}>{step}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </SolutionBlock>
-
         {/* ── Block 3: Simplifying high-risk configuration ── */}
         <SolutionBlock
           headline="Simplifying High-Risk Configuration"
