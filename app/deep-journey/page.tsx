@@ -5,6 +5,7 @@ import DeepJourneyOutcome from "@/components/case-study/DeepJourneyOutcome";
 import DeepJourneyStrategy from "@/components/case-study/DeepJourneyStrategy";
 import DeepJourneyProcess from "@/components/case-study/DeepJourneyProcess";
 import DeepJourneySolution from "@/components/case-study/DeepJourneySolution";
+import DeepJourneyImpact from "@/components/case-study/DeepJourneyImpact";
 import DeepJourneyFutureVision from "@/components/case-study/DeepJourneyFutureVision";
 import DeepJourneyLocalNav from "@/components/case-study/DeepJourneyLocalNav";
 import FooterCTA from "@/components/sections/FooterCTA";
@@ -52,6 +53,9 @@ export default function DeepJourneyPage() {
         <div id="solution">
           <DeepJourneySolution />
         </div>
+
+        {/* ─── IMPACT ─── */}
+        <DeepJourneyImpact />
 
         {/* ─── FUTURE VISION ─── */}
         <DeepJourneyFutureVision />
