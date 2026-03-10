@@ -44,7 +44,7 @@ export default function DeepJourneyImpact() {
             maxWidth: "820px",
             marginBottom: "clamp(2rem, 4vw, 3rem)",
           }}>
-            From fragmented conversations to real-time revenue intelligence
+            From fragmented tools and inputs to real-time sales intelligence
           </h3>
 
           {/* Body paragraphs */}
