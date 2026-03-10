@@ -6,6 +6,7 @@ import AltrOutcome from "@/components/case-study/AltrOutcome";
 import AltrStrategy from "@/components/case-study/AltrStrategy";
 import AltrProcess from "@/components/case-study/AltrProcess";
 import AltrSolution from "@/components/case-study/AltrSolution";
+import AltrImpact from "@/components/case-study/AltrImpact";
 import AltrTakeaways from "@/components/case-study/AltrTakeaways";
 import FooterCTA from "@/components/sections/FooterCTA";
 
@@ -52,6 +53,9 @@ export default function AltrPage() {
         <div id="solution">
           <AltrSolution />
         </div>
+
+        {/* ─── IMPACT ─── */}
+        <AltrImpact />
 
         {/* ─── TAKEAWAYS ─── */}
         <div id="takeaways">
