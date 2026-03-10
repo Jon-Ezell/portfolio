@@ -410,7 +410,7 @@ export default function AboutPage() {
     const midnight = {
       "--theme-bg": "#0d0d0f",
       "--theme-text": "#f0ebe2",
-      "--theme-muted": "#9a9590",
+      "--theme-muted": "#b5b0a9",
       "--theme-accent": "#e76e52",
       "--theme-accent-text": "#111111",
       "--theme-nav": "rgba(28,28,30,0.95)",
@@ -429,7 +429,7 @@ export default function AboutPage() {
       "--theme-decor-filter": "brightness(0.35) saturate(0.6)",
       "--theme-hero-bg": "#0d0d0f",
       "--theme-hero-text": "#f0ebe2",
-      "--theme-hero-muted": "#9a9590",
+      "--theme-hero-muted": "#b5b0a9",
       "--theme-hero-surface": "#1a1a1c",
       "--theme-hero-logo-filter": "brightness(0) invert(1)",
       "--theme-hero-tree-blend": "luminosity",
