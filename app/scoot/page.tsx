@@ -5,6 +5,7 @@ import ScootOutcome from "@/components/case-study/ScootOutcome";
 import ScootStrategy from "@/components/case-study/ScootStrategy";
 import ScootProcess from "@/components/case-study/ScootProcess";
 import ScootSolution from "@/components/case-study/ScootSolution";
+import ScootImpact from "@/components/case-study/ScootImpact";
 import ScootFutureVision from "@/components/case-study/ScootFutureVision";
 import ScootLocalNav from "@/components/case-study/ScootLocalNav";
 import FooterCTA from "@/components/sections/FooterCTA";
@@ -51,6 +52,9 @@ export default function ScootPage() {
         <div id="solution">
           <ScootSolution />
         </div>
+
+        {/* ─── IMPACT ─── */}
+        <ScootImpact />
 
         {/* ─── FUTURE VISION ─── */}
         <div id="next-steps">
