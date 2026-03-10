@@ -23,7 +23,7 @@ export default function Philosophy() {
             alt=""
             width={160}
             height={160}
-            style={{ width: "clamp(135px, 15vw, 240px)", height: "auto", objectFit: "contain" }}
+            style={{ width: "clamp(135px, 15vw, 240px)", height: "auto", objectFit: "contain", filter: "var(--theme-decor-filter)" }}
           />
         </motion.div>
 
@@ -60,7 +60,7 @@ export default function Philosophy() {
             alt=""
             width={80}
             height={200}
-            style={{ width: "clamp(75px, 9vw, 120px)", height: "auto", objectFit: "contain" }}
+            style={{ width: "clamp(75px, 9vw, 120px)", height: "auto", objectFit: "contain", filter: "var(--theme-decor-filter)" }}
           />
         </motion.div>
 
@@ -110,71 +110,6 @@ export default function Philosophy() {
         </motion.div>
       </div>
 
-      {/* ── Bottom headline ── */}
-      <div className="px-8 pb-10 text-center" style={{ position: "relative", zIndex: 1 }}>
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          style={{
-            fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif',
-            fontSize: "clamp(2rem, 5.5vw, 5rem)",
-            lineHeight: 1.0,
-            color: "var(--theme-text)",
-            margin: "0 auto",
-            maxWidth: "70vw",
-          }}
-        >
-          TRANSLATING USER, BUSINESS, AND
-          <br />
-          STAKEHOLDER NEEDS INTO{" "}
-          <span style={{ color: "var(--theme-accent)" }}>MEANINGFUL</span>
-          {" "}AND{" "}
-          <span style={{ color: "var(--theme-accent)" }}>ELEGANT</span>
-          <br />
-          EXPERIENCES.
-        </motion.h2>
-      </div>
-
-      {/* ── SEE HOW I DO IT CTA ── */}
-      <div className="pb-20 text-center" style={{ position: "relative", zIndex: 1 }}>
-        {/* Stepping stones — bottom-left */}
-        <motion.div
-          className="hidden md:block"
-          style={{ position: "absolute", left: "clamp(16px, 4vw, 60px)", bottom: "0px", zIndex: 2 }}
-          animate={{ y: [0, -8, 0] }}
-          transition={{ duration: 6.0, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <Image
-            src="/decor-stepping-stones.png"
-            alt=""
-            width={200}
-            height={260}
-            style={{ width: "clamp(120px, 14vw, 200px)", height: "auto", objectFit: "contain" }}
-          />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <p
-            style={{
-              fontFamily: '"MD Nichrome Dark", Verdana, sans-serif',
-              fontSize: "22px",
-              letterSpacing: "0.08em",
-              color: "var(--theme-text)",
-              marginBottom: "12px",
-            }}
-          >
-            SEE HOW I DO IT
-          </p>
-          <p style={{ fontSize: "24px", color: "var(--theme-text)", lineHeight: 1 }}>↓</p>
-        </motion.div>
-      </div>
     </section>
   );
 }

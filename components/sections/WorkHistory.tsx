@@ -139,7 +139,7 @@ export default function WorkHistory() {
                     fontSize: "clamp(12px, 1.1vw, 14px)",
                     fontWeight: 300,
                     lineHeight: 1.7,
-                    color: "var(--theme-muted)",
+                    color: "var(--theme-text)",
                     margin: 0,
                   }}
                 >

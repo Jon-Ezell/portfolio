@@ -160,7 +160,7 @@ export default function ScootProcess() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             style={{ paddingRight: "3rem", paddingBottom: "5rem", display: "flex", justifyContent: "flex-end" }}
           >
-            <CaptionedImage src="/scoot-activation-research.png" caption="UX Audit" />
+            <CaptionedImage src="/scoot-activation-research.png" caption="Activation Audit" />
           </motion.div>
 
           <TimelineNode icon={<SearchIcon />} isFirst />
@@ -173,7 +173,7 @@ export default function ScootProcess() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{ paddingLeft: "3rem", paddingTop: "2rem", paddingBottom: "5rem" }}
           >
-            <p style={headlineStyle}>Audited the current app experience, documenting pain-points across platforms and devices, prioritizing and shipping solutions.</p>
+            <p style={headlineStyle}>Audited the current onboarding and activation experience, documenting pain-points across platforms and devices, prioritizing and shipping solutions.</p>
             <Bullets items={[
               "ID'd over 35 pain points through personal auditing and quantitatively through amplitude.",
               "Categorized by severity and complexity",

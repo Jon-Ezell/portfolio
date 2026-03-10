@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const RefreshIcon = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -74,7 +73,8 @@ function SolutionBlock({ headline, body, children, delay = 0 }: SolutionBlockPro
 function FullImage({ src, alt = "" }: { src: string; alt?: string }) {
   return (
     <div style={{ borderRadius: "12px", overflow: "hidden" }}>
-      <Image src={src} alt={alt} width={1400} height={900} className="w-full h-auto" />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={src} alt={alt} style={{ width: "100%", height: "auto", display: "block" }} />
     </div>
   );
 }
@@ -91,10 +91,12 @@ function TwoColImages({
   return (
     <div className="two-col-grid" style={{ display: "grid", gridTemplateColumns: cols, gap: "1rem", alignItems: "center" }}>
       <div style={{ borderRadius: "12px", overflow: "hidden" }}>
-        <Image src={left} alt="" width={700} height={900} style={{ width: "100%", height: "auto", display: "block" }} />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={left} alt="" style={{ width: "100%", height: "auto", display: "block" }} />
       </div>
       <div style={{ borderRadius: "12px", overflow: "hidden" }}>
-        <Image src={right} alt="" width={1200} height={900} style={{ width: "100%", height: "auto", display: "block" }} />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={right} alt="" style={{ width: "100%", height: "auto", display: "block" }} />
       </div>
     </div>
   );

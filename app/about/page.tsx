@@ -4,7 +4,7 @@ import Nav from "@/components/layout/Nav";
 import FooterCTA from "@/components/sections/FooterCTA";
 import DotBlobCanvas from "@/components/ui/DotBlobCanvas";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 // Ordered L, P, P, P, L, P, P, P… so the 5 landscape shots land evenly across all columns
@@ -264,7 +264,9 @@ function SkillsSection() {
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
-          backgroundColor: "var(--theme-surface)",
+          backgroundColor: "rgba(255, 255, 255, 0.02)",
+          backdropFilter: "blur(7px)",
+          WebkitBackdropFilter: "blur(7px)",
           border: "1px solid var(--theme-divider)",
           borderRadius: "10px",
           padding: "4px",
@@ -301,7 +303,9 @@ function SkillsSection() {
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.5, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
         style={{
-          backgroundColor: "var(--theme-surface)",
+          backgroundColor: "rgba(255, 255, 255, 0.02)",
+          backdropFilter: "blur(7px)",
+          WebkitBackdropFilter: "blur(7px)",
           border: "1px solid var(--theme-divider)",
           borderRadius: "12px",
           padding: "clamp(20px, 3vw, 32px)",
@@ -401,6 +405,41 @@ const fadeUp = {
 
 export default function AboutPage() {
   const [photosExpanded, setPhotosExpanded] = useState(false);
+
+  useEffect(() => {
+    const midnight = {
+      "--theme-bg": "#0d0d0f",
+      "--theme-text": "#f0ebe2",
+      "--theme-muted": "#9a9590",
+      "--theme-accent": "#e76e52",
+      "--theme-accent-text": "#111111",
+      "--theme-nav": "rgba(28,28,30,0.95)",
+      "--theme-divider": "rgba(255,255,255,0.12)",
+      "--theme-surface": "#1a1a1c",
+      "--theme-surface-hover": "#252527",
+      "--theme-card-bg": "rgba(26, 26, 28, 0.72)",
+      "--theme-card-bg-hover": "rgba(37, 37, 39, 0.78)",
+      "--theme-on-dark": "rgba(255, 255, 255, 0.55)",
+      "--theme-logo-filter": "brightness(0) invert(1)",
+      "--theme-venn-filter": "invert(1)",
+      "--theme-graphic-filter": "invert(1)",
+      "--theme-vase-blend": "screen",
+      "--theme-tree-blend": "luminosity",
+      "--theme-tree-opacity": "0.9",
+      "--theme-decor-filter": "brightness(0.35) saturate(0.6)",
+      "--theme-hero-bg": "#0d0d0f",
+      "--theme-hero-text": "#f0ebe2",
+      "--theme-hero-muted": "#9a9590",
+      "--theme-hero-surface": "#1a1a1c",
+      "--theme-hero-logo-filter": "brightness(0) invert(1)",
+      "--theme-hero-tree-blend": "luminosity",
+      "--theme-hero-tree-opacity": "0.9",
+    };
+    const html = document.documentElement;
+    html.setAttribute("data-theme", "midnight");
+    Object.entries(midnight).forEach(([key, val]) => html.style.setProperty(key, val));
+    localStorage.setItem("portfolio-theme", "midnight");
+  }, []);
 
   return (
     <>
@@ -557,7 +596,9 @@ export default function AboutPage() {
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 style={{
-                  backgroundColor: "var(--theme-surface)",
+                  backgroundColor: "rgba(255, 255, 255, 0.02)",
+                  backdropFilter: "blur(7px)",
+                  WebkitBackdropFilter: "blur(7px)",
                   borderRadius: "12px",
                   padding: "clamp(20px, 3vw, 32px)",
                   border: "1px solid var(--theme-divider)",
@@ -598,7 +639,9 @@ export default function AboutPage() {
           <motion.div
             {...fadeUp}
             style={{
-              backgroundColor: "var(--theme-surface)",
+              backgroundColor: "rgba(255, 255, 255, 0.02)",
+              backdropFilter: "blur(7px)",
+              WebkitBackdropFilter: "blur(7px)",
               border: "1px solid var(--theme-divider)",
               borderRadius: "16px",
               padding: "clamp(28px, 4vw, 48px)",
@@ -684,7 +727,9 @@ export default function AboutPage() {
                   display: "flex",
                   alignItems: "flex-start",
                   gap: "clamp(14px, 2vw, 20px)",
-                  backgroundColor: "var(--theme-surface)",
+                  backgroundColor: "rgba(255, 255, 255, 0.02)",
+                  backdropFilter: "blur(7px)",
+                  WebkitBackdropFilter: "blur(7px)",
                   border: "1px solid var(--theme-divider)",
                   borderRadius: "12px",
                   padding: "clamp(18px, 2.5vw, 28px)",

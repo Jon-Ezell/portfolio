@@ -6,21 +6,6 @@ const cards = [
   {
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
-        <ellipse cx="12" cy="5" rx="9" ry="3"/>
-        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
-        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
-        <path d="M17 3.5l1.5 1.5-1.5 1.5M19.5 5h-3"/>
-      </svg>
-    ),
-    title: "Integration of Agents",
-    bullets: [
-      "The ratio of attendees to VIPs or sales leaders is never 1:1, incorporating agents may allow more attendees to connect with more VIPs or get insights during the meeting",
-      "The Scoot experience is novel for most users, and can be challenging for older demographics, support bots would help this learning curve greatly",
-    ],
-  },
-  {
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
         <rect x="7" y="2" width="10" height="8" rx="2"/>
         <path d="M9 10v2M15 10v2"/>
         <circle cx="9" cy="6" r="1" fill="currentColor" stroke="none"/>
@@ -29,10 +14,25 @@ const cards = [
         <path d="M7 16H5a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1h-2"/>
       </svg>
     ),
+    title: "Integration of Agents",
+    bullets: [
+      "Attendee-to-VIP ratios make true 1:1 coverage impossible — agents bridge that gap, giving every attendee access to contextual support and expert knowledge at scale",
+      "Reduce onboarding friction for first-time users and lower-tech demographics, directly improving activation and time-to-value",
+    ],
+  },
+  {
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
+        <ellipse cx="12" cy="5" rx="9" ry="3"/>
+        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+        <path d="M17 3.5l1.5 1.5-1.5 1.5M19.5 5h-3"/>
+      </svg>
+    ),
     title: "Large Data Set Queries",
     bullets: [
-      "Ability to query all meeting and event data potentially for an entire sales funnel or cycle",
-      "So many use cases from CRO's, CMO's, and other sales people to leverage the rich social data created during our events",
+      "Query behavioral, conversational, and engagement data across an entire event or sales cycle — surfacing patterns no human review could catch",
+      "Equips CROs, CMOs, and AEs with signal-rich intelligence to sharpen targeting, refine messaging, and measure rep performance against real interaction data",
     ],
   },
 ];
@@ -77,7 +77,7 @@ export default function ScootFutureVision() {
           transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "15px", fontWeight: 300, lineHeight: 1.75, color: "var(--theme-muted)", maxWidth: "780px", marginBottom: "clamp(3rem, 6vw, 5rem)" }}
         >
-          After completion of this project, most users really enjoyed connecting and mingling — the core social experience was something that we managed to get right. But, with the advent of AI, there is so much opportunity for users to get even more out of the experience from being able to chat with agents as support and knowledge tools, as well as for sales people to utilize all of the conversation, and social data to better inform and fine tune their campaigns and rep performance.
+          The core social experience landed — post-event feedback consistently cited meaningful connections as the standout outcome. The next frontier is compounding that value with AI: embedding agents directly into the event flow to scale 1:1 engagement beyond what any human team can deliver, and converting the rich behavioral and conversational data generated during events into a strategic asset for revenue teams.
         </motion.p>
 
         {/* Cards */}

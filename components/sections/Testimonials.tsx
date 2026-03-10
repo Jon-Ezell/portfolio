@@ -87,7 +87,7 @@ export default function Testimonials() {
               }}
               className="rounded-[10px] p-8 flex flex-col gap-6"
               style={{
-                backgroundColor: "color-mix(in srgb, var(--theme-surface) 60%, transparent)",
+                backgroundColor: "rgba(255, 255, 255, 0.02)",
                 backdropFilter: "blur(16px)",
                 WebkitBackdropFilter: "blur(16px)",
                 border: "1px solid var(--theme-divider)",

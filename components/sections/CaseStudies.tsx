@@ -48,7 +48,7 @@ export default function CaseStudies() {
   return (
     <section
       id="work"
-      className="px-8 py-32"
+      className="px-8 pt-8 pb-32"
       style={{ position: "relative", overflow: "hidden" }}
     >
       {/* Background rocks — sits behind all content */}
@@ -69,21 +69,6 @@ export default function CaseStudies() {
       </div>
 
       <div className="max-w-7xl mx-auto" style={{ position: "relative", zIndex: 1 }}>
-        <motion.p
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-16"
-          style={{
-            fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif',
-            fontSize: "44px",
-            color: "var(--theme-text)",
-          }}
-        >
-          SELECTED WORK
-        </motion.p>
-
         <div className="flex flex-col gap-6">
           {projects.map((project, i) => (
             <motion.div
@@ -99,21 +84,22 @@ export default function CaseStudies() {
             >
               <Link
                 href={`/${project.slug}`}
-                className="group grid grid-cols-1 md:grid-cols-2 gap-8 rounded-[10px] p-8 transition-colors"
+                className="group grid grid-cols-1 md:grid-cols-2 gap-8 rounded-[10px] p-8"
                 style={{
-                  backgroundColor: "color-mix(in srgb, var(--theme-card-bg) 50%, transparent)",
-                  backdropFilter: "blur(16px)",
-                  WebkitBackdropFilter: "blur(16px)",
+                  backgroundColor: "rgba(255, 255, 255, 0.02)",
+                  backdropFilter: "blur(20px)",
+                  WebkitBackdropFilter: "blur(20px)",
                   border: "1px solid var(--theme-divider)",
                   textDecoration: "none",
+                  transition: "background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLElement).style.backgroundColor =
-                    "var(--theme-card-bg-hover)";
+                    "var(--theme-surface)";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLElement).style.backgroundColor =
-                    "color-mix(in srgb, var(--theme-card-bg) 50%, transparent)";
+                    "rgba(255, 255, 255, 0.02)";
                 }}
               >
                 {/* Thumbnail */}
@@ -147,7 +133,7 @@ export default function CaseStudies() {
                       fontSize: "14px",
                       fontWeight: 300,
                       lineHeight: 1.6,
-                      color: "var(--theme-muted)",
+                      color: "var(--theme-text)",
                     }}
                   >
                     {project.description}

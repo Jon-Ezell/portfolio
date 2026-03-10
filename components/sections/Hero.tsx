@@ -107,9 +107,9 @@ export default function Hero() {
         <div
           className="rounded-xl px-6 py-5 relative"
           style={{
-            backgroundColor: "rgba(26, 26, 28, 0.12)",
-            backdropFilter: "blur(20px)",
-            WebkitBackdropFilter: "blur(20px)",
+            backgroundColor: "rgba(255, 255, 255, 0.06)",
+            backdropFilter: "blur(4px)",
+            WebkitBackdropFilter: "blur(4px)",
             border: "1px solid rgba(255, 255, 255, 0.12)",
           }}
         >
@@ -157,7 +157,7 @@ export default function Hero() {
               fontSize: "13px",
               fontWeight: 300,
               lineHeight: 1.6,
-              color: "var(--theme-hero-muted, var(--theme-muted))",
+              color: "var(--theme-hero-text, var(--theme-text))",
             }}
           >
             A design philosophy guided by clarity and systems awareness —

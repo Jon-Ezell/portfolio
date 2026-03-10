@@ -66,7 +66,7 @@ function IconBubble({ icon }: { icon: React.ReactNode }) {
       width: "36px",
       height: "36px",
       borderRadius: "50%",
-      backgroundColor: "var(--theme-surface-hover)",
+      backgroundColor: "transparent",
       border: "1px solid var(--theme-divider)",
       display: "flex",
       alignItems: "center",
@@ -108,7 +108,9 @@ export default function Highlights() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              backgroundColor: "var(--theme-surface)",
+              backgroundColor: "rgba(255, 255, 255, 0.02)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
               borderRadius: "12px",
               padding: "clamp(18px, 2.5vw, 28px)",
               border: "1px solid var(--theme-divider)",
@@ -144,7 +146,7 @@ export default function Highlights() {
               fontSize: "13px",
               fontWeight: 300,
               lineHeight: 1.7,
-              color: "var(--theme-muted)",
+              color: "var(--theme-text)",
               margin: 0,
               flexGrow: 1,
             }}>
