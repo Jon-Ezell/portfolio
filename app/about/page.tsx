@@ -577,7 +577,7 @@ export default function AboutPage() {
 
             {/* LinkedIn */}
             <a
-              href="https://www.linkedin.com/in/jonezell/"
+              href="https://www.linkedin.com/in/jonathan-ezell/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
