@@ -3,6 +3,7 @@
 import Nav from "@/components/layout/Nav";
 import FooterCTA from "@/components/sections/FooterCTA";
 import DotBlobCanvas from "@/components/ui/DotBlobCanvas";
+import ContactModal from "@/components/ui/ContactModal";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -405,6 +406,7 @@ const fadeUp = {
 
 export default function AboutPage() {
   const [photosExpanded, setPhotosExpanded] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
 
   useEffect(() => {
     const midnight = {
@@ -543,10 +545,10 @@ export default function AboutPage() {
             transition={{ duration: 0.6, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
             style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}
           >
-            {/* Mail */}
-            <a
-              href="mailto:jon@ezell.guru"
-              aria-label="Email jon@ezell.guru"
+            {/* Mail — opens contact modal */}
+            <button
+              onClick={() => setContactOpen(true)}
+              aria-label="Open contact form"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -556,24 +558,25 @@ export default function AboutPage() {
                 borderRadius: "50%",
                 border: "1px solid var(--theme-accent)",
                 color: "var(--theme-accent)",
-                textDecoration: "none",
+                background: "transparent",
+                cursor: "pointer",
                 flexShrink: 0,
                 transition: "background-color 0.2s ease, color 0.2s ease",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--theme-accent)";
-                (e.currentTarget as HTMLAnchorElement).style.color = "var(--theme-bg)";
+                (e.currentTarget as HTMLButtonElement).style.backgroundColor = "var(--theme-accent)";
+                (e.currentTarget as HTMLButtonElement).style.color = "var(--theme-bg)";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent";
-                (e.currentTarget as HTMLAnchorElement).style.color = "var(--theme-accent)";
+                (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
+                (e.currentTarget as HTMLButtonElement).style.color = "var(--theme-accent)";
               }}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <rect x="2" y="4" width="20" height="16" rx="2" />
                 <path d="m2 7 10 7 10-7" />
               </svg>
-            </a>
+            </button>
 
             {/* LinkedIn */}
             <a
@@ -973,6 +976,8 @@ export default function AboutPage() {
 
         <FooterCTA />
       </main>
+
+      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
     </>
   );
 }
