@@ -132,9 +132,7 @@ export default function DeepJourneySolution() {
             marginBottom: "clamp(4rem, 7vw, 6rem)",
           }}
         >
-          Rather than designing isolated features, the work focused on redefining how users
-          access and explore organizational knowledge — shifting from navigation-based interfaces
-          toward continuity-driven interaction.
+          From navigating information to just asking for it.
         </motion.h2>
 
         {/* ── Block 1: Conversational intelligence ── */}

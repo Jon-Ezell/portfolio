@@ -55,7 +55,7 @@ export default function DeepJourneyImpact() {
               color: "var(--theme-muted)",
               margin: 0,
             }}>
-              The platform transformed thousands of unstructured sales conversations into a single, queryable system executives could rely on for decision-making.
+              I tested with the actual subject matter experts using representative data — validating both that the AI was surfacing accurate results and that the experience matched how they think about their work.
             </p>
             <p style={{
               fontFamily: '"PP Neue Machina", Arial, sans-serif',
@@ -63,8 +63,9 @@ export default function DeepJourneyImpact() {
               color: "var(--theme-muted)",
               margin: 0,
             }}>
-              By consolidating 6–8 fragmented tools into one interface, leaders could directly explore trends, performance gaps, and campaign signals across 5,000+ conversations without manual synthesis.
+              The platform transformed thousands of unstructured sales conversations into a single, queryable system executives could rely on for decision-making.
             </p>
+
             <p style={{
               fontFamily: '"PP Neue Machina", Arial, sans-serif',
               fontSize: "13px", fontWeight: 300, lineHeight: 1.8,

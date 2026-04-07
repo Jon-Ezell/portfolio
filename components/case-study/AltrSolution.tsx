@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import VideoPlayer from "@/components/ui/VideoPlayer";
 
 const RefreshIcon = () => (
   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
@@ -167,8 +168,7 @@ export default function AltrSolution() {
             marginBottom: "clamp(4rem, 7vw, 6rem)",
           }}
         >
-          The solution wasn&apos;t a better form — it was removing the form entirely
-          and replacing it with a guided, in-product activation experience.
+          The solution wasn&apos;t tweaking the UI — it was fixing the system.
         </motion.h2>
 
         {/* ── Block 1: The onboarding wizard ── */}
@@ -206,16 +206,10 @@ export default function AltrSolution() {
           body="Two small changes had an outsized impact on completion: progress indicators so users always knew how far they were from done, and form state persistence so a failed connection attempt didn't wipe out everything they'd typed. Together they addressed the two biggest drivers of abandonment identified in the usability research."
           delay={0.05}
         >
-          <div style={{ borderRadius: "12px", overflow: "hidden", marginBottom: "1.5rem" }}>
-            <video
-              src="/Onboarding ALTR Demo.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              style={{ width: "100%", height: "auto", display: "block" }}
-            />
-          </div>
+          <VideoPlayer
+            src="/Onboarding ALTR Demo.mp4"
+            style={{ marginBottom: "1.5rem" }}
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
               {

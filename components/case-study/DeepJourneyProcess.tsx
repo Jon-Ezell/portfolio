@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
 
 const SearchIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -36,6 +37,91 @@ const ChipIcon = () => (
     <path d="M7 9H4M7 12H4M7 15H4M17 9h3M17 12h3M17 15h3M9 7V4M12 7V4M15 7V4M9 17v3M12 17v3M15 17v3"/>
   </svg>
 );
+
+const NittyGritty = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div style={{ marginTop: "1.25rem" }}>
+      <motion.div
+        animate={{ borderColor: open ? "rgba(255,255,255,0.18)" : "rgba(255,255,255,0.08)" }}
+        transition={{ duration: 0.2 }}
+        style={{
+          borderRadius: "10px",
+          border: "1px solid rgba(255,255,255,0.08)",
+          backgroundColor: "rgba(255,255,255,0.03)",
+          overflow: "hidden",
+        }}
+      >
+        {/* Header / trigger */}
+        <button
+          onClick={() => setOpen(v => !v)}
+          aria-expanded={open}
+          style={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "0.75rem",
+            padding: "0.875rem 1rem",
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            textAlign: "left",
+          }}
+        >
+          <span style={{
+            fontFamily: '"PP Neue Machina", Arial, sans-serif',
+            fontSize: "11px",
+            fontWeight: 700,
+            letterSpacing: "0.1em",
+            textTransform: "uppercase",
+            color: "var(--theme-muted)",
+          }}>
+            The Nitty Gritty
+          </span>
+          <motion.span
+            animate={{ rotate: open ? 180 : 0 }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            style={{ display: "flex", alignItems: "center", color: "var(--theme-muted)", flexShrink: 0 }}
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </motion.span>
+        </button>
+
+        {/* Body */}
+        <AnimatePresence initial={false}>
+          {open && (
+            <motion.div
+              key="nitty-gritty-body"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              style={{ overflow: "hidden" }}
+            >
+              <div style={{ padding: "0 1rem 1rem", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+                <ul style={{ listStyle: "none", padding: 0, margin: "0.875rem 0 0", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+                  {[
+                    "I constrained the retrieval context window by user, topic, and date — reducing noise so the model reasoned over higher-signal data and produced more relevant, accurate results.",
+                    "I crafted explicit system prompts instructing the model to only answer from provided context and surface an 'I don't know' response when the answer wasn't present — directly suppressing hallucination.",
+                    "I scored retrieved chunks against the query using embedding similarity and dropped low-scoring chunks before they reached the LLM — keeping the context clean and the outputs grounded in the transcript data.",
+                  ].map((item, i) => (
+                    <li key={i} style={{ display: "flex", gap: "0.625rem", alignItems: "flex-start" }}>
+                      <span style={{ color: "var(--theme-accent)", flexShrink: 0, lineHeight: 1.75, fontSize: "13px" }}>—</span>
+                      <span style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.75, color: "var(--theme-muted)" }}>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
+    </div>
+  );
+};
 
 const headlineStyle: React.CSSProperties = {
   fontFamily: '"PP Neue Machina", Arial, sans-serif',
@@ -236,11 +322,27 @@ export default function DeepJourneyProcess() {
                 Before designing a single screen, I built a functional prototype in n8n to evaluate which LLMs and query parameters produced accurate, trustworthy results at scale.
               </p>
               <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.75, color: "var(--theme-muted)", marginBottom: "0.75rem" }}>
-                This step is one most designers skip — but for an AI product where the quality of outputs directly determines user trust, validating the model behavior before committing to an interface was non-negotiable.
+                Validating the model behavior before committing to an interface was non-negotiable.
               </p>
-              <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.75, color: "var(--theme-muted)" }}>
+              <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.75, color: "var(--theme-muted)", marginBottom: "1rem" }}>
                 Testing variables included: model selection, context window size, prompt structure, and how the system handled ambiguous or low-confidence queries.
               </p>
+              {/* Discoveries */}
+              <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "11px", fontWeight: 700, lineHeight: 1.4, color: "var(--theme-accent)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "0.5rem" }}>
+                Discoveries
+              </p>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                {[
+                  "Ability to accurately filter context window based on users, topic, and date yielded much more accurate and relevant results.",
+                  "Crafting a precise system prompt was imperative in only surfacing information that would be directly traced back to transcripts.",
+                ].map((item, i) => (
+                  <li key={i} style={{ display: "flex", gap: "0.625rem", alignItems: "flex-start" }}>
+                    <span style={{ color: "var(--theme-accent)", flexShrink: 0, lineHeight: 1.75, fontSize: "13px" }}>—</span>
+                    <span style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.75, color: "var(--theme-muted)" }}>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <NittyGritty />
             </div>
           </motion.div>
 

@@ -245,13 +245,12 @@ export default function AltrProcess() {
             style={{ paddingLeft: "3rem", paddingTop: "2rem", paddingBottom: "5rem" }}
           >
             <InsightCard
-              label="Key Research Findings"
+              label="KEY RESEARCH FINDINGS"
               items={[
-                "Formatting had to be exact — no hints given",
-                "Entire form input cleared on failed submission attempts",
-                "No progress indicators or step summary",
-                "No introduction to the product or the setup process",
-                "Users needed to maintain 3 open tabs simultaneously",
+                "No clear guidance to value upon first login.",
+                "Users diverged from the connection happy path in many different instances and often didn't navigate to the right page after login.",
+                "No helper text or connective tissue between the documentation and the database connection form existed.",
+                "Formatting had to be exact in the form, and input cleared upon failed attempts.",
               ]}
             />
           </motion.div>
