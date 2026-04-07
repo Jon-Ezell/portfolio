@@ -43,12 +43,10 @@ const NittyGritty = () => {
   return (
     <div style={{ marginTop: "1.25rem" }}>
       <motion.div
-        animate={{ borderColor: open ? "rgba(255,255,255,0.18)" : "rgba(255,255,255,0.08)" }}
-        transition={{ duration: 0.2 }}
         style={{
           borderRadius: "10px",
-          border: "1px solid rgba(255,255,255,0.08)",
-          backgroundColor: "rgba(255,255,255,0.03)",
+          border: "1px solid var(--theme-divider)",
+          backgroundColor: "var(--theme-surface)",
           overflow: "hidden",
         }}
       >
@@ -101,7 +99,7 @@ const NittyGritty = () => {
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
               style={{ overflow: "hidden" }}
             >
-              <div style={{ padding: "0 1rem 1rem", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+              <div style={{ padding: "0 1rem 1rem", borderTop: "1px solid var(--theme-divider)" }}>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0.875rem 0 0", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                   {[
                     "I constrained the retrieval context window by user, topic, and date — reducing noise so the model reasoned over higher-signal data and produced more relevant, accurate results.",
@@ -158,9 +156,9 @@ function TimelineNode({ icon, isFirst, isLast }: { icon: React.ReactNode; isFirs
   );
 }
 
-function CaptionedImage({ src, caption }: { src: string; caption?: string }) {
+function CaptionedImage({ src, caption, maxWidth }: { src: string; caption?: string; maxWidth?: string }) {
   return (
-    <div style={{ border: "1px solid var(--theme-divider)", borderRadius: "12px", overflow: "hidden", backgroundColor: "var(--theme-surface)", maxWidth: "min(320px, 100%)" }}>
+    <div style={{ border: "1px solid var(--theme-divider)", borderRadius: "12px", overflow: "hidden", backgroundColor: "var(--theme-surface)", maxWidth: maxWidth ?? "min(320px, 100%)" }}>
       {caption && (
         <div style={{ padding: "0.75rem 1.25rem", borderBottom: "1px solid var(--theme-divider)" }}>
           <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "11px", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--theme-accent)", margin: 0 }}>
@@ -276,7 +274,7 @@ export default function DeepJourneyProcess() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{ paddingLeft: "3rem", paddingTop: "2rem", paddingBottom: "5rem" }}
           >
-            <CaptionedImage src="/deep-journey-cro-persona.png" caption="CRO persona map" />
+            <CaptionedImage src="/deep-journey-cro-persona.png" caption="CRO persona map" maxWidth="min(560px, 100%)" />
           </motion.div>
 
           {/* ── ROW 3 ── image left, text right */}
@@ -286,9 +284,9 @@ export default function DeepJourneyProcess() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            style={{ paddingRight: "3rem", paddingBottom: "5rem", display: "flex", justifyContent: "flex-end" }}
+            style={{ paddingRight: "3rem", paddingBottom: "5rem", display: "flex", justifyContent: "flex-end", alignSelf: "start" }}
           >
-            <CaptionedImage src="/deep-journey-journey-map.png" caption="User journey + n8n prototype" />
+            <CaptionedImage src="/deep-journey-journey-map.png" caption="User journey + n8n prototype" maxWidth="min(480px, 100%)" />
           </motion.div>
 
           <TimelineNode icon={<GitBranchIcon />} />
