@@ -47,6 +47,30 @@ export default function AltrImpact() {
             A scalable, product-led onboarding experience
           </h3>
 
+          {/* Stats */}
+          <div style={{ display: "flex", gap: "clamp(2rem, 5vw, 4rem)", flexWrap: "wrap", marginBottom: "clamp(2rem, 4vw, 3rem)" }}>
+            {[
+              { value: "7%→50%+", label: "Activation Rate" },
+              { value: "80%", label: "DAU Increase in 2 Months" },
+              { value: "$100K→$1M+", label: "ARR Over Two Years" },
+            ].map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <p style={{ fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif', fontSize: "clamp(1.5rem, 3vw, 3rem)", lineHeight: 1, color: "var(--theme-text)", wordBreak: "break-word" }}>
+                  {stat.value}
+                </p>
+                <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "11px", fontWeight: 300, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--theme-muted)", marginTop: "0.6rem" }}>
+                  {stat.label}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
           {/* Body paragraphs */}
           <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", maxWidth: "720px" }}>
             <p style={{
