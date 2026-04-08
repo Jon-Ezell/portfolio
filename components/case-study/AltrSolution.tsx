@@ -208,40 +208,7 @@ export default function AltrSolution() {
         >
           <VideoPlayer
             src="/Onboarding ALTR Demo.mp4"
-            style={{ marginBottom: "1.5rem" }}
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {[
-              {
-                title: "Progress Indicators",
-                items: [
-                  "Step counter and named progress bar on every screen",
-                  "Users could see exactly how many steps remained",
-                  "Named steps (Welcome, Configure, Connect...) gave context before arriving at each screen",
-                ],
-              },
-              {
-                title: "Form State Integrity",
-                items: [
-                  "Input values persisted through failed connection attempts",
-                  "Inline error messaging surfaced on the specific field, not as a generic failure",
-                  "Format hints and field descriptions added so users knew exactly what was expected",
-                ],
-              },
-            ].map((card, i) => (
-              <div key={i} style={{ border: "1px solid rgba(255,255,255,0.12)", borderRadius: "12px", padding: "1.5rem", backgroundColor: "rgba(255,255,255,0.04)" }}>
-                <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "14px", fontWeight: 700, lineHeight: 1.3, color: "#ffffff", marginBottom: "1rem" }}>{card.title}</p>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                  {card.items.map((item, j) => (
-                    <li key={j} style={{ display: "flex", gap: "0.4rem", fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.65, color: "rgba(255,255,255,0.55)", marginTop: j > 0 ? "0.5rem" : 0 }}>
-                      <span style={{ flexShrink: 0, marginTop: "0.1rem" }}>•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
         </SolutionBlock>
 
       </div>
