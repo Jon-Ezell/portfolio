@@ -315,6 +315,16 @@ export default function AltrProcess() {
               "6 screens: Welcome, Configure, Connect, Select Data, Classify, Completion.",
               "Escalated to hand-off-ready deliverables after engineering sign-off.",
             ]} />
+
+            {/* Key Discovery callout */}
+            <div style={{ marginTop: "1.5rem", borderLeft: "2px solid var(--theme-accent)", paddingLeft: "1.25rem" }}>
+              <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "clamp(0.85rem, 1.1vw, 0.95rem)", fontWeight: 700, lineHeight: 1.4, color: "var(--theme-text)", marginBottom: "0.75rem" }}>
+                Key Discovery
+              </p>
+              <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.75, color: "var(--theme-muted)" }}>
+                Meeting with engineering helped me understand that there were actually two different connection types: Express and Manual configuration. The Express configuration, while more limited in functionality, was much more streamlined, and prioritizing that for the first-time experience would allow users to get to value faster.
+              </p>
+            </div>
           </motion.div>
 
           <TimelineNode icon={<WireframeIcon />} isLast />
