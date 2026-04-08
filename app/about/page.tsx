@@ -504,39 +504,45 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{
-              fontFamily: '"PP Neue Machina", Arial, sans-serif',
-              fontSize: "clamp(14px, 1.6vw, 17px)",
-              fontWeight: 300,
-              lineHeight: 1.75,
-              color: "var(--theme-muted)",
-              maxWidth: "600px",
-              marginBottom: "clamp(12px, 2vw, 18px)",
-            }}
-          >
-            I&apos;m a product designer and strategist who builds high-fidelity systems for high-stakes environments. I specialize in bringing clarity to complex AI and enterprise workflows where precision, trust, and interaction craft are the difference between a tool and a solution.
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.14, ease: [0.16, 1, 0.3, 1] }}
-            style={{
-              fontFamily: '"PP Neue Machina", Arial, sans-serif',
-              fontSize: "clamp(14px, 1.6vw, 17px)",
-              fontWeight: 300,
-              lineHeight: 1.75,
-              color: "var(--theme-muted)",
+              backgroundColor: "rgba(255, 255, 255, 0.02)",
+              backdropFilter: "blur(7px)",
+              WebkitBackdropFilter: "blur(7px)",
+              border: "1px solid var(--theme-divider)",
+              borderRadius: "12px",
+              padding: "clamp(16px, 2vw, 24px)",
               maxWidth: "600px",
               marginBottom: "clamp(24px, 3.5vw, 36px)",
+              display: "flex",
+              flexDirection: "column",
+              gap: "clamp(10px, 1.5vw, 14px)",
             }}
           >
-            From defining product direction to perfecting every pixel, I align design to measurable outcomes—turning technical ambiguity into intuitive, revenue-driving experiences.
-          </motion.p>
+            <p style={{
+              fontFamily: '"PP Neue Machina", Arial, sans-serif',
+              fontSize: "clamp(14px, 1.6vw, 17px)",
+              fontWeight: 300,
+              lineHeight: 1.75,
+              color: "var(--theme-muted)",
+              margin: 0,
+            }}>
+              I&apos;m a product designer and strategist who builds high-fidelity systems for high-stakes environments. I specialize in bringing clarity to complex AI and enterprise workflows where precision, trust, and interaction craft are the difference between a tool and a solution.
+            </p>
+            <p style={{
+              fontFamily: '"PP Neue Machina", Arial, sans-serif',
+              fontSize: "clamp(14px, 1.6vw, 17px)",
+              fontWeight: 300,
+              lineHeight: 1.75,
+              color: "var(--theme-muted)",
+              margin: 0,
+            }}>
+              From defining product direction to perfecting every pixel, I align design to measurable outcomes—turning technical ambiguity into intuitive, revenue-driving experiences.
+            </p>
+          </motion.div>
 
 
           <motion.div

@@ -35,7 +35,7 @@ export default function PageTransition() {
         return;
       const url = new URL(href, window.location.href);
       if (url.origin !== window.location.origin) return;
-      if (url.pathname === window.location.pathname && url.hash) return;
+      if (url.hash) return;
 
       e.preventDefault();
       html.classList.remove("pt-up");

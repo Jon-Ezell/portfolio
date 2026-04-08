@@ -241,7 +241,10 @@ export default function Nav() {
               <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", margin: "0.375rem 0.375rem 0" }} />
               <Link
                 href="/#work"
-                onClick={(e) => { setWorkOpen(false); handleAnchorClick(e, "work"); }}
+                onClick={(e) => {
+                  setWorkOpen(false);
+                  if (window.location.pathname === "/") handleAnchorClick(e, "work");
+                }}
                 style={{ textDecoration: "none", display: "block" }}
               >
                 <div className="flex items-center justify-between rounded-[8px] px-3 py-2.5 transition-colors duration-200 hover:bg-white/[0.06]">

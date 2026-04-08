@@ -11,12 +11,10 @@ interface OutcomeCard {
 
 const PathIcon = () => (
   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="5" r="3"/>
-    <path d="M12 8v3"/>
-    <path d="M6.5 14a5.5 5.5 0 0 1 11 0"/>
-    <circle cx="6" cy="17" r="3"/>
-    <circle cx="18" cy="17" r="3"/>
-    <path d="M9 17h6"/>
+    <circle cx="10" cy="10" r="7"/>
+    <line x1="15.5" y1="15.5" x2="21" y2="21"/>
+    <path d="M7 10c0-1.5 1.3-2.5 3-2.5s3 1 3 2.5-1.3 2.5-3 2.5S7 11.5 7 10z"/>
+    <circle cx="10" cy="10" r="1" fill="currentColor" stroke="none"/>
   </svg>
 );
 
@@ -74,7 +72,7 @@ export default function AltrOutcome({ cards = defaultCards }: { cards?: OutcomeC
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-          style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "clamp(1.3rem, 2.8vw, 2.2rem)", fontWeight: 700, lineHeight: 1.25, color: "var(--theme-text)", maxWidth: "900px", marginBottom: "clamp(2rem, 4vw, 3.5rem)" }}
+          style={{ fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif', fontSize: "clamp(1.8rem, 3.5vw, 3rem)", lineHeight: 1.05, letterSpacing: "-0.02em", color: "var(--theme-text)", maxWidth: "900px", marginBottom: "clamp(2rem, 4vw, 3.5rem)" }}
         >
           Turning an expert-dependent onboarding into a self-serve activation experience
           that scaled with the product.
