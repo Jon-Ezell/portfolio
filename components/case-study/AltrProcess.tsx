@@ -308,14 +308,6 @@ export default function AltrProcess() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             style={{ paddingRight: "3rem", paddingBottom: "2rem" }}
           >
-            <p style={headlineStyle}>Created low-fidelity wireframes for 6 onboarding screens and validated with engineering before moving to high-fidelity hand-off.</p>
-            <Bullets items={[
-              "Conducted feasibility sessions with engineering to align on what was possible and practical.",
-              "Iterated on wireframes based on engineering constraints — specifically around data fetching and form state.",
-              "6 screens: Welcome, Configure, Connect, Select Data, Classify, Completion.",
-              "Escalated to hand-off-ready deliverables after engineering sign-off.",
-            ]} />
-
             {/* Key Discovery callout */}
             <div style={{ marginTop: "1.5rem", borderLeft: "2px solid var(--theme-accent)", paddingLeft: "1.25rem" }}>
               <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "clamp(0.85rem, 1.1vw, 0.95rem)", fontWeight: 700, lineHeight: 1.4, color: "var(--theme-text)", marginBottom: "0.75rem" }}>
