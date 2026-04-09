@@ -105,33 +105,6 @@ export default function DeepJourneyTLDR() {
             </div>
           </div>
 
-          {/* Divider */}
-          <div style={{ borderTop: "1px solid var(--theme-divider)", marginBottom: "clamp(1.5rem, 3vw, 2.5rem)" }} />
-
-          {/* Metrics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { value: "2–6 hrs → 15 min", label: "Weekly Reporting Time Saved Per CRO" },
-              { value: "8→1", label: "eight different touch points reduced to one source of truth" },
-              { value: "8-24x", label: "times faster than traditional campaign analysis" },
-              { value: "5,000+", label: "conversations simultaneously queryable" },
-            ].map((m, i) => (
-              <motion.div
-                key={m.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <p style={{ fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif', fontSize: "clamp(1.5rem, 3vw, 3rem)", lineHeight: 1, color: "var(--theme-text)" }}>
-                  {m.value}
-                </p>
-                <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "11px", fontWeight: 300, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--theme-muted)", marginTop: "0.6rem" }}>
-                  {m.label}
-                </p>
-              </motion.div>
-            ))}
-          </div>
         </motion.div>
       </div>
     </section>
