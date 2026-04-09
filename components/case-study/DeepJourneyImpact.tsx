@@ -74,6 +74,14 @@ export default function DeepJourneyImpact() {
             }}>
               This shift dramatically accelerated executive reporting workflows, reducing weekly analysis from 2–6 hours to under 15 minutes, while increasing confidence in AI-generated insights through source-linked traceability.
             </p>
+            <p style={{
+              fontFamily: '"PP Neue Machina", Arial, sans-serif',
+              fontSize: "13px", fontWeight: 700, lineHeight: 1.8,
+              color: "var(--theme-text)",
+              margin: 0,
+            }}>
+              This feature set was a core selling point that helped close an enterprise deal with a Fortune 500 client for the sales use case.
+            </p>
           </div>
         </motion.div>
 

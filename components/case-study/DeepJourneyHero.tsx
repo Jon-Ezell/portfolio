@@ -176,7 +176,7 @@ export default function DeepJourneyHero({ metaItems = [] }: DeepJourneyHeroProps
           {[
             { value: "2–6 hrs → 15 min", label: "Weekly Reporting Time Saved Per CRO" },
             { value: "8→1", label: "eight different touch points reduced to one source of truth" },
-            { value: "8-24x", label: "times faster than traditional campaign analysis" },
+            { value: "Key selling point", label: "which resulted in the acquisition of a Fortune 500 client" },
             { value: "5,000+", label: "conversations simultaneously queryable" },
           ].map((stat, i) => (
             <motion.div
