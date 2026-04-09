@@ -159,7 +159,7 @@ export default function DeepJourneyHero({ metaItems = [] }: DeepJourneyHeroProps
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="rounded-2xl overflow-hidden"
-          style={{ marginBottom: "clamp(3rem, 6vw, 5rem)" }}
+          style={{ marginBottom: "clamp(2rem, 4vw, 3rem)" }}
         >
           <Image
             src="/deep-journey-laptop.png"
@@ -170,6 +170,30 @@ export default function DeepJourneyHero({ metaItems = [] }: DeepJourneyHeroProps
             priority
           />
         </motion.div>
+
+        {/* ── Stats ── */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8" style={{ marginBottom: "clamp(3rem, 6vw, 5rem)" }}>
+          {[
+            { value: "2–6 hrs → 15 min", label: "Weekly Reporting Time Saved Per CRO" },
+            { value: "8→1", label: "eight different touch points reduced to one source of truth" },
+            { value: "8-24x", label: "times faster than traditional campaign analysis" },
+            { value: "5,000+", label: "conversations simultaneously queryable" },
+          ].map((stat, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.7 + i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <p style={{ fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif', fontSize: "clamp(1.5rem, 3vw, 3rem)", lineHeight: 1, color: "var(--theme-text)", wordBreak: "break-word" }}>
+                {stat.value}
+              </p>
+              <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "11px", fontWeight: 300, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--theme-muted)", marginTop: "0.6rem" }}>
+                {stat.label}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

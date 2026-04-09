@@ -51,8 +51,8 @@ export default function DeepJourneyImpact() {
           <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem", maxWidth: "720px" }}>
             <p style={{
               fontFamily: '"PP Neue Machina", Arial, sans-serif',
-              fontSize: "13px", fontWeight: 300, lineHeight: 1.8,
-              color: "var(--theme-muted)",
+              fontSize: "13px", fontWeight: 700, lineHeight: 1.8,
+              color: "var(--theme-text)",
               margin: 0,
             }}>
               I tested with the actual subject matter experts using representative data — validating both that the AI was surfacing accurate results and that the experience matched how they think about their work.

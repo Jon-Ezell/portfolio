@@ -2,6 +2,7 @@ import Nav from "@/components/layout/Nav";
 import DeepJourneyHero from "@/components/case-study/DeepJourneyHero";
 import DeepJourneyTLDR from "@/components/case-study/DeepJourneyTLDR";
 import DeepJourneyOutcome from "@/components/case-study/DeepJourneyOutcome";
+import DeepJourneyBackground from "@/components/case-study/DeepJourneyBackground";
 import DeepJourneyStrategy from "@/components/case-study/DeepJourneyStrategy";
 import DeepJourneyProcess from "@/components/case-study/DeepJourneyProcess";
 import DeepJourneySolution from "@/components/case-study/DeepJourneySolution";
@@ -36,12 +37,15 @@ export default function DeepJourneyPage() {
         {/* ─── STICKY LOCAL NAV ─── */}
         <DeepJourneyLocalNav />
 
+        {/* ─── BACKGROUND ─── */}
+        <DeepJourneyBackground />
+
         {/* ─── OUTCOME CARDS ─── */}
         <div id="outcomes">
           <DeepJourneyOutcome />
         </div>
 
-        {/* ─── STRATEGY + AUDIENCE ─── */}
+        {/* ─── AUDIENCES ─── */}
         <DeepJourneyStrategy />
 
         {/* ─── PROCESS ─── */}
