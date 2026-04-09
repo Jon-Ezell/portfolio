@@ -147,10 +147,6 @@ export default function DeepJourneySolution() {
         <SolutionBlock
           headline="Contextual continuity – from thousands of conversations to a single quotation"
           body="Designed traceable insight architecture that allows users to move seamlessly from high-level summaries to source-level quotations, ensuring trust and verifiability — a critical requirement for AI-assisted decision making."
-          caption={{
-            title: "Strategic Trade-off —",
-            body: "We prioritized traceability and context continuity over raw generation speed because accurate, auditable insights were essential to executive confidence and operational decision-making.",
-          }}
         >
           <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
             <FullImage src="/cc1.png" alt="Deep Journey — Ask interface with context filtering" />

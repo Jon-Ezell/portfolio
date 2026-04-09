@@ -102,9 +102,9 @@ const NittyGritty = () => {
               <div style={{ padding: "0 1rem 1rem", borderTop: "1px solid var(--theme-divider)" }}>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0.875rem 0 0", display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                   {[
-                    "I constrained the retrieval context window by user, topic, and date — reducing noise so the model reasoned over higher-signal data and produced more relevant, accurate results.",
-                    "I crafted explicit system prompts instructing the model to only answer from provided context and surface an 'I don't know' response when the answer wasn't present — directly suppressing hallucination.",
-                    "I scored retrieved chunks against the query using embedding similarity and dropped low-scoring chunks before they reached the LLM — keeping the context clean and the outputs grounded in the transcript data.",
+                    <>I constrained the retrieval context window by <strong style={{ fontWeight: 700, color: "var(--theme-text)" }}>user, topic, and date</strong> — reducing noise so the model reasoned over higher-signal data and produced more <strong style={{ fontWeight: 700, color: "var(--theme-text)" }}>relevant, accurate results</strong>.</>,
+                    <>I crafted explicit <strong style={{ fontWeight: 700, color: "var(--theme-text)" }}>system prompts instructing the model to only answer from provided context</strong> and surface an &apos;I don&apos;t know&apos; response when the answer wasn&apos;t present — directly suppressing hallucination.</>,
+                    <>I scored retrieved chunks against the query using embedding similarity and <strong style={{ fontWeight: 700, color: "var(--theme-text)" }}>dropped low-scoring chunks before they reached the LLM</strong> — keeping the context clean and the outputs grounded in the transcript data.</>,
                   ].map((item, i) => (
                     <li key={i} style={{ display: "flex", gap: "0.625rem", alignItems: "flex-start" }}>
                       <span style={{ color: "var(--theme-accent)", flexShrink: 0, lineHeight: 1.75, fontSize: "13px" }}>—</span>

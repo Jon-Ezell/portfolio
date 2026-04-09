@@ -112,7 +112,7 @@ export default function DeepJourneyTLDR() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { value: "2–6 hrs → 15 min", label: "Weekly Reporting Time Saved Per CRO" },
-              { value: "8", label: "different touch points reduced to one source of truth" },
+              { value: "8→1", label: "eight different touch points reduced to one source of truth" },
               { value: "8-24x", label: "times faster than traditional campaign analysis" },
               { value: "5,000+", label: "conversations simultaneously queryable" },
             ].map((m, i) => (

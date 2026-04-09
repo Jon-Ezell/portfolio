@@ -25,12 +25,12 @@ const cards = [
     ],
   },
   {
-    image: "/dj3.png",
-    imageAlt: "Organizational Visibility — Deep Journey",
-    title: "Organizational Visibility",
+    image: "/convoDJ.png",
+    imageAlt: "High trust, no hallucination conversations — Deep Journey",
+    title: "High trust, no hallucinated conversations",
     intro: undefined,
     bullets: [
-      "Due to the sensitive nature of meeting transcriptions, access controls were designed around the experience to allow for proper visibility and organizational access.",
+      "A conversational experience specifically designed to only surface information directly informed by source material — allowing users to trust the tool for high-stakes decisions.",
     ],
   },
 ];
