@@ -105,21 +105,6 @@ export default function DeepJourneyTLDR() {
             </div>
           </div>
 
-          {/* The Strategic Decision */}
-          <div style={{ borderTop: "1px solid var(--theme-divider)", paddingTop: "clamp(1.5rem, 3vw, 2.5rem)", marginBottom: "clamp(2rem, 4vw, 3rem)" }}>
-            <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "14px", fontWeight: 700, color: "var(--theme-text)", marginBottom: "1rem" }}>
-              The Strategic Decision
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16">
-              <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.7, color: "var(--theme-text)" }}>
-                Rather than building another dashboard layered on top of static metrics, I proposed a conversational AI interface that allowed executives to directly query unstructured sales transcripts in natural language.
-              </p>
-              <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.7, color: "var(--theme-text)" }}>
-                The key design challenge was trust. Generative summaries without traceability risked hallucination and reduced confidence in high-stakes decisions. To address this, I structured the system to preserve conversational continuity across sessions and embed linked source references within every response. This required prioritizing traceability and decision confidence over raw response speed — a deliberate tradeoff to support enterprise use.
-              </p>
-            </div>
-          </div>
-
           {/* Divider */}
           <div style={{ borderTop: "1px solid var(--theme-divider)", marginBottom: "clamp(1.5rem, 3vw, 2.5rem)" }} />
 
