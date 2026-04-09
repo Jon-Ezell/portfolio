@@ -87,15 +87,6 @@ export default function DeepJourneyFutureVision() {
           The MVP was scoped tightly to the CRO persona, which was the right call for speed — but it meant we underdesigned for the sales rep persona who would ultimately be the heaviest user of the data being queried. I&apos;d have pushed for at least one round of rep-facing validation before shipping to ensure the access control model and organizational visibility layer matched how reps actually think about their data ownership.
         </motion.p>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "15px", fontWeight: 300, lineHeight: 1.75, color: "var(--theme-muted)", maxWidth: "780px" }}
-        >
-          I&apos;d also have designed a more explicit onboarding moment for first-time AI interaction — many CROs hadn&apos;t used a conversational analytics tool before and the blank prompt state created hesitation we hadn&apos;t fully anticipated.
-        </motion.p>
 
       </div>
     </section>
