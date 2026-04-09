@@ -2,8 +2,7 @@ import Nav from "@/components/layout/Nav";
 import AltrHero from "@/components/case-study/AltrHero";
 import AltrTLDR from "@/components/case-study/AltrTLDR";
 import AltrLocalNav from "@/components/case-study/AltrLocalNav";
-import AltrOutcome from "@/components/case-study/AltrOutcome";
-import AltrStrategy from "@/components/case-study/AltrStrategy";
+import AltrBackground from "@/components/case-study/AltrBackground";
 import AltrProcess from "@/components/case-study/AltrProcess";
 import AltrSolution from "@/components/case-study/AltrSolution";
 import AltrImpact from "@/components/case-study/AltrImpact";
@@ -36,13 +35,8 @@ export default function AltrPage() {
         {/* ─── STICKY LOCAL NAV ─── */}
         <AltrLocalNav />
 
-        {/* ─── OUTCOME CARDS ─── */}
-        <div id="outcomes">
-          <AltrOutcome />
-        </div>
-
-        {/* ─── STRATEGY + AUDIENCES ─── */}
-        <AltrStrategy />
+        {/* ─── BACKGROUND ─── */}
+        <AltrBackground />
 
         {/* ─── RESEARCH + PROCESS ─── */}
         <div id="research">
