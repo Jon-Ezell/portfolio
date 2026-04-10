@@ -331,7 +331,7 @@ export default function DeepJourneyProcess() {
               </p>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 {[
-                  "Ability to accurately filter context window based on users, topic, and date yielded much more accurate and relevant results.",
+                  "The ability to accurately filter the context window yielded results that were much more accurate and relevant.",
                   "Crafting a precise system prompt was imperative in only surfacing information that would be directly traced back to transcripts.",
                 ].map((item, i) => (
                   <li key={i} style={{ display: "flex", gap: "0.625rem", alignItems: "flex-start" }}>
