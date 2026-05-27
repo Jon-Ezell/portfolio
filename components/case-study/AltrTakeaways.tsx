@@ -2,36 +2,6 @@
 
 import { motion } from "framer-motion";
 
-const takeaways = [
-  {
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="18" y1="20" x2="18" y2="10"/>
-        <line x1="12" y1="20" x2="12" y2="4"/>
-        <line x1="6" y1="20" x2="6" y2="14"/>
-        <line x1="2" y1="20" x2="22" y2="20"/>
-      </svg>
-    ),
-    title: "Behavioral analytics are a designer's best advocate",
-    bullets: [
-      "The 7% activation rate was invisible to the team until Pendo surfaced it. Without the data, the problem could have been dismissed as an edge case.",
-      "Quantitative data built the business case; qualitative research explained the why. Both were necessary — neither alone was sufficient.",
-    ],
-  },
-  {
-    icon: (
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-        <circle cx="12" cy="12" r="3"/>
-      </svg>
-    ),
-    title: "The gap was never the technology — it was the experience around it",
-    bullets: [
-      "The underlying database connection worked fine. The problem was that no one had designed the path to using it.",
-      "Users didn't need a smarter system — they needed context, progress visibility, and a single source of truth.",
-    ],
-  },
-];
 
 export default function AltrTakeaways() {
   return (
@@ -78,45 +48,63 @@ export default function AltrTakeaways() {
           a solution that felt obvious in retrospect — but would have been easy to get wrong without both.
         </motion.p>
 
-        {/* Takeaway cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5" style={{ marginBottom: "clamp(3rem, 6vw, 5rem)" }}>
-          {takeaways.map((card, i) => (
-            <motion.div
-              key={card.title}
-              initial={{ opacity: 0, y: 32 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              style={{ border: "1px solid var(--theme-divider)", borderRadius: "14px", overflow: "hidden", backgroundColor: "var(--theme-surface)" }}
-            >
-              <div style={{ aspectRatio: "16/7", backgroundColor: "var(--theme-surface-hover)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--theme-text)" }}>
-                {card.icon}
-              </div>
-              <div style={{ padding: "1.25rem 1.25rem 1.5rem" }}>
-                <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "14px", fontWeight: 700, lineHeight: 1.35, color: "var(--theme-text)", marginBottom: "0.75rem" }}>
-                  {card.title}
-                </p>
-                <ul style={{ padding: 0, listStyle: "none", margin: 0 }}>
-                  {card.bullets.map((b, j) => (
-                    <li key={j} style={{ display: "flex", gap: "0.4rem", fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "13px", fontWeight: 300, lineHeight: 1.65, color: "var(--theme-muted)", marginTop: j > 0 ? "0.5rem" : 0 }}>
-                      <span style={{ flexShrink: 0, marginTop: "0.1rem" }}>•</span>
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {/* What / Why graphic + caption */}
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          style={{ marginBottom: "clamp(3rem, 6vw, 5rem)", display: "flex", alignItems: "center", gap: "clamp(2rem, 5vw, 4rem)", flexWrap: "wrap" }}
+        >
+          <svg viewBox="0 0 620 340" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0, width: "100%", maxWidth: "580px" }}>
+            {/* Handle */}
+            <line x1="195" y1="175" x2="312" y2="275" stroke="currentColor" strokeWidth="36" strokeLinecap="round" style={{ color: "var(--theme-text)" }} />
+            {/* Filled circle masks handle bleed-through */}
+            <circle cx="130" cy="120" r="90" fill="var(--theme-bg)" />
+            {/* Circle stroke */}
+            <circle cx="130" cy="120" r="90" stroke="currentColor" strokeWidth="12" fill="none" style={{ color: "var(--theme-text)" }} />
+            {/* WHY inside glass */}
+            <text x="130" y="138" textAnchor="middle" style={{ fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif', fontSize: "58px", fill: "var(--theme-text)", letterSpacing: "-0.02em" }}>why</text>
+            {/* WHAT inside handle — match why: MD Nichrome Ultra, lowercase */}
+            <text x="254" y="231" textAnchor="middle" transform="rotate(40 254 231)" style={{ fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif', fontSize: "22px", fill: "var(--theme-bg)", letterSpacing: "-0.02em" }}>what</text>
+
+            {/* Qualitative label — points to glass */}
+            <circle cx="220" cy="120" r="3.5" fill="var(--theme-text)" />
+            <line x1="224" y1="118" x2="396" y2="62" stroke="currentColor" strokeWidth="1" style={{ color: "var(--theme-muted)" }} />
+            <text x="402" y="66" textAnchor="start" style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "11px", fontWeight: 300, fill: "var(--theme-muted)", letterSpacing: "0.18em" }}>QUALITATIVE</text>
+
+            {/* Quantitative label — points to handle, no dot */}
+            <line x1="292" y1="252" x2="416" y2="295" stroke="currentColor" strokeWidth="1" style={{ color: "var(--theme-muted)" }} />
+            <text x="422" y="299" textAnchor="start" style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "11px", fontWeight: 300, fill: "var(--theme-muted)", letterSpacing: "0.18em" }}>QUANTITATIVE</text>
+          </svg>
+
+          <p style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "15px", fontWeight: 300, lineHeight: 1.75, color: "var(--theme-muted)", maxWidth: "420px", fontStyle: "italic" }}>
+            I like to think about quantitative research as being able to position or focus a microscope or magnifying glass, and the qualitative &lsquo;why&rsquo; as really what is discovered from looking through that focused and correctly positioned lens.
+          </p>
+        </motion.div>
+
+        {/* Divider */}
+        <div style={{ borderTop: "1px solid var(--theme-divider)", margin: "clamp(3rem, 6vw, 5rem) 0" }} />
+
+        {/* What I could've done differently */}
+        <motion.h2
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          style={{ fontFamily: '"MD Nichrome Ultra", Verdana, sans-serif', fontSize: "clamp(1.8rem, 3.5vw, 3rem)", lineHeight: 1.05, letterSpacing: "-0.02em", color: "var(--theme-text)", marginBottom: "1.25rem" }}
+        >
+          What I could&apos;ve done differently
+        </motion.h2>
 
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           style={{ fontFamily: '"PP Neue Machina", Arial, sans-serif', fontSize: "15px", fontWeight: 300, lineHeight: 1.75, color: "var(--theme-muted)", maxWidth: "780px" }}
         >
-          This project shaped how I approach every new product engagement — the first question I ask is always &ldquo;what does the data say about where users are failing?&rdquo; before entertaining any design hypotheses.
+          I defined activation as connecting a database — which was the right constraint for the scope of the project. But looking back, I never investigated what happened after that moment. Were users engaging with the analytics features? Were governance workflows being used as intended? Activation solved for the minimum viable entry point into the product, but it didn&apos;t answer whether users were reaching the full &ldquo;aha.&rdquo;
         </motion.p>
 
       </div>
