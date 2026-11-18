@@ -8,6 +8,12 @@ import ContactModal from "@/components/ui/ContactModal";
 
 const caseStudies = [
   {
+    slug: "lymeless",
+    title: "LymeLess",
+    description: "Onboarding, activation & IA redesign — projected 3× core users",
+    thumb: "/lymeless/33-act-home-first-days.jpg",
+  },
+  {
     slug: "scoot",
     title: "Scoot",
     description: "Virtual event platform for enterprise engagement",

@@ -6,6 +6,15 @@ import Image from "next/image";
 
 const projects = [
   {
+    slug: "lymeless",
+    title: "LymeLess",
+    headline: "ONE CLEAR JOURNEY TO FULLY ACTIVATED",
+    description:
+      "A research-led redesign of onboarding, activation, and IA for a chronic-illness app, projected to triple core users per 100 onboarding starts.",
+    tags: ["Product Strategy", "Mobile", "2026"],
+    thumbnail: "/lymeless/33-act-home-first-days.jpg",
+  },
+  {
     slug: "altr",
     title: "ALTR",
     headline: "FROM 7% TO THE MOON",
